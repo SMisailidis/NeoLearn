@@ -55,12 +55,18 @@ $(document).ready(function () {
     switch (sessionStorage.getItem("userType")) {
       case "student":
         navList = {
-          Home: "Portfolio.php",
+          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
+          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
+          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
+          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
         };
         break;
       case "teacher":
         navList = {
-          Home: "Portfolio.php",
+          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
+          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
+          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
+          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
         };
         break;
       case "admin":
@@ -73,10 +79,62 @@ $(document).ready(function () {
     }
   };
 
+  const setContentList = () => {
+    let contentList;
+
+    switch (sessionStorage.getItem("userType")) {
+      case "student":
+        contentList = {
+          home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
+          courses: { text: "My Courses", url: "courses.php", imgURL: "" },
+          addCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
+          logOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+        };
+        break;
+      case "teacher":
+        contentList = {
+          viewAll: {
+            text: "View All Courses",
+            url: "viewCourses.php",
+            imgURL: "assets/images/showStudentsIcon.png",
+          },
+          addCourse: {
+            text: "Add Course",
+            url: "AddCourse.php",
+            imgURL: "assets/images/addCourseIcon.png",
+          },
+          profilePref: {
+            text: "Profile Preferences",
+            url: "profilePref.php",
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
+          viewStud: {
+            text: "View Students",
+            url: "viewStud.php",
+            imgURL: "assets/images/showStudentsIcon.png",
+          },
+        };
+        break;
+      case "admin":
+        contentList = {
+          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
+          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
+          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
+          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+        };
+        break;
+      default:
+        break;
+    }
+
+    sessionStorage.setItem("userContent", JSON.stringify(contentList));
+  };
+
   const LogIn = (data) => {
     sessionStorage.setItem("userData", JSON.stringify(data));
-    sessionStorage.setItem("userType", data.type);
+    sessionStorage.setItem("userType", data[0].type);
     setNavList();
+    setContentList();
     window.location.href = "portfolio.php";
   };
 });

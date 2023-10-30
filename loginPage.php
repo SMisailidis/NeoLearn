@@ -1,4 +1,4 @@
-<?php require 'assets/partials/header.php' ?>
+<?php require 'assets/partials/loginHeader.php' ?>
 <style>
     <?php require 'assets/css/loginPage.css' ?>
 </style>

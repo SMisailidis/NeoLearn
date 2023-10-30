@@ -1,6 +1,12 @@
-.mainScreenContainer {
-  height: 70vh;
+body{
+  display: flex !important;
+  
 
+}
+
+.mainScreenContainer {
+  height: 90%;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
