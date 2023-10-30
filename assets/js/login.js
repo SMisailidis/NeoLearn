@@ -77,6 +77,6 @@ $(document).ready(function () {
     sessionStorage.setItem("userData", JSON.stringify(data));
     sessionStorage.setItem("userType", data.type);
     setNavList();
-    window.location.href = "Portfolio.php";
+    window.location.href = "portfolio.php";
   };
 });

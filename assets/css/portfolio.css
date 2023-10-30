@@ -1,0 +1,45 @@
+.mainScreenContainer {
+  height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentContainer {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 150px;
+}
+
+.contentContainer img {
+  width: 18vh;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.contentContainer .mainContent {
+  width: 25vh;
+  height: 17vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e6d7c;
+  gap: 5px;
+}
+
+.contentContainer a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
