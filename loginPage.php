@@ -1,4 +1,4 @@
-<?php require 'partials/header.php' ?>
+<?php require 'Front-End/partials/header.php' ?>
 <style>
     <?php require 'Front-End/css/loginPage.css' ?>
 </style>
@@ -16,7 +16,8 @@
                 <div class="inputContainer col-10 col-md-8 col-lg-7 position-relative">
                     <label for="password" class="form-label">Password</label>
                     <i class="fa-solid fa-lock"></i>
-                    <i class="fa-regular fa-eye" id="showPasswordIcon"></i>
+                    <button type="button" class="passwordButton"><i class="fa-regular fa-eye" id="showPasswordIcon"></i></button>
+                    
                     <input type="password" class="form-control" name="password" id="password">
                     <a href="">Ξέχασα τον κωδικό μου</a>
 
@@ -27,4 +28,5 @@
             </form>
         </div>
     </main>
+    <script src="Front-End/js/showPassword.js"></script>
 </body>

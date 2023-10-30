@@ -85,12 +85,15 @@ form .inputContainer {
     color: #2e6d7c;
 }
 
-.inputContainer .fa-eye {
-    font-size: 20px;
+.inputContainer .passwordButton {
+    font-size: 23px;
+    width: 40px;
     position: absolute;
-    top: 43%;
+    top: 35%;
     right: 3%;
     color: #2e6d7c;
+    background-color: inherit;
+    border: none;
 }
 
 .inputContainer a {
