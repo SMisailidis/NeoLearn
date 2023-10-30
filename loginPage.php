@@ -1,12 +1,12 @@
-<?php require 'Front-End/partials/header.php' ?>
+<?php require 'assets/partials/header.php' ?>
 <style>
-    <?php require 'Front-End/css/loginPage.css' ?>
+    <?php require 'assets/css/loginPage.css' ?>
 </style>
 
     <main class="container-fluid">
         <div class="formContainer col-md-8 col-sm-10 col-12">
             <h2>Είσοδος Στην Πλατφόρμα</h2>
-            <form action="">
+            <form method="POST" id="loginForm">
 
                 <div class="inputContainer col-10 col-md-8 col-lg-7 position-relative">
                     <label for="username" class="form-label">Username</label>
@@ -28,5 +28,6 @@
             </form>
         </div>
     </main>
-    <script src="Front-End/js/showPassword.js"></script>
+    <script src="assets/js/showPassword.js"></script>
+    <script src="assets/js/login.js"></script>
 </body>
