@@ -16,9 +16,9 @@
     <header class="container-fluid  header">
 
         <div class="col-12 col-lg-6 col-xl-4 logoContainer">
-            <img src="images/logo.png" alt="">
+            <img src="Front-End/images/logo.png" alt="">
             <span>NEOLEARN</span>
-            <span>'Fueling Curiosity, Igniting Success' </span>
+            <span>'Fueling Curiosity, Igniting Success'</span>
         </div>
     </header>
     <div class="subheader container-fluid"></div>

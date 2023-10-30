@@ -2,21 +2,24 @@ html,
 body {
     height: 100vh;
     background-color: #e6e4e4;
-    /* overflow-y: scroll; */
+    display: flex;
+    flex-direction: column;
+
 }
 
 main {
-    height: 84vh;
+    flex: 1;
     padding: 25px 0;
     display: flex;
     justify-content: center;
-    /* align-items: center;  */
+    align-items: center; 
 
 }
 
 .formContainer {
-    height: max(90%, 500px);
-    margin: auto;
+    height: 550px;
+    max-width: 1500px;
+    /* margin: auto; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,8 +52,8 @@ main {
 }
 
 form .inputContainer {
-    height: max(30%, 100px);
-    display: flex;
+    height: 100px;
+    display: inline-flex;
     flex-direction: column;
     margin-bottom: 25px;
 }
