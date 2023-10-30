@@ -1,6 +1,6 @@
-<?php require '../partials/header.php'?>
+<?php require 'partials/header.php'?>
 <style>
-    <?php require '../Front-End/css/loginPage.css' ?>
+    <?php require 'Front-End/css/loginPage.css' ?>
 </style>
 
 <main class="container-fluid">
