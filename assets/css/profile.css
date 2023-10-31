@@ -1,0 +1,97 @@
+.header {
+  color: #114054;
+  font-weight: normal;
+}
+
+.mainScreenContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(46, 109, 124, 0.4);
+  padding: 20px;
+  border-radius: 20px;
+}
+.sectionOuterContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.sectionOuterContainer .title {
+  color: #114054;
+  font-weight: normal;
+  text-align: center;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #e6e4e4;
+  border-radius: 20px;
+  padding-top: 20px;
+  margin-top: 10px;
+  width: 50vh;
+  height: 100%;
+  color: #114054;
+}
+
+.contentContainer img {
+  width: 18vh;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.sectionContainer input[type="text"],
+input[type="password"] {
+  background-color: #edebeb;
+  color: #114054;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  margin-top: 5px;
+  width: 60%;
+}
+
+.mainContent {
+  background-color: #edebeb;
+  padding-left: 5px;
+}
+
+.mainContent.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainContent .button {
+  width: 20%;
+  height: 75%;
+  border: 0;
+  border-radius: 50px;
+  margin-right: 10px;
+  background-color: #114054;
+  color: #e6e4e4;
+  cursor: pointer;
+}
+
+.changeButton {
+  width: 20%;
+  height: 75%;
+  border: 0;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  background-color: #114054;
+  color: #e6e4e4;
+  cursor: pointer;
+  align-self: center;
+}

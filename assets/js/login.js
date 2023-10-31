@@ -8,6 +8,7 @@ $(document).ready(function () {
   });
 
   const validateInput = () => {
+    sessionStorage.clear();
     const am_to_table = {
       ics: "student",
       dia: "teacher",
@@ -87,8 +88,8 @@ $(document).ready(function () {
         contentList = {
           home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
           courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-          addCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
-          logOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+          addCourse: { text: "Add Course", url: "addCourse.php", imgURL: "" },
+          logOut: { text: "Log Out", url: "loginPage.php", imgURL: "" },
         };
         break;
       case "teacher":
@@ -100,12 +101,12 @@ $(document).ready(function () {
           },
           addCourse: {
             text: "Add Course",
-            url: "AddCourse.php",
+            url: "addCourse.php",
             imgURL: "assets/images/addCourseIcon.png",
           },
           profilePref: {
             text: "Profile Preferences",
-            url: "profilePref.php",
+            url: "profile.php",
             imgURL: "assets/images/accountInfoIcon.png",
           },
           viewStud: {
@@ -115,14 +116,14 @@ $(document).ready(function () {
           },
         };
         break;
-      case "admin":
-        contentList = {
-          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
-          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
-          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
-        };
-        break;
+      // case "admin":
+      //   contentList = {
+      //     Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
+      //     Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
+      //     AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
+      //     LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+      //   };
+      //   break;
       default:
         break;
     }
