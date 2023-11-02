@@ -86,10 +86,26 @@ $(document).ready(function () {
     switch (sessionStorage.getItem("userType")) {
       case "student":
         contentList = {
-          home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
-          courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-          addCourse: { text: "Add Course", url: "addCourse.php", imgURL: "" },
-          logOut: { text: "Log Out", url: "loginPage.php", imgURL: "" },
+          availCourses: {
+            text: "Available Courses",
+            url: "availCourses.php",
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
+          courses: {
+            text: "My courses",
+            url: "myCourses.php",
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
+          addCourse: {
+            text: "Profile Preferences",
+            url: "profile.php",
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
+          quiz: {
+            text: "Quiz",
+            url: "quiz.php",
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
         };
         break;
       case "teacher":
@@ -127,7 +143,6 @@ $(document).ready(function () {
       default:
         break;
     }
-
     sessionStorage.setItem("userContent", JSON.stringify(contentList));
   };
 
