@@ -2,28 +2,28 @@ body {
   display: flex !important;
 }
 
-.mainScreenContainer {
-  height: 90%;
-  border: 2px solid black;
+.mainScreenPortfolioContainer {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-grow: 1;
 }
 
-.contentContainer {
+.contentPortfolioContainer {
   display: grid;
   place-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 150px;
 }
 
-.contentContainer img {
+.contentPortfolioContainer img {
   width: 18vh;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
 
-.contentContainer .mainContent {
+.contentPortfolioContainer .mainContent {
   width: 25vh;
   height: 17vh;
   display: flex;
@@ -34,7 +34,7 @@ body {
   gap: 5px;
 }
 
-.contentContainer a:link,
+.contentPortfolioContainer a:link,
 a:visited {
   text-decoration: none;
   color: white;

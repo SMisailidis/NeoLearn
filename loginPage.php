@@ -23,8 +23,6 @@
 
                 </div>
                 <input type="submit" name="submit" id="submit" class="btn-lg" value="Είσοδος">
-
-
             </form>
         </div>
     </main>

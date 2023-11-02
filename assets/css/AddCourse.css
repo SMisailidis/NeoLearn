@@ -6,20 +6,22 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.container {
+.addContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.header {
+.header-text {
   color: #114054;
   font-weight: normal;
   margin-bottom: 3px;
 }
 
-.input-form {
+.addInput-form {
   background-color: rgba(46, 109, 124, 0.4);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
     -5px -5px 20px rgba(255, 255, 255, 0.5);
@@ -34,12 +36,12 @@
   width: 45%;
 }
 
-.input-form label {
+.addInput-form label {
   color: #0b2d3c;
   margin-top: 10px;
 }
 
-.input-form input[type="text"] {
+.addInput-form input[type="text"] {
   background-color: #e8e9ea;
   outline: none;
   border: 0;
@@ -49,11 +51,11 @@
   width: 45%;
 }
 
-.input-form input[type="file"] {
+.addInput-form input[type="file"] {
   display: none;
 }
 
-.submit-btn {
+.addSubmit-btn {
   cursor: pointer;
   padding: 8px;
   border: 0;
@@ -68,7 +70,7 @@
   font-size: small;
 }
 
-img {
+.addUploadFiles img {
   width: 80px;
   aspect-ratio: 16/9;
   object-fit: contain;

@@ -1,7 +1,47 @@
-header{
-    height: 10%;
-    background-color: #2e6d7c;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
+.header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  /* padding-right: 50px; */
+  background-color: #2e6d7c;
+  justify-content: space-between;
+  align-items: center;
+  color: #e8e9ea;
+}
+
+.header .logoContainer img {
+  width: 15vh;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.logoContainer {
+  display: flex;
+  height: 100%;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  padding-right: 50px;
+}
+
+.header span {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    justify-content: flex-start;
+    padding-left: 0;
   }
+
+  .header .logoContainer {
+    justify-self: flex-start;
+  }
+
+  .header i {
+    display: none;
+  }
+}
