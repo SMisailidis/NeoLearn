@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+
 }
 
 .contentPortfolioContainer {
@@ -15,6 +16,7 @@ body {
   place-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 150px;
+
 }
 
 .contentPortfolioContainer img {
@@ -47,3 +49,18 @@ a:visited {
   flex-direction: column;
   text-align: center;
 }
+
+.openMenuContainerResponse{
+  margin-left: auto;
+    flex-grow: 0.4;
+    flex-direction: column;
+    transition: 0.8s ease;
+}
+
+.openMenuPortfolioResponse{
+    padding: 25px 0;
+    grid-template-columns: repeat(1,1fr);
+    transition: 0.8s ease;
+
+}
+

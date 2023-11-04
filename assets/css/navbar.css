@@ -4,7 +4,7 @@
   flex-direction: column;
   background-color: #2e6d7c;
   height: 90vh;
-  flex-basis: 25%;
+  flex-basis: 20%;
   overflow: hidden;
   transition: flex-basis 0.5s;
 }
@@ -86,7 +86,7 @@ nav ul li a {
 @media only screen and (max-width: 768px) {
   .navContainer {
     flex-basis: 0%;
-    transition: 0.5s ease-in-out;
+    transition: 0.8s ease-in-out;
   }
 
   .menuBtn {
@@ -109,3 +109,6 @@ nav ul li a {
     background-color: #2e6d7c;
   }
 }
+
+
+
