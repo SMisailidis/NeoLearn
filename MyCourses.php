@@ -2,15 +2,17 @@
 <main>
     <h1>My Courses</h1>
     <div class="container">
-        <ul>
-            <li>Course 1</li>
-            <li>Course 2</li>
-            <li>Course 3</li>
-        </ul>
-        <div id="b1" class="buttons">Add a Course</div>
-        <div id="b2" class="buttons">Remove Course</div>
+        <table>
+            <tr class="TRow">
+                <td class="CourseCol">COURSE-1</td>
+                <td><a id="editButton" class="ENbuttons"><img class="ENicons" src="assets/images/edit.png" width="30" height="30"></a></td>
+                <td><a id="notesButton" class="ENbuttons"><img class="ENicons" src="assets/images/notes.png" width="30" height="30"></a></td></td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <div class="Buttons">Add a Course</div> 
+            <div class="Buttons">Remove a Course</div>
+        </div>     
     </div>
 </main>
-</div>
-</body>
-</html>    
+

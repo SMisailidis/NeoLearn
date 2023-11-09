@@ -4,10 +4,11 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-main{
+main {
     margin: auto;
 }
-.container{
+
+.container {
     border: solid 3px;
     border-color: #114054;
     border-radius: 25px;
@@ -15,34 +16,28 @@ main{
     box-shadow: 5px 5px 10px;
     height: 687px;
     width: 1117px;
-    padding: 5%;
-    overflow: auto;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; 
 }
 
-li {
-    list-style-type: none;
-    margin: 20px;
-    background-color: white;
-    height: 30px;
+h1 {
     text-align: center;
     color: #114054;
 }
 
-h1{
-    text-align: center;
-    color: #114054;
+.button-container {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    gap: 100px;
 }
 
-#b1{
-    float: left;
-}
-
-#b2{
-    float: right;
-}
-
-.buttons{
-    padding: 10px;
+.Buttons{
+    padding: 8px;
+    display: inline-block;
     text-align: center;
     border: none;
     background-color: #114054;
@@ -51,3 +46,56 @@ h1{
     height: 40px;
     width: 150px;
 }
+
+table{
+    overflow: auto;
+}
+
+.CourseCol{
+    background-color: white;
+    border: none;
+    color:#114054;
+    width: 100%;
+    text-align: center;
+
+}
+
+ .ENbuttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #114054;
+    width: 50px;
+    height: 35px;
+ }
+
+ .ENicons{
+    max-width: 100%;
+    max-height: 100%;
+ }
+
+ #editButton{
+    border-right: solid 1px white;
+ }
+
+ #notesButton{
+    border-left: solid 1px white;
+ }
+
+ .ENbuttons:hover{
+    border: solid 2px white;
+    cursor: pointer;
+ }
+
+ .Buttons:hover{
+    background-color: #e6e4e4;
+    cursor: pointer;
+ }
+
+
+
+
+
+
+
+
