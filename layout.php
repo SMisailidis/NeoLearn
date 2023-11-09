@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="assets/css/userHeader.css">
         <link rel="stylesheet" href="assets/css/portfolio.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
+        <link rel="stylesheet" href="assets/css/viewStudCourses.css">
         <!---------------->
 
         <!-- JS assets -->

@@ -93,7 +93,7 @@ $(document).ready(function () {
           },
           courses: {
             text: "My courses",
-            url: "myCourses.php",
+            url: "viewStudCourses.php",
             imgURL: "assets/images/accountInfoIcon.png",
           },
           addCourse: {
@@ -112,7 +112,7 @@ $(document).ready(function () {
         contentList = {
           viewAll: {
             text: "View All Courses",
-            url: "viewCourses.php",
+            url: "viewStudCourses.php",
             imgURL: "assets/images/showStudentsIcon.png",
           },
           addCourse: {
