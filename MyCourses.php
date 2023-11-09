@@ -5,8 +5,13 @@
         <table>
             <tr class="TRow">
                 <td class="CourseCol">COURSE-1</td>
-                <td><a id="editButton" class="ENbuttons"><img class="ENicons" src="assets/images/edit.png" width="30" height="30"></a></td>
-                <td><a id="notesButton" class="ENbuttons"><img class="ENicons" src="assets/images/notes.png" width="30" height="30"></a></td></td>
+                <td class="IconCol"><a id="editButton" class="ENbuttons"><img class="ENicons" src="assets/images/edit.png" width="30" height="30"></a></td>
+                <td class="IconCol"><a id="notesButton" class="ENbuttons"><img class="ENicons" src="assets/images/notes.png" width="30" height="30"></a></td></td>
+            </tr>
+            <tr class="TRow">
+                <td class="CourseCol">COURSE-1</td>
+                <td class="IconCol"><a id="editButton" class="ENbuttons"><img class="ENicons" src="assets/images/edit.png" width="30" height="30"></a></td>
+                <td class="IconCol"><a id="notesButton" class="ENbuttons"><img class="ENicons" src="assets/images/notes.png" width="30" height="30"></a></td></td>
             </tr>
         </table>
         <div class="button-container">

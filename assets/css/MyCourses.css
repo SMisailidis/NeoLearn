@@ -51,13 +51,16 @@ table{
     overflow: auto;
 }
 
+.TRow{
+    border-bottom: solid 3px #114054;
+}
+
 .CourseCol{
     background-color: #e8e9ea;
     border: none;
     color:#114054;
     width: 100%;
     text-align: center;
-
 }
 
  .ENbuttons{
