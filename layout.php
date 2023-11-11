@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="assets/css/portfolio.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
         <link rel="stylesheet" href="assets/css/viewStudCourses.css">
+        <link rel="stylesheet" href="assets/css/viewCourseNotes.css">
         <!---------------->
 
         <!-- JS assets -->
