@@ -19,12 +19,14 @@
         <link rel="stylesheet" href="assets/css/navbar.css">
         <link rel="stylesheet" href="assets/css/userHeader.css">
         <link rel="stylesheet" href="assets/css/portfolio.css">
+        <link rel="stylesheet" href="assets/css/availCourses.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
         <!---------------->
 
         <!-- JS assets -->
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
+        <script type="module" src="assets/js/eventHandler.js"></script>
         <!--------------->
 
     </head>

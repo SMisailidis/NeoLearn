@@ -1,6 +1,8 @@
 import { fetchData } from "./eventHandler.js";
 
 $(document).ready(function () {
+  sessionStorage.clear();
+
   let form = $("#loginForm");
 
   form.on("submit", function (e) {
@@ -10,7 +12,6 @@ $(document).ready(function () {
   });
 
   const validateInput = () => {
-    sessionStorage.clear();
     const am_to_table = {
       ics: "student",
       dia: "teacher",

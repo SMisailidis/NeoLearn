@@ -1,0 +1,31 @@
+.mainScreenAvailCoursesContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.contentAvailCoursesContainer table {
+  color: #0b2d3c;
+  background-color: rgba(46, 109, 124, 0.4);
+  width: 60vw;
+  height: 70vh;
+}
+
+.contentAvailCoursesContainer .tableHeader {
+  background-color: #0b2d3c;
+  color: #ddd;
+  text-decoration: underline;
+}
+
+.contentAvailCoursesContainer th,
+td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.contentAvailCoursesContainer input[type="checkbox"] {
+  transform: scale(1.5);
+  accent-color: #0b2d3c;
+}

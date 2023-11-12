@@ -4,7 +4,7 @@
 }
 
 .mainScreenProfileContainer {
-  width: 100%;
+  width: 75%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -24,6 +24,7 @@
 .sectionOuterProfileContainer {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .sectionOuterProfileContainer .title {

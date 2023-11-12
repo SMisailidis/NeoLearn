@@ -1,6 +1,7 @@
 export const fetchData = ($, url, method, data) => {
   return new Promise((resolve, reject) => {
     $(document).ready(() => {
+      console.log(data);
       $.ajax({
         url: url,
         method: method,
@@ -9,7 +10,7 @@ export const fetchData = ($, url, method, data) => {
         success: (response) => {
           if (response.success) {
             if (!response.affected_rows) {
-              resolve(response.data[0]);
+              resolve(response.data);
             } else if (response.affected_rows === 0) {
               reject("Query failed: " + response.message);
             }
@@ -17,9 +18,7 @@ export const fetchData = ($, url, method, data) => {
             reject("Query failed: " + response.message);
           }
         },
-        error: (error) => {
-          reject("Error fetching data: " + error.statusText);
-        },
+        error: (error) => {},
       });
     });
   });
