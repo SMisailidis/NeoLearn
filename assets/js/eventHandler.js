@@ -1,7 +1,6 @@
 export const fetchData = ($, url, method, data) => {
   return new Promise((resolve, reject) => {
     $(document).ready(() => {
-      console.log(data);
       $.ajax({
         url: url,
         method: method,

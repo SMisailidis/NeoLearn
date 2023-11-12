@@ -121,7 +121,7 @@ $(document).ready(function () {
           },
           viewStud: {
             text: "View Students",
-            url: "viewStud.php",
+            url: "viewStuds.php",
             imgURL: "assets/images/showStudentsIcon.png",
           },
         };

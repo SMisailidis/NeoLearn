@@ -19,7 +19,7 @@
   object-fit: contain;
 }
 
-.contentPortfolioContainer .mainContent {
+.contentPortfolioContainer .mainPortfolioContent {
   width: 25vh;
   height: 17vh;
   display: flex;
@@ -30,8 +30,8 @@
   gap: 5px;
 }
 
-.contentPortfolioContainer a:link,
-a:visited {
+.mainPortfolioContent a:link,
+.mainPortfolioContent a:visited {
   text-decoration: none;
   color: white;
 }
