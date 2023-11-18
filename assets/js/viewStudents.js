@@ -42,33 +42,38 @@ $(document).ready(function () {
           .attr("id", "collapse-" + index);
 
         div.on("show.bs.collapse", function () {
+          let img;
           if (
             currentOpenCollapseId &&
             currentOpenCollapseId !== div.attr("id")
           ) {
             $("#" + currentOpenCollapseId).collapse("hide");
 
-            let img = `img[href*="#${currentOpenCollapseId}"]`;
+            img = $(`img[href*="#${currentOpenCollapseId}"]`);
 
-            if (!$(img).hasClass("rotate180")) {
-              $(img).toggleClass("rotate180");
-            } else {
+            let currImg = $(`img[href*="#${div.attr("id")}"]`);
+
+            if ($(img).hasClass("rotate180")) {
+              $(img).addClass("init");
               $(img).toggleClass("init");
             }
           }
+          $(img).toggleClass("init");
           currentOpenCollapseId = div.attr("id");
         });
 
         let expandSection = $("<section>").addClass("showed");
         let expandContent = $("<content>").addClass("expandedContent");
 
-        let expandedPhone = $("<article>").text(
-          "Phone Number: " + row.Phone_Number
-        );
+        let expandedPhone = $("<article>")
+          .addClass("phoneNumber")
+          .text("Phone Number: " + row.Phone_Number);
         let expandedLink = $("<article>").append(
           $("<a>").attr("href", "").text("More Info")
         );
-        let expandedEmail = $("<article>").text("Email: " + row.Email);
+        let expandedEmail = $("<article>")
+          .addClass("email")
+          .text("Email: " + row.Email);
 
         article.append(studPhoto).append(studInfo);
         mainContent.append(article).append(expandPhoto);
