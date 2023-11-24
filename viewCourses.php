@@ -1,11 +1,11 @@
 <?php require 'layout.php' ?>
 <main>
-    <h1>My Courses</h1>
+    <h1 class="header-text">My Courses</h1>
     <div class="container">
         <div class="CoursesList">
         </div>  
         <div class="button-container">
-            <div id="AddB" class="Buttons">Add a Course</div> 
+            <a href="addCourse.php"><div id="AddB" class="Buttons">Add a Course</div></a> 
             <div id="RemoveB" class="Buttons">Remove a Course</div>
         </div> 
     </div>
