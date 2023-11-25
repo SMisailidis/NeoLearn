@@ -20,9 +20,11 @@
         <link rel="stylesheet" href="assets/css/userHeader.css">
         <link rel="stylesheet" href="assets/css/portfolio.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
+        <link rel="stylesheet" href="assets/css/quiz.css">
         <!---------------->
 
         <!-- JS assets -->
+        <script type="module" src="assets/js/eventHandler.js"></script>
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
         <!--------------->
