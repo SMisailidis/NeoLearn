@@ -12,12 +12,16 @@ export const fetchData = ($, url, method, data) => {
               resolve(response.data);
             } else if (response.affected_rows === 0) {
               reject("Query failed: " + response.message);
+            } else {
+              resolve(response.success);
             }
           } else {
             reject("Query failed: " + response.message);
           }
         },
-        error: (error) => {},
+        error: (error) => {
+          console.log(error);
+        },
       });
     });
   });

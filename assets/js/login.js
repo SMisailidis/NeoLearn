@@ -76,6 +76,7 @@ $(document).ready(function () {
 
   const setContentList = () => {
     let contentList;
+    console.log(JSON.parse(sessionStorage.getItem("userData"))[0].ID);
 
     switch (sessionStorage.getItem("userType")) {
       case "student":
@@ -92,7 +93,9 @@ $(document).ready(function () {
           },
           addCourse: {
             text: "Profile Preferences",
-            url: "profile.php",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
             imgURL: "assets/images/accountInfoIcon.png",
           },
           quiz: {
@@ -116,7 +119,9 @@ $(document).ready(function () {
           },
           profilePref: {
             text: "Profile Preferences",
-            url: "profile.php",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
             imgURL: "assets/images/accountInfoIcon.png",
           },
           viewStud: {

@@ -1,10 +1,22 @@
 .addContainer {
-  width: 75%;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+.contentAddCourseContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 70vh;
+  gap: 20px;
 }
 
 .addInput-form {
@@ -19,37 +31,48 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  width: 45%;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
 }
 
 .addInput-form label {
   color: #0b2d3c;
+  font-weight: bold;
   margin-top: 10px;
 }
 
-.addInput-form input[type="text"] {
+.addInput-form input[type="text"],
+.addInput-form input[type="file"] {
   background-color: #e8e9ea;
   outline: none;
   border: 0;
   border-radius: 7px;
   padding: 10px;
   margin-top: 5px;
-  width: 45%;
+  width: 100%;
+  height: 8%;
 }
 
-.addInput-form input[type="file"] {
-  display: none;
+.addInput-form .inputFileWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.addInput-form .inputFileWrapper input {
+  padding: 6px;
 }
 
 .addSubmit-btn {
   cursor: pointer;
-  padding: 8px;
+  padding: 10px 18px;
   border: 0;
   border-radius: 14px;
   margin-top: 20px;
   margin-bottom: 5px;
-
-  width: 20%;
   background-color: #114054;
   color: #e8e9ea;
   font-weight: bold;
@@ -57,6 +80,7 @@
 }
 
 .addUploadFiles img {
+  cursor: pointer;
   width: 80px;
   aspect-ratio: 16/9;
   object-fit: contain;

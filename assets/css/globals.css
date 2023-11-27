@@ -18,4 +18,25 @@ body {
   color: #114054;
   font-weight: normal;
   margin-bottom: 3px;
+  text-align: center;
+}
+
+.paginationNav .pagination .page-item .page-link {
+  color: #114054;
+}
+
+.paginationImg {
+  width: 38px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+#prev .page-link,
+#next .page-link {
+  background-color: #0b2d3c;
+}
+
+.pagination .page-link.customActive {
+  background-color: #2e6d7c !important;
+  color: #fff !important;
 }
