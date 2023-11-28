@@ -5,8 +5,8 @@
         <div class="CoursesList">
         </div>  
         <div class="button-container">
-            <a href="addCourse.php"><div id="AddB" class="Buttons">Add a Course</div></a> 
-            <div id="RemoveB" class="Buttons">Remove a Course</div>
+            <a href="addCourse.php"><button id="AddB" class="Buttons">Add a Course</button></a> 
+            <button id="RemoveB" class="Buttons">Remove a Course</button>
         </div> 
     </div>
 </main>
