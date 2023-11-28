@@ -29,6 +29,6 @@ $(document).ready(function(){
     }
 
     const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID
-    updateCourses(studentID)
+    updateCourses(studentID);
 
 });
