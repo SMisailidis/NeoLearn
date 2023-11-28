@@ -14,35 +14,44 @@ main {
     border-radius: 25px;
     background-color: rgba(46, 109, 124, 0.4);
     box-shadow: 5px 5px 10px;
-    height: 687px;
-    width: 1117px;
-    padding: 10%;
+    height: 60vh;
+    width: 60vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     position: relative; 
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
+    -5px -5px 20px rgba(255, 255, 255, 0.5);
 }
 
 .CoursesList {
     width: 100%;
     height: 100%;
-    border: solid 2px black;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+.CoursesList .CourseLine p{
+  margin-bottom: 0;
 }
 
 .CourseLine{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%; 
     height: 50px;   
     background-color:#e8e9ea;
     margin: 10px;
+    padding: 10px;
+    padding-right: 0;
     box-sizing: border-box;
     text-align: center;
-    border: solid 2px black;
+    align-items: center;
 }
   
 h1 {
@@ -52,40 +61,35 @@ h1 {
 
 .button-container {
     display: flex;
-    position: absolute;
-    bottom: 100px;
-    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 25px; 
     border: solid 2px black;
-    
 }
 
 .Buttons{
-    display: block;
-    padding: 8px;
     text-align: center;
     border: none;
     background-color: #114054;
     color: white;
-    border-radius: 40px;
+    border-radius: 20px;
     height: 40px;
-    width: 150px;
-    position: absolute;
+    width: 140px;
 }
 
 .CourseName{
+    height: 100%;
     font-size: larger;
     background-color: #e8e9ea;
     color:#114054;
     width: 95%;
-    height: 100%;
-    text-align: center;
-    text-decoration: none;
 }
 
  .ENbuttons{
     width: 5%;
-    height: 50px;
-    border: solid 2px black;
+    height: 50px;  
  }
 
  .ENicons{
@@ -93,23 +97,20 @@ h1 {
     height: 50px;
     object-fit: contain;
     background-color: #114054;
-    border: solid 2px black;
  }
 
- .ENbuttons:hover{
-    border: solid 2px white;
-    cursor: pointer;
- }
+.CourseLine a:link,
+.CourseLine a:visited{
+    text-decoration: none;
+    color: #114054;
+}
+
 
  .Buttons:hover{
     background-color: #e6e4e4;
     cursor: pointer;
  }
  
- #RemoveB{
-    right:0%;
- }
-
 
 
 

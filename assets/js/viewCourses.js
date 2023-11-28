@@ -10,8 +10,8 @@ $(document).ready(function () {
 
                 $.each(response, function (index, course) {
                     const CourseLine = $("<div>").addClass("CourseLine")
-                    const name = $("<p>").addClass("CourseName").append(course.Title)
-                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton")
+                    const name = $("<a>").addClass("CourseName").attr("href", "").append(course.Title)
+                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "")
                     const editImage = $("<img>").addClass("ENicons").attr("src", "assets/images/edit.png").attr("width", "30").attr("height", "30")
 
                     const editButton = editAnchor.append(editImage)
