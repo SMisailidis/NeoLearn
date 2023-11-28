@@ -1,34 +1,33 @@
-import { fetchData } from "./eventHandler.js";
+import { fetchData } from './EventHandler.js';
 
-$(document).ready(function(){
-    
-    function updateCourses(studentID){
+$(document).ready(function () {
+    function updateCourseList(studentId) {
+        const coursesContainer = $("#leftChildContainer");
 
+        fetchData($, "assets/Back-End/getEnrolledCourses.php", "POST", { student_id: studentId })
+            .then((response) => {
+                $.each(response, function (index, course) {
+                    const courseDiv = $("<div>").addClass("rectangle");
 
-        fetchData($, "assets/Back-End/getEnrolledStudents.php", 'GET', {studentID: studID})
-    .then(response => {
+                    const courseTitle = $("<a>").addClass("courseTitle").attr("href", "#").text(course.Title);
 
-        const leftChildDiv = $(".left-child");
+                    const viewCourse = $("<a>").addClass("viewCourse").attr("href", "#");
 
-      $.each(response, function (index, course) {
-        const courseDiv = $("<div>").addClass("rectangle");
-        const courseTitle = $("<a>").addClass("courseTitle").attr("href", course.ID).text(course.Title);
-        const viewCourse = $("<a>").addClass("viewCourse").attr("href", "#");
-        const arrowImage = $("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow");
+                    const arrowImage = $("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow");
 
-        viewCourse.append(arrowImage);
-        courseDiv.append(courseTitle).append(viewCourse);
-        leftChildDiv.append(courseDiv);
+                    viewCourse.append(arrowImage);
 
-      });
-    })
-    .catch(error => {
-      console.error('Error fetching course data:', error);
-    });
+                    courseDiv.append(courseTitle).append(viewCourse);
 
+                    coursesContainer.append(courseDiv);
+                });
+            })
+            .catch((error) => {
+                console.log("Error fetching enrolled courses: " + error);
+            });
     }
 
-    const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID
-    updateCourses(studentID);
-
+    // Assuming student ID is available in session storage
+    const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
+    updateCourseList(studentID);
 });
