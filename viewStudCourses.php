@@ -1,15 +1,18 @@
 <?php require 'layout.php' ?>
 <main class="mainScreenViewStudCoursesContainer">
   <div class="central-div">
-  <div class="left-child" id="leftChildContainer">
+      <div class="left-child">
+        
+      </div>
+      <div class="right-child">
+        <button>Add Course</button>
+        <button>Remove Course</button>
+      </div>
     </div>
-
-    <div class="right-child">
-      <button>Add Course</button>
-      <button>Remove Course</button>
-    </div>
-  </div>
-</div>
+          </div>
 </main>
-    </body>
-</html>
+</div>
+<script type="module" src="assets/js/viewStudCourses.js"></script>
+</body>
+
+

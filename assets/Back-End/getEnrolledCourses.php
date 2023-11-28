@@ -8,7 +8,7 @@ $studentID=$_POST["student_id"];
 $query="SELECT Course.Title
         FROM EnrolledIn
         INNER JOIN Course ON EnrolledIn.Course_ID = Course.ID
-        WHERE EnrolledIn.Stud_ID = :studentID";
+        WHERE EnrolledIn.Stud_ID = '$studentID' ";
 
 $queryResults=executeDMLQuery($query,$connection);
 

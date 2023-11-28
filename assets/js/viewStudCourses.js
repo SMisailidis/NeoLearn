@@ -1,7 +1,7 @@
 import { fetchData } from './EventHandler.js';
 
 $(document).ready(function () {
-    function updateCourseList(studentId) {
+    function updateEnrolledCourseList(studentId) {
         const coursesContainer = $(".left-child");
 
         fetchData($, "assets/Back-End/getEnrolledCourses.php", "POST", { student_id: studentId })
@@ -9,9 +9,9 @@ $(document).ready(function () {
                 $.each(response, function (index, course) {
                     const courseDiv = $("<div>").addClass("rectangle");
 
-                    const courseTitle = $("<a>").addClass("courseTitle").attr("href", "#").text(course.Title);
+                    const courseTitle = $("<a>").addClass("courseTitle").attr("href", "").append(course.Title);
 
-                    const viewCourse = $("<a>").addClass("viewCourse").attr("href", "#");
+                    const viewCourse = $("<a>").addClass("viewCourse").attr("href", "");
 
                     const arrowImage = $("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow");
 
@@ -28,5 +28,5 @@ $(document).ready(function () {
     }
 
     const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
-    updateCourseList(studentID);
+    updateEnrolledCourseList(studentID);
 });
