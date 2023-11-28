@@ -2,7 +2,7 @@ import { fetchData } from './EventHandler.js';
 
 $(document).ready(function () {
     function updateCourseList(studentId) {
-        const coursesContainer = $("#leftChildContainer");
+        const coursesContainer = $(".left-child");
 
         fetchData($, "assets/Back-End/getEnrolledCourses.php", "POST", { student_id: studentId })
             .then((response) => {
@@ -27,7 +27,6 @@ $(document).ready(function () {
             });
     }
 
-    // Assuming student ID is available in session storage
     const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
     updateCourseList(studentID);
 });
