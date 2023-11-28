@@ -12,7 +12,6 @@
     </div>
 </main>
 </div>
-<script type="module" src="assets/js/viewCourses.js"></script>
 </body>
 
 
