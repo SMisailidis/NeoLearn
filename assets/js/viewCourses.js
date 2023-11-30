@@ -16,7 +16,9 @@ $(document).ready(function () {
 
                     const editButton = editAnchor.append(editImage)
 
-                    CourseLine.append(name).append(editButton)
+                    const checkbox = $("<input>").attr("type", "checkbox").val(course.ID).addClass("courseCheckbox");
+                
+                    CourseLine.append(name).append(editButton).append(checkbox);
                     coursesList.append(CourseLine)
                 });
             })
@@ -26,6 +28,45 @@ $(document).ready(function () {
     }
     const teacherID = JSON.parse(sessionStorage.getItem("userData"))[0].ID
     updateCourseList(teacherID)
+
+    $("#RemoveB, #cancelB").click(function () {
+        $(".Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
+    });
+
+    $("#confirmB").click(function () {
+        const selectedCourses = $(".courseCheckbox:checked").map(function () {
+            return $(this).val();
+        }).get();
+        
+        const ModalB = $("#confirmB");
+
+        if (selectedCourses.length === 0) {
+            ModalB.attr("data-target", "#noCourseSelectedModal");
+            $("#noCourseSelectedModal").modal('show');
+        } else {
+            ModalB.attr("data-target", "#confirmationModal");
+            $("#confirmationModal").modal('show');
+        }
+    });
+
+    $("#OKbutton").click(function () {
+        $("#noCourseSelectedModal").modal('hide');
+    });
+
+    $("#confirmDeleteBtn").click(function () {
+        const selectedCourses = $(".courseCheckbox:checked").map(function () {
+            return $(this).val();
+        }).get();
+        console.log(selectedCourses);
+
+        if (selectedCourses.length === 0) {
+            console.log("No courses selected for deletion");
+            return;
+        }
+    });
+
+    
+
 });
 
 
