@@ -35,6 +35,8 @@
     </head>
     
     <body>
+        <?php require 'assets/partials/modal.php' ?>
+        <?php require 'assets/partials/toast.php' ?>
         <?php require 'assets/partials/userHeader.php' ?>
         <div class="nav-and-main" style="display: flex"> 
             <?php require 'assets/partials/navbar.php' ?>  

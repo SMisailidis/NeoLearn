@@ -1,15 +1,16 @@
 import { fetchData } from "./eventHandler.js";
 
+import modal from "./modal.js"
+import toast from "./toast.js";
+import pagination from "./pagination.js";
+
 $(document).ready(function () {
-  let currentPage = 1;
-  const itemsPerPage = 4;
-  let totalCourses = 0;
-  let courses = [];
   let selectedCourse;
   let enrolledInCourses = [];
   let selectedCourseData = {};
 
   const stud_ID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
+  
   const checkEnrolledCourses = () => {
     $.each(enrolledInCourses, function (index, row) {
       $("#" + row.Course_ID)
@@ -31,72 +32,33 @@ $(document).ready(function () {
       });
   };
 
-  const renderTable = (data, totalCourses) => {
-    $(".tableBody").empty();
+  const renderTable = () => {
+    pagination.renderContent(() => {
+      pagination.renderElement.empty();
 
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const pageData = data.slice(startIndex, endIndex);
+      const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
+      const endIndex = startIndex + pagination.itemsPerPage;
+      const pageData = pagination.data.slice(startIndex, endIndex);
 
-    $.each(pageData, function (index, row) {
-      const tr = $("<tr>").addClass("tableRowData");
-      const td1 = $("<td>").addClass("tableData");
-      const td2 = $("<td>").addClass("tableData");
-      const td3 = $("<td>").addClass("tableData");
-      const td4 = $("<td>").addClass("tableData");
-      const checkbox = $("<input>")
-        .attr("type", "checkbox")
-        .attr("id", row.ID)
-        .attr("value", row.Title);
-      td1.append(row.Title);
-      td2.append(row.ID);
-      td3.append(row.First_Name + " " + row.Last_Name);
-      td4.append(checkbox);
-      tr.append(td1).append(td2).append(td3).append(td4);
-      $(".tableBody").append(tr);
-    });
-    checkEnrolledCourses();
-  };
-
-  const updatePaginationLinks = (currentPage) => {
-    const totalPages = Math.ceil(totalCourses / itemsPerPage);
-
-    $(".pagination").empty();
-
-    const prevImg = $("<img>")
-      .addClass("paginationImg")
-      .attr("src", "assets/images/logo.png");
-
-    const prevLI = $("<li>").addClass("page-item disabled").attr("id", "prev");
-    const prevA = $("<a>").addClass("page-link").attr("href", "#");
-
-    prevA.append(prevImg);
-    prevLI.append(prevA);
-
-    const nextLI = $("<li>").addClass("page-item disabled").attr("id", "next");
-    const nextA = $("<a>").addClass("page-link").attr("href", "#");
-    const nextImg = $("<img>")
-      .addClass("paginationImg")
-      .attr("src", "assets/images/logo.png");
-    nextA.append(nextImg);
-    nextLI.append(nextA);
-
-    $(".pagination").append(prevLI);
-
-    for (let i = 1; i <= totalPages; i++) {
-      const li = $("<li>").addClass("page-item");
-      const button = $("<button>")
-        .attr("type", "button")
-        .addClass("page-link")
-        .text(i);
-      if (i === currentPage) {
-        button.addClass("customActive");
-      }
-      li.append(button);
-      $(".pagination").append(li);
-    }
-
-    $(".pagination").append(nextLI);
+      $.each(pageData, function (index, row) {
+        const tr = $("<tr>").addClass("tableRowData");
+        const td1 = $("<td>").addClass("tableData");
+        const td2 = $("<td>").addClass("tableData");
+        const td3 = $("<td>").addClass("tableData");
+        const td4 = $("<td>").addClass("tableData");
+        const checkbox = $("<input>")
+          .attr("type", "checkbox")
+          .attr("id", row.ID)
+          .attr("value", row.Title);
+        td1.append(row.Title);
+        td2.append(row.ID);
+        td3.append(row.First_Name + " " + row.Last_Name);
+        td4.append(checkbox);
+        tr.append(td1).append(td2).append(td3).append(td4);
+        pagination.renderElement.append(tr);
+      });
+      checkEnrolledCourses();
+    })
   };
 
   const fetchCourses = () => {
@@ -107,29 +69,23 @@ $(document).ready(function () {
       undefined
     )
       .then((data) => {
-        totalCourses = data.length;
-        courses = data;
-        renderTable(data, totalCourses);
-        updatePaginationLinks(currentPage);
-        initCheckedCourses();
+        pagination.setData(data);
+        renderTable();
+        pagination.updatePaginationLinks();
+
       })
       .catch((error) => {
         console.error(error);
       });
   };
 
-  const onCloseModal = () => {
+  modal.onClickCloseHandler(() => {
     const input = $(`input[id=${selectedCourse}]`);
     const state = input.is(":checked");
     input.prop("checked", !state);
-    $("#exampleModalCenter").modal("hide");
-  };
+  })
 
-  $(".btn-secondary").on("click", onCloseModal);
-
-  $(".btn-close").on("click", onCloseModal);
-
-  $("#save").on("click", function () {
+  modal.onClickSaveHandler(() => {
     fetchData(
       jQuery,
       "assets/Back-End/updateEnrolledCourses.php",
@@ -138,33 +94,14 @@ $(document).ready(function () {
     )
       .then((success) => {
         if (success) {
-          $("#exampleModalCenter").modal("hide");
-          $("#liveToast").removeClass("hide").addClass("show");
-
-          setTimeout(function () {
-            $("#liveToast").removeClass("show").addClass("hide");
-          }, 3000);
+          modal.closeModal();
+          toast.showToast();
         }
       })
       .catch((error) => {
         console.error(error);
       });
-  });
-
-  $(".pagination").on("click", "button.page-link", function (e) {
-    e.preventDefault();
-    const page = parseInt($(this).text(), 10);
-    if (!isNaN(page) && page !== currentPage) {
-      currentPage = page;
-
-      $(".pagination button.page-link").removeClass("active");
-
-      $(this).closest("li.page-item").addClass("active");
-
-      renderTable(courses, totalCourses);
-      updatePaginationLinks(currentPage);
-    }
-  });
+  })
 
   $(".tableBody").on("change", ":checkbox", function () {
     let course_ID = this.id;
@@ -177,16 +114,24 @@ $(document).ready(function () {
       : `Are you sure you want to enroll in:
     ${course_Title} (${course_ID})?`;
 
+
     selectedCourseData = {
       state: state,
       Course_ID: course_ID,
       Stud_ID: stud_ID,
     };
 
-    $("#exampleModalCenter").modal("show");
+    modal.openModal();
 
-    $(".modal-body").text(text);
+    modal.setContent(text);
   });
 
+  modal.setTitle("Course Enrolment")
+  modal.setButtonsText("No", "Yes")
+  toast.setContent("The changes have been applied successfully!")
+  pagination.setPaginationElement($(".tableBody"))
+  
   fetchCourses();
+  pagination.onClickHandler(renderTable)
+  initCheckedCourses();
 });

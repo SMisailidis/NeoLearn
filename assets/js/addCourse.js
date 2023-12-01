@@ -1,4 +1,6 @@
 import { fetchData } from "./eventHandler.js";
+import modal from "./modal.js";
+import toast from "./toast.js";
 
 $(document).ready(function () {
   let courseData = {};
@@ -20,41 +22,37 @@ $(document).ready(function () {
     $("#exampleModalCenter").modal("show");
   };
 
-  const onCloseModal = () => {
-    $("#exampleModalCenter").modal("hide");
-    resetInputs();
-  };
-
   const resetInputs = () => {
     const inputs = $(`:input:not(:button):not(input[type=submit])`);
 
-    inputs[0].value = "";
-    inputs[1].value = "";
-    inputs[2].value = "";
-    inputs[3].value = "";
-    inputs[4].value = "";
+    $.each(inputs, function (index, row) {
+      row.value = "";
+    })
   };
 
-  $(".btn-secondary").on("click", onCloseModal);
+  modal.onClickCloseHandler(() => {
+    modal.closeModal()
+    resetInputs();
+  })
 
-  $(".btn-close").on("click", onCloseModal);
-
-  $("#save").on("click", function () {
+  modal.onClickSaveHandler(() => {
     fetchData(jQuery, "assets/Back-End/addCourse.php", "POST", courseData)
-      .then((success) => {
-        if (success) {
-          $("#liveToast").removeClass("hide").addClass("show");
-          $("#exampleModalCenter").modal("hide");
-
-          resetInputs();
-
-          setTimeout(function () {
-            $("#liveToast").removeClass("show").addClass("hide");
-          }, 3000);
-        }
-      })
-      .catch((error) => {});
-  });
+    .then((success) => {
+      if (success) {
+        toast.showToast();
+        modal.openModal();
+        modal.closeModal();
+        resetInputs();
+      }
+    })
+    .catch((error) => {console.log(error)});
+  })
 
   $(".addInput-form").on("submit", onSubmitHandler);
+
+  modal.setTitle("Add Course");
+  modal.setContent("Do you to publish the Course?");
+  modal.setButtonsText("No", "Yes");
+
+  toast.setContent("Published successfully!")
 });
