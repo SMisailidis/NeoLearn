@@ -52,28 +52,11 @@
     color: #000;
 }
 
-.Notesrectangle .deleteNotes {
-    width: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Notesrectangle .deleteNotes img {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
-    display: block; 
-    margin: auto; 
-}
 
 @media screen and (max-width: 500px) {
     .Notes_central-div {
         width: 90%;
         max-width: none;
     }
-    .Notesrectangle .deleteNotes img {
-        width: 20px;
-        height: 20px;
-    }
+   
 }
