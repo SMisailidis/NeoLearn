@@ -70,17 +70,6 @@ main{
     align-self: center;
 }
 
-.editCourseContainer .bottomContainer label input[type="file"]{
-    display: none;
-}
-
-.bottomContainer label img {
-    width: 80px;
-    aspect-ratio: 16/9;
-    object-fit: contain;
-    cursor: pointer;
-}
-
 .bottomContainer  #saveChanges{
     cursor: pointer;
     padding: 8px;

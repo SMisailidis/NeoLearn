@@ -8,11 +8,7 @@
 
             <label for="description">Description</label>
             <textarea id="description" name="description" required></textarea>
-            <div class="bottomContainer">
-                <label class="addUploadFiles">
-                    <img src="assets/images/add.png" alt="img" title="Upload Files here" />
-                    <input type="file" id="fileUp" name="fileUp" required accept=".pdf, .png, .jpg">
-                </label>    
+            <div class="bottomContainer">   
                 <button type="button" id="saveChanges">Save Changes</button>
             </div>
         </form>    
