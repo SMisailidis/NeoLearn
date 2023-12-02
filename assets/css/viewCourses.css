@@ -9,8 +9,7 @@ main {
 }
 
 .container {
-    border: solid 3px;
-    border-color: #114054;
+    border: solid 2px #114054;
     border-radius: 25px;
     background-color: rgba(46, 109, 124, 0.4);
     box-shadow: 5px 5px 10px;
@@ -97,6 +96,10 @@ h1 {
     object-fit: contain;
     background-color: #114054;
  }
+ .ENicons:hover{
+    border: solid 2px white;
+ }
+ 
 
 .CourseLine a:link,
 .CourseLine a:visited{
@@ -110,6 +113,7 @@ h1 {
  .Buttons:hover{
     background-color: #e6e4e4;
     cursor: pointer;
+    color: #114054;
  }
 
  .courseCheckbox{

@@ -11,7 +11,8 @@ $(document).ready(function () {
                 $.each(response, function (index, course) {
                     const CourseLine = $("<div>").addClass("CourseLine");
                     const name = $("<a>").addClass("CourseName").attr("href", "").append(course.Title);
-                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "");
+                    let crsId = course.ID;
+                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "#");
                     const editImage = $("<img>").addClass("ENicons").attr("src", "assets/images/edit.png").attr("width", "30").attr("height", "30");
 
                     const editButton = editAnchor.append(editImage);
@@ -20,15 +21,22 @@ $(document).ready(function () {
                 
                     CourseLine.append(name).append(editButton).append(checkbox);
                     coursesList.append(CourseLine);
+
                 });
 
                 $(".courseCheckbox").on("change", function () {
                     const atLeastOneCheckboxChecked = $(".courseCheckbox:checked").length > 0;
                     $("#confirmB").prop("disabled", !atLeastOneCheckboxChecked);
                 });
+                
             })
             .catch((error) => {
                 console.log("Error fetching courses: " + error);
+            });
+
+            $(".ENbuttons").on("click", function () {
+                const courseId = $(this).closest('.CourseLine').data('course-id');
+                fetchCourseDetails(courseId);
             });
     }
     const teacherID = JSON.parse(sessionStorage.getItem("userData"))[0].ID
@@ -54,8 +62,21 @@ $(document).ready(function () {
             return $(this).val();
         }).get();
 
+        $.ajax({
+            url: 'assets/Back-End/deleteCourses.php',
+            method: 'POST',
+            data: { course_ids: checkedCourseIDs },
+            success: function (response) {
+                console.log('Courses deleted successfully:', response);
+                // Optionally, refresh the course list or perform any other actions
+            },
+            error: function (error) {
+                console.error('Error deleting courses:', error);
+            }
+        });
         console.log("Selected Course IDs:", checkedCourseIDs);
     });
+
 });
 
 
