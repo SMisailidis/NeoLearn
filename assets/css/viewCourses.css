@@ -118,6 +118,12 @@ h1 {
     margin-right: 10px;
  }
 
+ #confirmB:disabled{
+    background-color: grey;
+    cursor: not-allowed;
+ }
+
+
 
 
 
