@@ -10,9 +10,9 @@ $(document).ready(function () {
 
                 $.each(response, function (index, course) {
                     const CourseLine = $("<div>").addClass("CourseLine");
-                    const name = $("<a>").addClass("CourseName").attr("href", "").append(course.Title);
+                    const name = $("<a>").addClass("CourseName").attr("href", "viewCourseChapters.php").append(course.Title);
                     let crsId = course.ID;
-                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "#");
+                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "editCourse.php");
                     const editImage = $("<img>").addClass("ENicons").attr("src", "assets/images/edit.png").attr("width", "30").attr("height", "30");
 
                     const editButton = editAnchor.append(editImage);
