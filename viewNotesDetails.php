@@ -1,6 +1,6 @@
 <?php require 'layout.php' ?>
 <main class="mainScreenViewNotesDetailsContainer">
-<div class="courseName">COURSE 1 (CS409)</div>
+<div class="header-text">COURSE 1 (CS409)</div>
     <div class="allInfo">
         <div class="noteTitle">Chapter 1 Notes</div>
         <div class="descandFilesContainer">

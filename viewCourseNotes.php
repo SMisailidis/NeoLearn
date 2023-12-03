@@ -1,23 +1,11 @@
 <?php require 'layout.php' ?>
 <main class="mainScreenViewCourseNotesContainer">
 <div class="course-title">
-        <h1>COURSE 1 (CS409)</h1>
+        <h1 class="header-text" id="curHeader"></h1>
       </div>
   <div class="Notes_central-div">
     <div class="allRectangles">
-        <div class="Notesrectangle">
-            <a class="chapterNotesTitle" href="./viewNotesDetails.php">Chapter 1 Notes</a>
-        </div>
-        <div class="Notesrectangle">
-            <a class="chapterNotesTitle" href="">Chapter 2 Notes</a>
-        </div>
-        <div class="Notesrectangle">
-            <a class="chapterNotesTitle" href="">Chapter 3 Notes</a>
-        </div>
-        <div class="Notesrectangle">
-            <a class="chapterNotesTitle" href="">Chapter 4 Notes</a>
-        </div>
     </div>
   </div>
-
+  <script type="module" src="assets/js/viewCourseNotes.js"></script>
 </main>

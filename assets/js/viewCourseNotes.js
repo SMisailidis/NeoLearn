@@ -4,28 +4,28 @@ $(document).ready(function () {
 
     const urlParams = new URLSearchParams(window.location.search);
     const courseTitle = urlParams.get('courseTitle');
+    const courseID = urlParams.get("courseID");
 
-    function updateEnrolledCourseList(studentId, courseTitle) {
-
+    $("#curHeader").text(courseTitle + " (" + courseID + ")")
+    const updateEnrolledCourseList = () => {
+        
         const ChaptersContainer = $(".allRectangles");
+        
+        fetchData($, "assets/Back-End/getCurriculumTitle.php", "POST", { course_id: courseID })
+        .then((response) => {
+            $.each(response, function (index, curriculum) {
 
-        fetchData($, "assets/Back-End/getCurriculumTitle.php", "POST", { student_id: studentId, course_title: courseTitle })
-            .then((response) => {
-                $.each(response, function (index, curriculum) {
-
-                    const chapterRow = $("<div>").addClass("Notesrectangle");
-                    const chapterTitle = $("<a>").addClass("chapterNotesTitle").attr("href", "").append(curriculum.CurriculumTitle);
-
-                    chapterRow.append(chapterTitle);
-                    ChaptersContainer.append(chapterRow);
-                });
-            })
-            .catch((error) => {
-                console.log("Error fetching curriculum titles: " + error);
+                const chapterRow = $("<div>").addClass("Notesrectangle");
+                const chapterTitle = $("<a>").addClass("chapterNotesTitle").attr("href", `viewNotesDetails.php?curID=${curriculum.ID}`).text(curriculum.Title);
+                
+                chapterRow.append(chapterTitle);
+                ChaptersContainer.append(chapterRow);
             });
+        })
+        .catch((error) => {
+            console.log("Error fetching curriculum titles: " + error);
+        });
     }
-
-    const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
-    updateEnrolledCourseList(studentID, courseTitle);
+    updateEnrolledCourseList();
 
 });
