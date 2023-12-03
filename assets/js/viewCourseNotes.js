@@ -7,7 +7,7 @@ $(document).ready(function () {
     const courseID = urlParams.get("courseID");
 
     $("#curHeader").text(courseTitle + " (" + courseID + ")")
-    const updateEnrolledCourseList = () => {
+    const updateNotesList = () => {
         
         const ChaptersContainer = $(".allRectangles");
         
@@ -26,6 +26,6 @@ $(document).ready(function () {
             console.log("Error fetching curriculum titles: " + error);
         });
     }
-    updateEnrolledCourseList();
+    updateNotesList();
 
 });
