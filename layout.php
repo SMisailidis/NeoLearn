@@ -29,6 +29,7 @@
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
         <script type="module" src="assets/js/viewStudCourses.js"></script>
+        <script type="module" src="assets/js/viewCourseNotes.js"></script>
 
         <!--------------->
 
