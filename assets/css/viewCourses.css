@@ -127,6 +127,13 @@ h1 {
     cursor: not-allowed;
  }
 
+ @media screen and (max-width: 500px) {
+    .container {
+        width: 90%;
+        max-width: none;
+    }
+   
+}
 
 
 
