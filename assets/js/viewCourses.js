@@ -68,7 +68,6 @@ $(document).ready(function () {
             data: { course_ids: checkedCourseIDs },
             success: function (response) {
                 console.log('Courses deleted successfully:', response);
-                // Optionally, refresh the course list or perform any other actions
             },
             error: function (error) {
                 console.error('Error deleting courses:', error);
