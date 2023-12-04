@@ -114,6 +114,24 @@
     height: 80%;
 }
 
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedPdf,
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedVideos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    margin-top: 5%;
+    background-color: rgb(192, 192, 192);
+}
+
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedPdf a:link,
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedVideos a:link{
+    text-decoration:underline;
+    color: #114054;
+}
+
+
 .allInfo .quizButton{
     width: 100%;
     height: 12%;

@@ -29,16 +29,32 @@ $(document).ready(function () {
                 const filesBox = $("<div>").addClass("filesBox");
                 const uploadText = $("<div>").addClass("uploadText").text("Uploaded Files");
                 const uploadedFiles = $("<div>").addClass("uploadedFiles");
+                const uploadedPdf = $("<div>").addClass("uploadedPdf");
+                const uploadedVideos = $("<div>").addClass("uploadedVideos");
+                const pdfLink = $("<a>").attr("href", curriculum.Pdf_Link).text("curriculum.Pdf_Link");
+                const videoLink = $("<a>").attr("href", curriculum.Video_Link).text("curriculum.Video_Link");
+
                 uploadText.appendTo(filesBox);
+
+                pdfLink.appendTo(uploadedPdf);
+                videoLink.appendTo(uploadedVideos);
+
+                uploadedPdf.appendTo(uploadedFiles);
+                uploadedVideos.appendTo(uploadedFiles);
+
                 uploadedFiles.appendTo(filesBox);
+
                 filesBox.appendTo(filesCont);
+
                 filesCont.appendTo(descAndFilesCont);
 
                 const quizButton = $("<div>").addClass("quizButton");
                 const button = $("<button>").text("QUIZ");
                 button.appendTo(quizButton);
                 noteName.appendTo(DetailsContainer);
+
                 descAndFilesCont.appendTo(DetailsContainer);
+                
                 quizButton.appendTo(DetailsContainer);
                 
 
