@@ -3,18 +3,14 @@ include 'DbConnection.php';
 
 $connection = dbConnect();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $courseIDs = $_POST['course_ids'];
 
-    foreach ($courseIDs as $courseID) {
-        $query = "DELETE FROM Course WHERE ID = '$courseID'";
-        executeDMLQuery($query, $connection);
-    }
+    $courseID = $_POST['course_ids'];
+    $ids = "'" . implode("', '", $courseID) . "'";
 
-    echo json_encode(['success' => true]);
-} else {
-    echo json_encode(['error' => 'Invalid request method']);
-}
+    $query = "DELETE FROM Course WHERE ID IN ($ids)";
+    $result  = executeDMLQuery($query, $connection);
+    echo($result);
+
 
 
 

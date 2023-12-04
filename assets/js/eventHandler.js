@@ -17,7 +17,7 @@ export const fetchData = ($, url, method, data) => {
               reject("Query failed: " + response.message);
             }
           },
-          error: (error) => {},
+          error: (error) => {console.error(error)},
         });
       });
     });

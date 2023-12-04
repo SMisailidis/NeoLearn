@@ -61,18 +61,12 @@ $(document).ready(function () {
         const checkedCourseIDs = $(".courseCheckbox:checked").map(function () {
             return $(this).val();
         }).get();
-
-        $.ajax({
-            url: 'assets/Back-End/deleteCourses.php',
-            method: 'POST',
-            data: { course_ids: checkedCourseIDs },
-            success: function (response) {
-                console.log('Courses deleted successfully:', response);
-            },
-            error: function (error) {
-                console.error('Error deleting courses:', error);
-            }
-        });
+        fetchData(jQuery,'assets/Back-End/deleteCourses.php',"POST",{ course_ids: checkedCourseIDs } ).then((data) =>{
+            console.log("ashdsadkjf");
+        }).catch((error)=>{
+            console.error(error)
+        })
+        
         console.log("Selected Course IDs:", checkedCourseIDs);
     });
 
