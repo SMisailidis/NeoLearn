@@ -15,8 +15,13 @@ $(document).ready(function () {
         .then((response) => {
             $.each(response, function (index, curriculum) {
 
-                const chapterRow = $("<div>").addClass("Notesrectangle");
-                const chapterTitle = $("<a>").addClass("chapterNotesTitle").attr("href", `viewNotesDetails.php?curID=${curriculum.ID}`).text(curriculum.Title);
+                const chapterRow = $("<div>")
+                .addClass("Notesrectangle");
+
+
+                const chapterTitle = $("<a>")
+                .addClass("chapterNotesTitle")
+                .attr("href", `viewNotesDetails.php?courseTitle=${courseTitle}&courseID=${courseID}&curID=${curriculum.ID}`).text(curriculum.Title);
                 
                 chapterRow.append(chapterTitle);
                 ChaptersContainer.append(chapterRow);
