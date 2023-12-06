@@ -42,7 +42,6 @@
   height: 50px;   
   background-color:#e8e9ea;
   margin: 10px;
-  padding: 10px;
   box-sizing: border-box;
   text-align: center;
 }
@@ -54,6 +53,15 @@
 .rectangle .viewCourse {
   width: 5%;
   height: 50px;
+}
+
+.rectangle .checkBoxCont{
+  width: fit-content;
+  height: fit-content;
+}
+
+.rectangle .checkBoxCont input[type="checkbox"]{
+  transform: scale(1.5);
 }
 
 .rectangle .viewCourse img {

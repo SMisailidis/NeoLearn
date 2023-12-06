@@ -25,13 +25,29 @@ $(document).ready(function () {
                         .attr("id", course.ID)
                         .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow"));
 
+                    const checkBoxCont = $("<div>")
+                    .addClass("checkBoxCont");
 
-                    courseDiv.append(courseTitle).append(viewCourse);
+                    const rmvCheckBox = $('<input type="checkbox">');
+
+                    checkBoxCont.append(rmvCheckBox);
+
+
+                    courseDiv.append(courseTitle).append(viewCourse).append(checkBoxCont);
                     coursesContainer.append(courseDiv);
+
+
+                    rmvCheckBox.hide();
                 });
             })
             .catch((error) => {
                 console.log("Error fetching enrolled courses: " + error);
+            });
+
+            $(".right-child button:contains('Remove Course')").on("click", function () {
+                $(".viewCourse").toggle();
+                $(".checkBoxCont input[type='checkbox']").toggle();
+
             });
     }
 
