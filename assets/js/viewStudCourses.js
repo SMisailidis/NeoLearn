@@ -23,7 +23,7 @@ $(document).ready(function () {
                         .addClass("viewCourse")
                         .attr("href", `./viewCourseNotes.php?courseTitle=${course.Title}&courseID=${course.ID}`)  
                         .attr("id", course.ID)
-                        .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow"));
+                        .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow").addClass('viewCourseImage'));
 
                     const checkBoxCont = $("<div>")
                     .addClass("checkBoxCont");
