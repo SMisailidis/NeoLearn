@@ -11,7 +11,7 @@
     margin-bottom: 20px;
 }
 
-.course-title h1 {
+.course-title #cTitle {
     font-size: 35px;
     font-weight: lighter;
     color: #114054;
@@ -46,8 +46,8 @@
     font-size: larger;
 }
 
-.chapterRectangle a:link,
-.chapterRectangle a:visited {
+.chapterTitle a:link,
+.chapterTitle a:visited {
     text-decoration: none;
     color: #000;
 }
@@ -58,5 +58,4 @@
         width: 90%;
         max-width: none;
     }
-   
 }
