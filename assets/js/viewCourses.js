@@ -12,7 +12,7 @@ $(document).ready(function () {
                     const CourseLine = $("<div>").addClass("CourseLine");
                     const name = $("<a>").addClass("CourseName").attr("href", "viewCourseChapters.php").append(course.Title);
                     let crsId = course.ID;
-                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "editCourse.php");
+                    const editAnchor = $("<a>").addClass("ENbuttons").attr("id", "editButton").attr("href", "editCourse.php?courseId=" + encodeURIComponent(crsId));
                     const editImage = $("<img>").addClass("ENicons").attr("src", "assets/images/edit.png").attr("width", "30").attr("height", "30");
 
                     const editButton = editAnchor.append(editImage);
@@ -66,6 +66,8 @@ $(document).ready(function () {
         }).catch((error)=>{
             console.error(error)
         })
+
+        location.reload();
         
         console.log("Selected Course IDs:", checkedCourseIDs);
     });
