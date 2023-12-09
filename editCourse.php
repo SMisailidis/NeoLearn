@@ -15,4 +15,5 @@
     </div>
 </main>
 </div>
+<script type="module" src="assets/js/editCourse.js"></script>
 </body>

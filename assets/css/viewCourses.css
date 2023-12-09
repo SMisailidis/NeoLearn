@@ -120,6 +120,7 @@ h1 {
     display: none;
     transform: scale(1.5);
     margin-right: 10px;
+    accent-color: #114054;
  }
 
  #confirmB:disabled{
