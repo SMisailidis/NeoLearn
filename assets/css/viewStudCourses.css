@@ -73,6 +73,7 @@
 
 .rectangle .checkBoxCont input[type="checkbox"]{
   transform: scale(1.5);
+  accent-color: #114054;
 }
 
 .rectangle .viewCourse .viewCourseImage {
@@ -119,7 +120,7 @@
   padding: 25px 0;
   display: flex;
   justify-content: space-around ;
-  align-items: center;
+  width: 100%;
 }
 
 @media only screen and (max-width: 768px){

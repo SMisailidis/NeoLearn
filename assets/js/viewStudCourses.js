@@ -7,43 +7,63 @@ import pagination from "./pagination.js";
 
 $(document).ready(function () {
 
+    function renderCourses(){
+      pagination.renderContent(() => {
+
+        pagination.renderElement.empty();
+        const startIndex = (pagination.currentPage - 1) * pagination.itemsPerPage;
+        const endIndex = startIndex + pagination.itemsPerPage;
+        const pageData = pagination.data.slice(startIndex, endIndex);
+
+        $.each(pageData, function (index, course) {
+
+            const courseDiv = $("<div>")
+            .addClass("rectangle");
+
+            const courseTitle = $("<a>")
+                .addClass("courseTitle")
+                .attr("href", `./viewCourseNotes.php?courseTitle=${course.Title}&courseID=${course.ID}`)  
+                .attr("id", course.ID)
+                .text(course.Title);
+
+            const viewCourse = $("<a>")
+                .addClass("viewCourse")
+                .attr("href", `./viewCourseNotes.php?courseTitle=${course.Title}&courseID=${course.ID}`)  
+                .attr("id", course.ID)
+                .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow").addClass('viewCourseImage'));
+
+            const checkBoxCont = $("<div>")
+            .addClass("checkBoxCont");
+
+            const rmvCheckBox = $('<input type="checkbox">').val(course.ID);
+
+            checkBoxCont.append(rmvCheckBox);
+
+
+            courseDiv.append(courseTitle).append(viewCourse).append(checkBoxCont);
+            pagination.renderElement.append(courseDiv);
+
+
+            rmvCheckBox.hide();
+
+
+
+        });
+
+    })
+    }
+
     function updateEnrolledCourseList(studentId) {
-        const coursesContainer = $(".left-child");
 
         fetchData($, "assets/Back-End/getEnrolledCourses.php", "POST", { student_id: studentId })
+
+            
             .then((response) => {
-                $.each(response, function (index, course) {
 
-                    const courseDiv = $("<div>")
-                    .addClass("rectangle");
-
-                    const courseTitle = $("<a>")
-                        .addClass("courseTitle")
-                        .attr("href", `./viewCourseNotes.php?courseTitle=${course.Title}&courseID=${course.ID}`)  
-                        .attr("id", course.ID)
-                        .text(course.Title);
-
-                    const viewCourse = $("<a>")
-                        .addClass("viewCourse")
-                        .attr("href", `./viewCourseNotes.php?courseTitle=${course.Title}&courseID=${course.ID}`)  
-                        .attr("id", course.ID)
-                        .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow").addClass('viewCourseImage'));
-
-                    const checkBoxCont = $("<div>")
-                    .addClass("checkBoxCont");
-
-                    const rmvCheckBox = $('<input type="checkbox">').val(course.ID);
-
-                    checkBoxCont.append(rmvCheckBox);
-
-
-                    courseDiv.append(courseTitle).append(viewCourse).append(checkBoxCont);
-                    coursesContainer.append(courseDiv);
-
-
-                    rmvCheckBox.hide();
-                    
-                });
+                pagination.setData(response);
+                renderCourses();
+                pagination.updatePaginationLinks();    
+                
             })
             .catch((error) => {
                 console.log("Error fetching enrolled courses: " + error);
@@ -84,10 +104,13 @@ $(document).ready(function () {
             });
 
             
+            //PAGINATION
+            pagination.setPaginationElement($(".left-child"));
+            pagination.onClickHandler(renderCourses);
+
+
 
             toast.setContent("Courses deleted successfully!");
-
-
 
             modal.setTitle("Remove courses");
             modal.setContent("Are you sure you want to remove the selected courses?");
