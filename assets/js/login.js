@@ -76,7 +76,6 @@ $(document).ready(function () {
 
   const setContentList = () => {
     let contentList;
-    console.log(JSON.parse(sessionStorage.getItem("userData"))[0].ID);
 
     switch (sessionStorage.getItem("userType")) {
       case "student":

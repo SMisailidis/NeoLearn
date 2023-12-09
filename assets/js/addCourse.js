@@ -19,7 +19,7 @@ $(document).ready(function () {
       Prerequisities: inputs[4].value,
     };
 
-    $("#exampleModalCenter").modal("show");
+    modal.openModal();
   };
 
   const resetInputs = () => {
@@ -27,26 +27,27 @@ $(document).ready(function () {
 
     $.each(inputs, function (index, row) {
       row.value = "";
-    })
+    });
   };
 
   modal.onClickCloseHandler(() => {
-    modal.closeModal()
     resetInputs();
-  })
+  });
 
   modal.onClickSaveHandler(() => {
     fetchData(jQuery, "assets/Back-End/addCourse.php", "POST", courseData)
-    .then((success) => {
-      if (success) {
-        toast.showToast();
-        modal.openModal();
-        modal.closeModal();
-        resetInputs();
-      }
-    })
-    .catch((error) => {console.log(error)});
-  })
+      .then((success) => {
+        if (success) {
+          toast.showToast();
+          modal.openModal();
+          modal.closeModal();
+          resetInputs();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   $(".addInput-form").on("submit", onSubmitHandler);
 
@@ -54,5 +55,5 @@ $(document).ready(function () {
   modal.setContent("Do you to publish the Course?");
   modal.setButtonsText("No", "Yes");
 
-  toast.setContent("Published successfully!")
+  toast.setContent("Published successfully!");
 });

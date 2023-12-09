@@ -1,4 +1,6 @@
 import { fetchData } from "./eventHandler.js";
+import modal from "./modal.js";
+import toast from "./toast.js";
 
 $(document).ready(function () {
   let userID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
@@ -46,13 +48,9 @@ $(document).ready(function () {
     return sortedString1 === sortedString2;
   };
 
-  const changePasswordHandler = (e) => {
-    console.log("hjajaha");
-  };
+  const changePasswordHandler = (e) => {};
 
-  const viewListHandler = (e) => {
-    console.log("haherhja");
-  };
+  const viewListHandler = (e) => {};
 
   const validityCheck = (inputs) => {
     inputs.each(function () {
@@ -64,24 +62,20 @@ $(document).ready(function () {
     return true;
   };
 
-  const onCloseModal = () => {
+  modal.onClickCloseHandler(() => {
     const inputs = $(
       `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
     );
-    $("#exampleModalCenter").modal("hide");
+    modal.closeModal();
     inputs[0].value = initData[0].First_Name + " " + initData[0].Last_Name;
     inputs[1].value = initData[0].Email;
     inputs[2].value = initData[0].Phone_Number;
     inputs[3].value = initData[0].Birth_Date;
     inputs[4].value = initData[0].ID;
     inputs[5].value = initData[0].Academic_Email;
-  };
+  });
 
-  $(".btn-secondary").on("click", onCloseModal);
-
-  $(".btn-close").on("click", onCloseModal);
-
-  $("#save").on("click", function () {
+  modal.onClickSaveHandler(() => {
     const inputs = $(
       `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
     );
@@ -98,10 +92,8 @@ $(document).ready(function () {
         ID: userID,
       };
 
-      console.log(areObjectsEqual(newValues, initData[0]));
-
       if (areObjectsEqual(newValues, initData[0])) {
-        $("#exampleModalCenter").modal("hide");
+        modal.closeModal();
       } else {
         fetchData(
           jQuery,
@@ -111,12 +103,8 @@ $(document).ready(function () {
         )
           .then((success) => {
             if (success) {
-              $("#liveToast").removeClass("hide").addClass("show");
-              $("#exampleModalCenter").modal("hide");
-
-              setTimeout(function () {
-                $("#liveToast").removeClass("show").addClass("hide");
-              }, 3000);
+              toast.showToast();
+              modal.closeModal();
             }
           })
           .catch((error) => {
@@ -140,7 +128,7 @@ $(document).ready(function () {
       inputs[0].focus();
       $(this).text("Save");
     } else {
-      $("#exampleModalCenter").modal("show");
+      modal.openModal();
 
       changes = {
         readonly: true,
@@ -270,4 +258,9 @@ $(document).ready(function () {
     .catch((error) => {
       console.error(error);
     });
+
+  modal.setTitle("Profile changes");
+  modal.setContent("Are you willing to make the changes?");
+  modal.setButtonsText("No", "Yes");
+  toast.setContent("Published successfully!");
 });
