@@ -1,4 +1,6 @@
 import { fetchData } from './EventHandler.js';
+import modal from './modal.js';
+import toast from './toast.js';
  
 
 $(document).ready(function () {
@@ -28,7 +30,7 @@ $(document).ready(function () {
                     const checkBoxCont = $("<div>")
                     .addClass("checkBoxCont");
 
-                    const rmvCheckBox = $('<input type="checkbox">');
+                    const rmvCheckBox = $('<input type="checkbox">').val(course.ID);
 
                     checkBoxCont.append(rmvCheckBox);
 
@@ -38,17 +40,96 @@ $(document).ready(function () {
 
 
                     rmvCheckBox.hide();
+                    
                 });
             })
             .catch((error) => {
                 console.log("Error fetching enrolled courses: " + error);
             });
 
-            $(".right-child button:contains('Remove Course')").on("click", function () {
+            $("#confirmBtn").hide();
+            $("#cancelBtn").hide();
+
+
+            $("#removeBtn").on("click", function () {
+                
+                $("#removeBtn").hide();
+                $("#cancelBtn").toggle();
+                $("#addBtn").hide();
                 $(".viewCourse").toggle();
+                $("#confirmBtn").toggle();
                 $(".checkBoxCont input[type='checkbox']").toggle();
 
             });
+
+            $("#cancelBtn").on("click", function () {
+                
+                $("#confirmBtn").toggle();
+                $("#cancelBtn").toggle();
+                $("#addBtn").toggle();
+                $("#removeBtn").toggle();
+                $(".viewCourse").toggle();
+                $(".checkBoxCont input[type='checkbox']").toggle();
+                $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+
+
+            });
+
+            $("#confirmBtn").on("click", function () {
+                
+                modal.openModal();
+                toast.setContent("Courses deleted succesfully!");
+
+            });
+
+            
+
+
+
+
+            modal.setTitle("Remove courses");
+            modal.setContent("Are you sure you want to remove the selected courses?");
+            modal.setButtonsText("Cancel", "Confirm");
+            modal.onClickSaveHandler(function saveClick (){
+
+                const checkedEnrolledCoursesIDs = $(".checkBoxCont input[type='checkbox']:checked").map(function () {
+                    return $(this).val(); 
+                }).get();
+                console.log(checkedEnrolledCoursesIDs);
+                 fetchData(jQuery, 'assets/Back-End/deleteEnrolledCourse.php', "POST", { EnrolledCourses_ids: checkedEnrolledCoursesIDs })
+                .then((data) => {
+                    console.log("Courses deleted successfully!");
+                }).catch((error) => {
+                    console.error(error)
+                })
+                
+
+                $("#confirmBtn").toggle();
+                $("#cancelBtn").toggle();
+                $("#addBtn").toggle();
+                $("#removeBtn").toggle();
+                $(".viewCourse").toggle();
+                $(".checkBoxCont input[type='checkbox']").toggle();
+                $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+                modal.closeModal();
+               
+            });
+
+
+            modal.onClickCloseHandler(function removeClick (){
+
+                $("#confirmBtn").toggle();
+                $("#cancelBtn").toggle();
+                $("#addBtn").toggle();
+                $("#removeBtn").toggle();
+                $(".viewCourse").toggle();
+                $(".checkBoxCont input[type='checkbox']").toggle();
+                $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+
+            });
+
+
+           
     }
 
     const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;

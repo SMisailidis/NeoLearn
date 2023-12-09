@@ -5,8 +5,11 @@
       <div class="left-child d-flex flex-column align-items-center justify-content-start">
       </div>
       <div class="right-child">
-        <button>Add Course</button>
-        <button>Remove Course</button>
+        <button id="addBtn">Add Course</button>
+        <button id="removeBtn">Remove Course</button>
+        <button id="cancelBtn">Cancel</button>
+        <button id="confirmBtn">Confirm</button>
+        
       </div>
     </div>
           </div>
