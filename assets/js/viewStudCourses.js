@@ -1,6 +1,8 @@
 import { fetchData } from './EventHandler.js';
 import modal from './modal.js';
 import toast from './toast.js';
+import pagination from "./pagination.js";
+
  
 
 $(document).ready(function () {
@@ -78,12 +80,12 @@ $(document).ready(function () {
             $("#confirmBtn").on("click", function () {
                 
                 modal.openModal();
-                toast.setContent("Courses deleted succesfully!");
 
             });
 
             
 
+            toast.setContent("Courses deleted successfully!");
 
 
 
@@ -102,6 +104,10 @@ $(document).ready(function () {
                 }).catch((error) => {
                     console.error(error)
                 })
+
+                checkedEnrolledCoursesIDs.forEach(courseID => {
+                    $(`.checkBoxCont input[type='checkbox'][value='${courseID}']`).closest('.rectangle').remove();
+                });
                 
 
                 $("#confirmBtn").toggle();
@@ -112,6 +118,9 @@ $(document).ready(function () {
                 $(".checkBoxCont input[type='checkbox']").toggle();
                 $(".checkBoxCont input[type='checkbox']").prop("checked", false);
                 modal.closeModal();
+
+                toast.showToast();
+
                
             });
 
