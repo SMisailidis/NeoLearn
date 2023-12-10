@@ -50,18 +50,54 @@ $(document).ready(function () {
     switch (sessionStorage.getItem("userType")) {
       case "student":
         navList = {
-          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
-          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
-          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+          Home: {
+            text: "My dashboard",
+            url: "portofolio.php",
+            imgURL: "fa-solid fa-house-chimney",
+          },
+          AvailCourses: {
+            text: "Available Courses",
+            url: "availCourses.php",
+            imgURL: "fa-solid fa-book",
+          },
+          MyCourses: {
+            text: "My courses",
+            url: "viewStudCoruses.php",
+            imgURL: "fa-solid fa-book",
+          },
+          profile: {
+            text: "Profile",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
+            imgURL: "fa-solid fa-right-from-bracket",
+          },
         };
         break;
       case "teacher":
         navList = {
-          Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
-          Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-          AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
-          LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
+          Home: {
+            text: "My dashboard",
+            url: "portofolio.php",
+            imgURL: "fa-solid fa-house-chimney",
+          },
+          Courses: {
+            text: "View All Courses",
+            url: "viewCourses.php",
+            imgURL: "fa-solid fa-book",
+          },
+          AddCourse: {
+            text: "Add Course",
+            url: "AddCourse.php",
+            imgURL: "fa-solid fa-square-plus",
+          },
+          profile: {
+            text: "Profile",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
+            imgURL: "fa-solid fa-right-from-bracket",
+          },
         };
         break;
       case "admin":
@@ -72,6 +108,7 @@ $(document).ready(function () {
       default:
         break;
     }
+    sessionStorage.setItem("userNavList", JSON.stringify(navList));
   };
 
   const setContentList = () => {

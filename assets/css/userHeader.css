@@ -10,7 +10,7 @@
 }
 
 .header .logoContainer img {
-  width: 15vh;
+  width: 8vw;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
@@ -18,9 +18,21 @@
 .logoContainer {
   display: flex;
   height: 100%;
-  width: 25%;
+  width: 20%;
   justify-content: center;
   align-items: center;
+}
+
+.menuBtn {
+  background-color: #2e6d7c;
+  width: 10%;
+  border: none;
+  border-radius: 10px;
+  display: none;
+}
+
+.menuBtn i {
+  color: #e8e9ea;
 }
 
 .userInfo {
@@ -33,15 +45,25 @@
 
 @media only screen and (max-width: 768px) {
   .header {
-    justify-content: flex-start;
-    padding-left: 0;
+    justify-content: space-between;
   }
 
   .header .logoContainer {
     justify-self: flex-start;
   }
 
-  .header i {
+  .header .logoContainer img {
+    width: 15vw;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+  }
+
+  .menuBtn {
+    height: 100%;
+    display: inline-block;
+  }
+
+  .userInfo i {
     display: none;
   }
 }

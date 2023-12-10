@@ -1,5 +1,4 @@
 <?php require 'layout.php' ?>
-<main>
     <h1 class="header-text">My Courses</h1>
     <div class="viewCoursesContainer">
         <div class="CoursesList">  
@@ -16,5 +15,5 @@
 </div>
 <script type="module" src="assets/js/viewCourses.js"></script>
 </body>
-
+</html>
 

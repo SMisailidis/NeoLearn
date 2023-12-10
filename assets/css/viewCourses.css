@@ -1,13 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
-main {
-  margin: auto;
-}
-
 .viewCoursesContainer {
   border: solid 2px #114054;
   border-radius: 25px;
