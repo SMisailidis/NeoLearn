@@ -26,6 +26,18 @@
     background-color: rgba(46, 107, 122, 0.4);
     border-color: #114054;
     margin: 10px; 
+    
+}
+
+.down-part{
+    position: absolute;
+    bottom: 0;
+    width:700px;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 

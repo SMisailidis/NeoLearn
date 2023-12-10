@@ -6,6 +6,9 @@
   <div class="Notes_central-div">
     <div class="allRectangles">
     </div>
+    <div class="down-part">
+    <?php require 'assets/partials/pagination.php'?>
+    </div>
   </div>
   <script type="module" src="assets/js/viewCourseNotes.js"></script>
 </main>
