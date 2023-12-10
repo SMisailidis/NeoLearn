@@ -30,8 +30,6 @@
         <!-- JS assets -->
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
-        
-        
         <!--------------->
 
     </head>
