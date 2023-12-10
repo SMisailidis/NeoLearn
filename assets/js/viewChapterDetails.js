@@ -4,6 +4,7 @@ import modal from './modal.js';
 
 $(document).ready(function () {
 
+    //Retrieve needed values from URL
     const urlParams = new URLSearchParams(window.location.search);
     const curId = urlParams.get('curID');
     const crsTitle = urlParams.get('courseTitle');

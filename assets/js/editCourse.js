@@ -3,9 +3,6 @@ import modal from './modal.js';
 import toast from './toast.js';
 
 $(document).ready(function () {
-
-    let urlParams = new URLSearchParams(window.location.search);
-    let courseId = urlParams.get('courseId');
     
     function updateCourseDetails(courseId) {
         fetchData($, "assets/Back-End/getCourseDetails.php", "POST", { course_id: courseId })
@@ -24,6 +21,7 @@ $(document).ready(function () {
             });
     }
 
+   
     function saveChanges(courseId, newTitle, newDescription) {
 
         fetchData($, "assets/Back-End/updateCourse.php", "POST", {
@@ -53,6 +51,8 @@ $(document).ready(function () {
     modal.onClickCloseHandler(()=>{
         location.reload();
     });
+
+   
     modal.onClickSaveHandler(() => {
         const newTitle = $("#title").val();
         const newDescription = $("#description").val();
@@ -64,6 +64,7 @@ $(document).ready(function () {
     if (courseId) {
         updateCourseDetails(courseId);
 
+        
         $("#saveChanges").on("click", function () {
             modal.openModal();
             

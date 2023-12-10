@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="assets/css/editCourse.css">
         <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
         <link rel="stylesheet" href="assets/css/viewChapterDetails.css">
+        <link rel="stylesheet" href="assets/css/addChapter.css">
         <!---------------->
 
         <!-- JS assets -->

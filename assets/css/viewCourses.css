@@ -106,9 +106,6 @@ h1 {
     text-decoration: none;
     color: #114054;
 }
-.RemoveButtons{
-    display: none;
-}
 
  .Buttons:hover{
     background-color: #e6e4e4;

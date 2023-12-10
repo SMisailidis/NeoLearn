@@ -50,4 +50,15 @@ $(document).ready(function () {
     pagination.onClickHandler(renderCourses);
     
     updateNotesList();
+
+
+    
+    $('#addBtn_href').on('click', function (event) {
+        event.preventDefault();
+
+        const addChapterUrl = 'addChapter.php?courseId=' + encodeURIComponent(courseId);
+
+        window.location.href = addChapterUrl;
+    });
+
 });

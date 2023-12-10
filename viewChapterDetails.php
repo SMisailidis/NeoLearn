@@ -20,6 +20,10 @@
                             <a href="#" id="VideoLinkPlaceholderT"></a>
                         </div>
                     </div>
+                    <div class="inputFileWrapper">
+                        <label for="formFileMultiple" class="form-label">Upload Files Here!</label>
+                        <input class="form-control" type="file" id="formFileMultiple" required accept=".pdf, .png, .jpg" multiple>
+                    </div>
                 </div>
             </div>
         </div>

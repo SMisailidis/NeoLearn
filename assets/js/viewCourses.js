@@ -54,6 +54,9 @@ $(document).ready(function () {
     const teacherID = JSON.parse(sessionStorage.getItem("userData"))[0].ID
     updateCourseList(teacherID);
 
+    $("#cancelB").hide();
+    $("#confirmB").hide();
+
     function updateConfirmButtonState() {
         const atLeastOneCheckboxChecked = $(".courseCheckbox:checked").length > 0;
         $("#confirmB").prop("disabled", !atLeastOneCheckboxChecked);

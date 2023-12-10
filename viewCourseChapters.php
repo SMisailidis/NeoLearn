@@ -9,7 +9,7 @@
         </div>
         <?php require 'assets/partials/pagination.php' ?>
         <div class="AddChapterButtonContainer">
-            <a href=""><button class="AddChapterButton">Add a Chapter</button></a>
+            <a id="addBtn_href" href=""><button class="AddChapterButton">Add a Chapter</button></a>
         </div>
     </div>
 </main>
