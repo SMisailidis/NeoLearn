@@ -83,6 +83,11 @@ $(document).ready(function () {
             modal.openModal();
         });
 
+        //Handling Add Button
+        $("#addBtn").on("click", function () {
+            window.location.href="availCourses.php";      
+        });
+
        
 
         // Handling pagination
