@@ -62,7 +62,7 @@ $(document).ready(function () {
           },
           MyCourses: {
             text: "My courses",
-            url: "viewStudCoruses.php",
+            url: "viewStudCourses.php",
             imgURL: "fa-solid fa-book",
           },
           profile: {
