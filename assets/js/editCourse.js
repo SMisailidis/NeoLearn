@@ -3,6 +3,9 @@ import modal from './modal.js';
 import toast from './toast.js';
 
 $(document).ready(function () {
+
+    let urlParams = new URLSearchParams(window.location.search);
+    let courseId = urlParams.get('courseId');
     
     function updateCourseDetails(courseId) {
         fetchData($, "assets/Back-End/getCourseDetails.php", "POST", { course_id: courseId })
