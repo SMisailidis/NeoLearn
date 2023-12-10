@@ -18,6 +18,8 @@
 }
 
 .chapters_central-div {
+    display: flex;
+    flex-direction: column;
     width: 90%; 
     max-width: 700px;
     height: 400px;
@@ -26,8 +28,8 @@
     background-color: rgba(46, 107, 122, 0.4);
     border-color: #114054;
     margin: 10px; 
+    justify-content: space-between;
 }
-
 
 
 .chapterRectangle {
@@ -58,4 +60,27 @@
         width: 90%;
         max-width: none;
     }
+}
+
+.AddChapterButtonContainer{
+    display: flex;
+    height: 15%;
+    justify-content:center;
+    padding: 3px;
+
+}
+
+.AddChapterButton{
+    text-align: center;
+    border: none;
+    background-color: #114054;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 140px;
+}
+
+.AddChapterButton:hover{
+    background-color: white;
+    color: #114054;
 }

@@ -5,12 +5,14 @@
     </div>
     <div class="chapters_central-div">
         <div class="Rectangles">
-            <div class="chapterRectangle">
-                <a class="chapterTitle" href="">Chapter 1 Notes</a>
-            </div>
+    
+        </div>
+        <?php require 'assets/partials/pagination.php' ?>
+        <div class="AddChapterButtonContainer">
+            <a href=""><button class="AddChapterButton">Add a Chapter</button></a>
         </div>
     </div>
-    <script type="module" src="assets/js/viewCourseChapters.js"></script>
 </main>
+<script type="module" src="assets/js/viewCourseChapters.js"></script>
 </div>
 </body>

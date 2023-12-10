@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     let urlParams = new URLSearchParams(window.location.search);
     let courseId = urlParams.get('courseId');
-    console.log(courseId);
+    
     function updateCourseDetails(courseId) {
         fetchData($, "assets/Back-End/getCourseDetails.php", "POST", { course_id: courseId })
             .then((response) => {
@@ -50,7 +50,9 @@ $(document).ready(function () {
     modal.setTitle("Edit Course");
     modal.setContent("Are you sure you want to save these changes?");
     modal.setButtonsText("Cancel", "Save");
-    modal.onClickCloseHandler();
+    modal.onClickCloseHandler(()=>{
+        location.reload();
+    });
     modal.onClickSaveHandler(() => {
         const newTitle = $("#title").val();
         const newDescription = $("#description").val();

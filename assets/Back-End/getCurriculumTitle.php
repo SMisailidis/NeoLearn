@@ -10,5 +10,4 @@ $query = "SELECT Curriculum.Title, Curriculum.ID FROM Curriculum WHERE Course_ID
 $queryResult = executeDMLQuery($query, $connection);
 
 echo($queryResult);
-
 ?>

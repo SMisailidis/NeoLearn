@@ -1,4 +1,6 @@
 import { fetchData } from './EventHandler.js';
+import toast from './toast.js';
+import modal from './modal.js';
 
 $(document).ready(function () {
 
@@ -35,19 +37,36 @@ $(document).ready(function () {
             new_description: newDescription
         })
         .then((response) => {
-            console.log("Changes saved successfully");
+            if(response){
+                console.log("Changes saved successfully");
+                updateChapterDetailsList();
+                modal.closeModal();
+                toast.showToast();
+            }
+            
         })
         .catch((error) => {
             console.error("Error saving changes: " + error);
         });
     }
 
-    $("#editB").on("click", function () {
+    toast.setContent("Changes saved successfully!");
+    modal.setTitle("Edit chapter Details");
+    modal.setContent("Are you sure you want to save these changes?");
+    modal.setButtonsText("Cancel", "Save");
+    modal.onClickCloseHandler(()=>{
+        location.reload();
+    });
+    modal.onClickSaveHandler(()=>{
         const newChapterTitle = $(".noteTitleT").val();
         const newDescription = $(".descBoxT").val();
 
        saveChanges(crsID, newChapterTitle, newDescription);
-       location.reload();
+       
+    })
+
+    $("#editB").on("click", function () {
+        modal.openModal();
     });
 
     updateChapterDetailsList();
