@@ -1,0 +1,41 @@
+.mainScreenAvailCoursesContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.contentAvailCoursesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contentAvailCoursesContainer table {
+  color: #0b2d3c;
+  background-color: rgba(46, 109, 124, 0.4);
+  width: 60vw;
+  height: 70vh;
+}
+
+.contentAvailCoursesContainer th,
+td {
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.contentAvailCoursesContainer input[type="checkbox"] {
+  transform: scale(1.5);
+  accent-color: #114054;
+}
+
+.tableHeaderRow th {
+  vertical-align: middle;
+  background-color: #114054;
+  color: #ddd;
+  text-decoration: underline;
+}

@@ -1,15 +1,11 @@
-.header-text {
-  color: #114054;
-  font-weight: normal;
-}
-
 .mainScreenProfileContainer {
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .contentProfileContainer {
@@ -24,12 +20,14 @@
 .sectionOuterProfileContainer {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .sectionOuterProfileContainer .title {
   color: #114054;
   font-weight: normal;
   text-align: center;
+  text-decoration: underline;
 }
 
 .sectionProfileContainer {
@@ -40,31 +38,45 @@
   border-radius: 20px;
   padding-top: 20px;
   margin-top: 10px;
-  width: 50vh;
+  width: 30vw;
   height: 100%;
   color: #114054;
 }
 
 .contentProfileContainer img {
-  width: 18vh;
+  width: 8vw;
   aspect-ratio: 16/9;
   object-fit: contain;
 }
 
 .sectionProfileContainer input[type="text"],
-input[type="password"] {
+.sectionProfileContainer input[type="password"] {
   background-color: #edebeb;
   color: #114054;
   outline: none;
   border: 0;
   padding: 10px;
-  margin-top: 5px;
-  width: 60%;
+  border-radius: 5px;
+  margin: 5px 1px;
+  width: 95%;
+  caret-color: #01b3ff;
 }
 
 .mainProfileContent {
   background-color: #edebeb;
   padding-left: 5px;
+}
+
+.mainProfileContent .wrapper input:empty {
+  background-color: #edebeb;
+  color: #114054;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 1px;
+  width: 95%;
+  cursor: default;
 }
 
 .mainProfileContent.button {
@@ -95,4 +107,22 @@ input[type="password"] {
   color: #e6e4e4;
   cursor: pointer;
   align-self: center;
+}
+
+.sectionProfileContainer .button:disabled,
+.sectionProfileContainer .changeProfileButton:disabled {
+  background-color: #dddddd; /* Light gray */
+  color: #666666; /* Dark gray */
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 882px) {
+  .sectionOuterProfileContainer {
+    flex-direction: column;
+  }
+
+  .sectionProfileContainer {
+    width: 50vw;
+    height: 50vh;
+  }
 }

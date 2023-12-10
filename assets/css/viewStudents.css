@@ -1,0 +1,94 @@
+.mainScreenViewStudentsContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1rem;
+}
+
+.contentViewStudentsContainer {
+  background-color: rgba(46, 109, 124, 0.4);
+  border-radius: 10px;
+}
+
+.contentViewStudentsContainer .mainViewStudentsContent {
+  width: 70vw;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e6e4e4;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.contentViewStudentsContainer .mainViewStudentsContent .userFullName {
+  margin-bottom: 0;
+}
+
+.userData img {
+  width: 50px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+
+.mainViewStudentsContent .userData {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.expandMore {
+  width: 50px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.rotate180.init {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-out;
+}
+
+.expandedContent a:link,
+.expandedContent a:visited {
+  color: #2e6d7c;
+}
+
+.expandedContent {
+  width: 55vw;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #e6e4e4;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.showed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 650px) {
+  .expandedContent {
+    justify-content: center;
+  }
+
+  .expandedContent .phoneNumber,
+  .expandedContent .email {
+    display: none;
+  }
+}

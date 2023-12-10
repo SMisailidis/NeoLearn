@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 html,
@@ -10,6 +12,13 @@ body {
   display: flex;
   background-color: #e6e4e4 !important;
   flex-direction: column;
+}
+
+.header-text {
+  color: #114054;
+  font-weight: normal;
+  margin-bottom: 3px;
+  text-align: center;
 }
 
 .paginationNav .pagination .page-item .page-link {

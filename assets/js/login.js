@@ -1,4 +1,8 @@
+import { fetchData } from "./eventHandler.js";
+
 $(document).ready(function () {
+  sessionStorage.clear();
+
   let form = $("#loginForm");
 
   form.on("submit", function (e) {
@@ -8,7 +12,6 @@ $(document).ready(function () {
   });
 
   const validateInput = () => {
-    sessionStorage.clear();
     const am_to_table = {
       ics: "student",
       dia: "teacher",
@@ -27,24 +30,15 @@ $(document).ready(function () {
     };
 
     if (credentials.table) {
-      $.ajax({
-        type: "POST",
-        url: "assets/Back-End/login.php",
-        data: credentials,
-        dataType: "json",
-        success: function (response) {
-          if (response.success) {
-            response.data[0].type = type;
-            delete response.data[0].Password;
-            LogIn(response.data);
-          } else {
-            alert("Query failed: " + response.message);
-          }
-        },
-        error: function (xhr, status, error) {
-          console.error("Error: " + error);
-        },
-      });
+      fetchData(jQuery, "assets/Back-End/login.php", "POST", credentials)
+        .then((data) => {
+          data.type = type;
+          delete data.Password;
+          LogIn(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     } else {
       alert("Invalid input");
     }
@@ -98,7 +92,9 @@ $(document).ready(function () {
           },
           addCourse: {
             text: "Profile Preferences",
-            url: "profile.php",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
             imgURL: "assets/images/accountInfoIcon.png",
           },
           quiz: {
@@ -122,12 +118,14 @@ $(document).ready(function () {
           },
           profilePref: {
             text: "Profile Preferences",
-            url: "profile.php",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
             imgURL: "assets/images/accountInfoIcon.png",
           },
           viewStud: {
             text: "View Students",
-            url: "viewStud.php",
+            url: "viewStuds.php",
             imgURL: "assets/images/showStudentsIcon.png",
           },
         };
@@ -148,7 +146,7 @@ $(document).ready(function () {
 
   const LogIn = (data) => {
     sessionStorage.setItem("userData", JSON.stringify(data));
-    sessionStorage.setItem("userType", data[0].type);
+    sessionStorage.setItem("userType", data.type);
     setNavList();
     setContentList();
     window.location.href = "portfolio.php";
