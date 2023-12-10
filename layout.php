@@ -20,23 +20,23 @@
         <link rel="stylesheet" href="assets/css/userHeader.css">
         <link rel="stylesheet" href="assets/css/portfolio.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
-        <link rel="stylesheet" href="assets/css/viewCourses.css">
-        <link rel="stylesheet" href="assets/css/editCourse.css">
-        <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
-        <link rel="stylesheet" href="assets/css/viewChapterDetails.css">
-        <link rel="stylesheet" href="assets/css/addChapter.css">
+        <link rel="stylesheet" href="assets/css/viewStudCourses.css">
+        <link rel="stylesheet" href="assets/css/viewCourseNotes.css">
+        <link rel="stylesheet" href="assets/css/viewNotesDetails.css">
         <!---------------->
 
         <!-- JS assets -->
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
+        <script type="module" src="assets/js/eventHandler.js"></script>
+    
         <!--------------->
 
     </head>
     
     <body>
+        <?php require 'assets/partials/userHeader.php' ?>
         <?php require 'assets/partials/modal.php' ?>
         <?php require 'assets/partials/toast.php' ?>
-        <?php require 'assets/partials/userHeader.php' ?>
         <div class="nav-and-main" style="display: flex"> 
             <?php require 'assets/partials/navbar.php' ?>  

@@ -1,0 +1,149 @@
+.mainScreenViewNotesDetailsContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+
+.courseName {
+    text-align: center;
+    color: #114054;
+    padding: 10px; 
+    margin-bottom: 20px;
+    font-size:x-large;
+}
+
+.allInfo {
+    width: 70%; 
+    height: 70%; 
+    border: 2px solid #114054; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    text-align: center;
+    border-radius: 30px;
+    background-color: rgba(46, 107, 122, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noteTitle{
+    border: 2px solid #114054; 
+    color: #114054;
+    font-size: x-large;
+    width: 70%; 
+    height: 10%;
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #e8e9ea;
+
+}
+
+.descandFilesContainer{
+    flex: 1; 
+    margin-top: 10px; 
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+}
+
+.descandFilesContainer .descContainer{
+
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.descandFilesContainer .filesContainer{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.descandFilesContainer .descContainer .descBox{
+    border: 2px solid #114054; 
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    width: 90%;
+    height: 80%;
+    border-radius: 10px;
+    background-color: #e8e9ea;
+    padding: 5%;
+
+
+
+}
+
+.descandFilesContainer .filesContainer .filesBox {
+    border: 2px solid #114054; 
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 70%;
+    background-color: #e8e9ea;
+
+
+
+}
+
+
+.descandFilesContainer .filesContainer .filesBox .uploadText{
+    color: #114054;
+    font-size: 25px;
+    width:100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles{
+    width:100%;
+    height: 80%;
+}
+
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedPdf,
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedVideos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+    margin-top: 5%;
+    background-color: rgb(192, 192, 192);
+}
+
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedPdf a:link,
+.descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedVideos a:link{
+    text-decoration:underline;
+    color: #114054;
+}
+
+
+.allInfo .quizButton{
+    width: 100%;
+    height: 12%;
+}
+
+.allInfo .quizButton button{
+    font-size: 20px;
+    background-color: #114054;
+    border-radius: 20px;
+    color: #e8e9ea;
+    border:0;
+    text-align: center;
+    width: 60%;
+    height: 100%;
+}
