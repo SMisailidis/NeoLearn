@@ -23,6 +23,12 @@
         <link rel="stylesheet" href="assets/css/viewStudCourses.css">
         <link rel="stylesheet" href="assets/css/viewCourseNotes.css">
         <link rel="stylesheet" href="assets/css/viewNotesDetails.css">
+        <link rel="stylesheet" href="assets/css/addChapter.css">
+        <link rel="stylesheet" href="assets/css/editCourse.css">
+        <link rel="stylesheet" href="assets/css/viewChapterDetails.css">
+        <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
+        <link rel="stylesheet" href="assets/css/viewCourses.css">
+
         <!---------------->
 
         <!-- JS assets -->
