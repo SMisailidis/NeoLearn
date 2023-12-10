@@ -15,7 +15,7 @@ $(document).ready(function () {
             const endIndex = startIndex + pagination.itemsPerPage;
             const pageData = pagination.data.slice(startIndex, endIndex);
 
-            // Iterate over the page data and create course elements
+            // Repeat the page data and create course elements
             $.each(pageData, function (index, course) {
                 const CourseLine = $("<div>").addClass("CourseLine");
                 let courseTitle = course.Title;
