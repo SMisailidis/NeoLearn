@@ -52,7 +52,7 @@ $(document).ready(function () {
         navList = {
           Home: {
             text: "My dashboard",
-            url: "portofolio.php",
+            url: "portfolio.php",
             imgURL: "fa-solid fa-house-chimney",
           },
           AvailCourses: {
@@ -78,7 +78,7 @@ $(document).ready(function () {
         navList = {
           Home: {
             text: "My dashboard",
-            url: "portofolio.php",
+            url: "portfolio.php",
             imgURL: "fa-solid fa-house-chimney",
           },
           Courses: {
