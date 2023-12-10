@@ -1,5 +1,4 @@
 <?php require 'layout.php' ?>
-<main>
     <h1 class="header-text">Edit Course</h1>
     <div class="editCourseContainer">
         <form id="editCourseForm" class="title-desc-container">

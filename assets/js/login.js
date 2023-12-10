@@ -83,12 +83,12 @@ $(document).ready(function () {
           availCourses: {
             text: "Available Courses",
             url: "availCourses.php",
-            imgURL: "assets/images/accountInfoIcon.png",
+            imgURL: "assets/images/allCoursesIcon.png",
           },
           courses: {
             text: "My courses",
             url: "viewStudCourses.php",
-            imgURL: "assets/images/accountInfoIcon.png",
+            imgURL: "assets/images/ViewCoursesIcon.png",
           },
           addCourse: {
             text: "Profile Preferences",
@@ -100,7 +100,7 @@ $(document).ready(function () {
           quiz: {
             text: "Quiz",
             url: "quiz.php",
-            imgURL: "assets/images/accountInfoIcon.png",
+            imgURL: "assets/images/quizIcon.png",
           },
         };
         break;
@@ -108,8 +108,8 @@ $(document).ready(function () {
         contentList = {
           viewAll: {
             text: "View All Courses",
-            url: "viewStudCourses.php",
-            imgURL: "assets/images/showStudentsIcon.png",
+            url: "viewCourses.php",
+            imgURL: "assets/images/ViewCoursesIcon.png",
           },
           addCourse: {
             text: "Add Course",

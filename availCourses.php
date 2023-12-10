@@ -1,6 +1,5 @@
 
 <?php require 'layout.php' ?>
-            <main class="mainScreenAvailCoursesContainer">
                 <section class="contentAvailCoursesContainer">
                     <h1 class="header-text">Available Courses</h1>
                     <table class="table table-bordered table-hover">

@@ -1,6 +1,5 @@
 <?php require 'layout.php' ?>
-<main>
-    <div class="addContainer">
+
         <h1 class="header-text">Add a Chapter</h1>
         <form class="addDetails" method="POST">
             <label for="chapterTitle">Chapter Title</label>
@@ -17,8 +16,7 @@
 
             <input class="addSubmit-btn" type="submit" value="Confirm" />
         </form>
-    </div>
-</main>
+    </main>
 <script type="module" src="assets/js/addChapter.js"></script>
 </div>
 </body>

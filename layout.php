@@ -24,6 +24,21 @@
         <link rel="stylesheet" href="assets/css/availCourses.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
         <link rel="stylesheet" href="assets/css/viewStudents.css">
+        <link rel="stylesheet" href="assets/css/profile.css">
+        <link rel="stylesheet" href="assets/css/globals.css">
+        <link rel="stylesheet" href="assets/css/navbar.css">
+        <link rel="stylesheet" href="assets/css/userHeader.css">
+        <link rel="stylesheet" href="assets/css/portfolio.css">
+        <link rel="stylesheet" href="assets/css/addCourse.css">
+        <link rel="stylesheet" href="assets/css/viewStudCourses.css">
+        <link rel="stylesheet" href="assets/css/viewCourseNotes.css">
+        <link rel="stylesheet" href="assets/css/viewNotesDetails.css">
+        <link rel="stylesheet" href="assets/css/addChapter.css">
+        <link rel="stylesheet" href="assets/css/editCourse.css">
+        <link rel="stylesheet" href="assets/css/viewChapterDetails.css">
+        <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
+        <link rel="stylesheet" href="assets/css/viewCourses.css">
+        <link rel="stylesheet" href="assets/css/quiz.css">
         <!---------------->
 
         <!-- JS assets -->
@@ -40,3 +55,4 @@
         <?php require 'assets/partials/userHeader.php' ?>
         <div class="nav-and-main" style="display: flex"> 
             <?php require 'assets/partials/navbar.php' ?>  
+            <main class="mainContainer">

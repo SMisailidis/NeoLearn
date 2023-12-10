@@ -1,157 +1,162 @@
-.mainScreenChapterDetailsContainer{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
+.Info {
+  width: 50vw;
+  height: 50vh;
+  border: 2px solid #114054;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgba(46, 107, 122, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Info{
-    width: 50vw;
-    height: 50vh;
-    border: 2px solid #114054;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 30px;
-    background-color: rgba(46, 107, 122, 0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.courseNameT {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  color: #114054;
+  padding: 10px;
+  font-size: x-large;
 }
 
-.courseNameT{
-    width: 100%;
-    height: 15%;
-    text-align: center;
-    color: #114054;
-    padding: 10px;
-    font-size: x-large;
+.noteTitleT {
+  border: 2px solid #114054;
+  color: #114054;
+  font-size: x-large;
+  width: 70%;
+  height: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #e8e9ea;
+  resize: none;
+  outline: none;
+  overflow: hidden;
 }
 
-.noteTitleT{
-    border: 2px solid #114054;
-    color: #114054;
-    font-size: x-large;
-    width: 70%;
-    height: 100%;
-    margin-bottom: 10px;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #e8e9ea; 
-    resize: none;
-    outline: none;
-    overflow: hidden;
+.descFilesContainerT {
+  flex: 1;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
-.descFilesContainerT{
-    flex: 1;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
+.descFilesContainerT .descContainerT {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.descFilesContainerT .descContainerT{
-    width: 55%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.descFilesContainerT .filesContainerT {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.descFilesContainerT .filesContainerT{
-    width: 45%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.descFilesContainerT .descContainerT .descBoxT {
+  border: 2px solid #114054;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: #e8e9ea;
+  padding: 5%;
+  outline: none;
+  resize: none;
+  overflow: hidden;
 }
 
-.descFilesContainerT .descContainerT .descBoxT{
-    border: 2px solid #114054;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 90%;
-    height: 80%;
-    border-radius: 10px;
-    background-color: #e8e9ea;
-    padding: 5%;
-    outline: none;
-    resize: none;
-    overflow: hidden;
+.descFilesContainerT .filesContainerT .filesBoxT {
+  border: 2px solid #114054;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 70%;
+  background-color: #e8e9ea;
+}
+.descFilesContainerT .filesContainerT .filesBoxT .inputFileWrapper {
+  margin: 1px;
 }
 
-.descFilesContainerT .filesContainerT .filesBoxT{
-    border: 2px solid #114054;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80%;
-    width: 70%;
-    background-color: #e8e9ea;
-}
-.descFilesContainerT .filesContainerT .filesBoxT .inputFileWrapper{
-    margin: 1px;
+.descFilesContainerT .filesContainerT .filesBoxT .uploadTextT {
+  color: #114054;
+  font-size: 25px;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.descFilesContainerT .filesContainerT .filesBoxT .uploadTextT{
-    color: #114054;
-    font-size: 25px;
-    width: 100%;
-    height: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-.descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-} 
+.descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
 
 .descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT .uploadedPdfT,
-.descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT .uploadedVideosT{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 15%;
-    margin-top: 5%;
-    background-color: rgb(192, 192, 192);
-} 
-
-.descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT .uploadedPdfT a:link,
-.descFilesContainerT .filesContainerT .filesBoxT .uploadedFilesT .uploadedVideosT a:link{
-    text-decoration: none;
-    color: #114054;
-} 
-
-.Info .chapterButtons{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 12%;
+.descFilesContainerT
+  .filesContainerT
+  .filesBoxT
+  .uploadedFilesT
+  .uploadedVideosT {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 15%;
+  margin-top: 5%;
+  background-color: rgb(192, 192, 192);
 }
 
-.Info .chapterButtons button{
-    font-size: 20px;
-    background-color: #114054;
-    border-radius: 20px;
-    color: #e8e9ea;
-    border: none;
-    text-align: center;
-    width: 40%;
-    height: 100%;
+.descFilesContainerT
+  .filesContainerT
+  .filesBoxT
+  .uploadedFilesT
+  .uploadedPdfT
+  a:link,
+.descFilesContainerT
+  .filesContainerT
+  .filesBoxT
+  .uploadedFilesT
+  .uploadedVideosT
+  a:link {
+  text-decoration: none;
+  color: #114054;
 }
 
-.Info .chapterButtons button:hover{
-    background-color: #e8e9ea;
-    color: #114054;
-    cursor: pointer;
+.Info .chapterButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 12%;
+}
+
+.Info .chapterButtons button {
+  font-size: 20px;
+  background-color: #114054;
+  border-radius: 20px;
+  color: #e8e9ea;
+  border: none;
+  text-align: center;
+  width: 40%;
+  height: 100%;
+}
+
+.Info .chapterButtons button:hover {
+  background-color: #e8e9ea;
+  color: #114054;
+  cursor: pointer;
 }

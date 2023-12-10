@@ -1,18 +1,4 @@
-
-*{
-  box-sizing: border-box;
-}
-
-.mainScreenViewStudCoursesContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-  padding: 0 10px;
-}
-
-.header-text{
+.header-text {
   font-size: 30px;
 }
 
@@ -28,26 +14,22 @@
   height: 100%;
   padding: 25px 0;
   gap: 10px;
-  
-
 }
 
 .rectangle {
   display: flex;
   align-items: center;
-  width: 90%; 
-  height: 50px;   
-  background-color:#e8e9ea;
+  width: 90%;
+  height: 50px;
+  background-color: #e8e9ea;
   box-sizing: border-box;
   text-align: center;
   position: relative;
 }
 
-
 .parent > .rectangle > .viewCourse > img:hover::before {
   transform: translateY(0);
 }
-
 
 .rectangle .courseTitle {
   width: 95%;
@@ -66,12 +48,12 @@
   transition: 0.5s ease-in-out;
 }
 
-.rectangle .checkBoxCont{
+.rectangle .checkBoxCont {
   width: fit-content;
   height: fit-content;
 }
 
-.rectangle .checkBoxCont input[type="checkbox"]{
+.rectangle .checkBoxCont input[type="checkbox"] {
   transform: scale(1.5);
   accent-color: #114054;
 }
@@ -86,25 +68,20 @@
   transition: 0.5s ease-in-out;
 }
 
-
 .rectangle a:link,
 .rectangle a:visited {
- text-decoration: none;
+  text-decoration: none;
   color: #114054;
 }
 
-
 .button-container {
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin-left: auto;
-  height: 50px; 
-
+  height: 50px;
 }
 
-
-
-.right-child button{
+.right-child button {
   font-size: 16px;
   height: 40px;
   width: 140px;
@@ -112,19 +89,18 @@
   background-color: #114054;
   color: #e8e9ea;
   text-align: center;
-  border:0;
-    
+  border: 0;
 }
 
 .right-child {
   padding: 25px 0;
   display: flex;
-  justify-content: space-around ;
+  justify-content: space-around;
   width: 100%;
 }
 
-@media only screen and (max-width: 768px){
-    .rectangle{
-      height: 40px;
-    }
+@media only screen and (max-width: 768px) {
+  .rectangle {
+    height: 40px;
+  }
 }

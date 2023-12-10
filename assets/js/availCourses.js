@@ -1,6 +1,6 @@
 import { fetchData } from "./eventHandler.js";
 
-import modal from "./modal.js"
+import modal from "./modal.js";
 import toast from "./toast.js";
 import pagination from "./pagination.js";
 
@@ -10,7 +10,7 @@ $(document).ready(function () {
   let selectedCourseData = {};
 
   const stud_ID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
-  
+
   const checkEnrolledCourses = () => {
     $.each(enrolledInCourses, function (index, row) {
       $("#" + row.Course_ID)
@@ -58,7 +58,7 @@ $(document).ready(function () {
         pagination.renderElement.append(tr);
       });
       checkEnrolledCourses();
-    })
+    });
   };
 
   const fetchCourses = () => {
@@ -72,7 +72,6 @@ $(document).ready(function () {
         pagination.setData(data);
         renderTable();
         pagination.updatePaginationLinks();
-
       })
       .catch((error) => {
         console.error(error);
@@ -83,7 +82,7 @@ $(document).ready(function () {
     const input = $(`input[id=${selectedCourse}]`);
     const state = input.is(":checked");
     input.prop("checked", !state);
-  })
+  });
 
   modal.onClickSaveHandler(() => {
     fetchData(
@@ -101,7 +100,7 @@ $(document).ready(function () {
       .catch((error) => {
         console.error(error);
       });
-  })
+  });
 
   $(".tableBody").on("change", ":checkbox", function () {
     let course_ID = this.id;
@@ -114,7 +113,6 @@ $(document).ready(function () {
       : `Are you sure you want to enroll in:
     ${course_Title} (${course_ID})?`;
 
-
     selectedCourseData = {
       state: state,
       Course_ID: course_ID,
@@ -126,12 +124,12 @@ $(document).ready(function () {
     modal.setContent(text);
   });
 
-  modal.setTitle("Course Enrolment")
-  modal.setButtonsText("No", "Yes")
-  toast.setContent("The changes have been applied successfully!")
-  pagination.setPaginationElement($(".tableBody"))
-  
+  modal.setTitle("Course Enrolment");
+  modal.setButtonsText("No", "Yes");
+  toast.setContent("The changes have been applied successfully!");
+  pagination.setPaginationElement($(".tableBody"));
+
   fetchCourses();
-  pagination.onClickHandler(renderTable)
+  pagination.onClickHandler(renderTable);
   initCheckedCourses();
 });

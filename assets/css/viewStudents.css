@@ -1,11 +1,8 @@
-.mainScreenViewStudentsContainer {
-  height: 100%;
-  width: 100%;
+.viewStudsInnerContent {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-grow: 1;
   gap: 1rem;
 }
 

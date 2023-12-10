@@ -4,8 +4,15 @@ import toast from "./toast.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
+  // Retrieve teacher ID from session storage
+  const teacherID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
+
+  // Hide confirmation buttons initially
+  $("#cancelB").hide();
+  $("#confirmB").hide();
+
   // Function to render courses based on pagination data
-  function renderCourses() {
+  const renderCourses = () => {
     pagination.renderContent(() => {
       pagination.renderElement.empty();
 
@@ -47,7 +54,9 @@ $(document).ready(function () {
         // Create a checkbox for course selection
         const checkbox = $("<input>")
           .attr("type", "checkbox")
-          .val(course.ID)
+          .attr("id", course.ID)
+          .attr("value", course.ID)
+          .on("change", onChangeHandler)
           .addClass("courseCheckbox");
 
         // Append elements to the course line
@@ -55,10 +64,10 @@ $(document).ready(function () {
         pagination.renderElement.append(CourseLine);
       });
     });
-  }
+  };
 
   // Function to update the course list based on teacher ID
-  function updateCourseList(teacherId) {
+  const updateCourseList = (teacherId) => {
     fetchData($, "assets/Back-End/getCourses.php", "POST", {
       teacher_id: teacherId,
     })
@@ -71,31 +80,16 @@ $(document).ready(function () {
       .catch((error) => {
         console.log("Error fetching courses: " + error);
       });
-  }
-
-  // Retrieve teacher ID from session storage
-  const teacherID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
-
-  // Initial update of the course list
-  updateCourseList(teacherID);
-
-  // Hide confirmation buttons initially
-  $("#cancelB").hide();
-  $("#confirmB").hide();
+  };
 
   // Function to update the state of the confirm button based on checkbox selection
-  function updateConfirmButtonState() {
+  const updateConfirmButtonState = () => {
     const atLeastOneCheckboxChecked = $(".courseCheckbox:checked").length > 0;
     $("#confirmB").prop("disabled", !atLeastOneCheckboxChecked);
-  }
-
-  // Event listener for checkbox change
-  $(".courseCheckbox").on("change", function () {
-    updateConfirmButtonState();
-  });
+  };
 
   // Function to reset the page state
-  function resetPage() {
+  const resetPage = () => {
     $(".Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
 
     // Uncheck checkboxes if cancel button is clicked
@@ -104,7 +98,7 @@ $(document).ready(function () {
     }
 
     updateConfirmButtonState();
-  }
+  };
 
   // Event listeners for edit buttons
   $(".ENbuttons").on("click", function () {
@@ -117,18 +111,6 @@ $(document).ready(function () {
     resetPage();
     updateConfirmButtonState();
   });
-
-  // Set pagination element and click handler
-  pagination.setPaginationElement($(".CoursesList"));
-  pagination.onClickHandler(renderCourses);
-
-  // Set toast content for course removal success
-  toast.setContent("Courses removed successfully!");
-
-  // Set modal title, content, and button text
-  modal.setTitle("Delete Courses");
-  modal.setContent("Are you sure you want to delete the selected courses?");
-  modal.setButtonsText("Cancel", "Remove");
 
   // Event handler for modal close
   modal.onClickCloseHandler(function cancelRemoval() {
@@ -170,4 +152,24 @@ $(document).ready(function () {
   $("#confirmB").click(function () {
     modal.openModal();
   });
+
+  // Event listener for checkbox change
+  const onChangeHandler = () => {
+    updateConfirmButtonState();
+  };
+
+  // Set toast content for course removal success
+  toast.setContent("Courses removed successfully!");
+
+  // Set modal title, content, and button text
+  modal.setTitle("Delete Courses");
+  modal.setContent("Are you sure you want to delete the selected courses?");
+  modal.setButtonsText("Cancel", "Remove");
+
+  // Initial update of the course list
+  updateCourseList(teacherID);
+
+  // Set pagination element and click handler
+  pagination.setPaginationElement($(".CoursesList"));
+  pagination.onClickHandler(renderCourses);
 });

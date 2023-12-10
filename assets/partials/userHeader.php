@@ -6,7 +6,7 @@
                 </a>
             </div>
             <div class="userInfo">
-                <span>Welcome, Pavlos!</span>
+                <span class="headerUserName"></span>
                 <i class="fa-solid fa-user"></i>
             </div>
         </header>

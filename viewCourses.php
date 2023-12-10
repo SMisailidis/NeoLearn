@@ -1,9 +1,8 @@
 <?php require 'layout.php' ?>
 <main>
     <h1 class="header-text">My Courses</h1>
-    <div class="container">
-        <div class="CoursesList">
-            
+    <div class="viewCoursesContainer">
+        <div class="CoursesList">  
         </div>  
         <?php require 'assets/partials/pagination.php' ?>
         <div class="button-container">
