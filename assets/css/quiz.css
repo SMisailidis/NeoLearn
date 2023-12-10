@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    border: 2px solid black;
+}
+
+.totalPointsWrapper{
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+
+}
+
+.totalPointsWrapper .totalPoints{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    border-bottom: 1px solid #2e6d7c;
+    color: #2e6d7c;
+}
+.quizContainer {
+    padding: 100px 0 10px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.startingPage {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 500px;
+    height: auto;
+    background-color: #2e6d7c;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #00000033;
+    color: #e6e4e4;
+    padding: 50px 0;
+    font-size: 20px;
+}
+
+.startingPage h1{
+    font-size: 30px;
+}
+
+.startingPage p{
+    font-size: 18px;
+}
+
+
+
+.startingPage .startBtn {
+    width: 250px;
+    padding: 10px 0;
+    border-radius: 25px;
+    background-color: #114054;
+    color: #e6e4e4;
+    border: none;
+    font-size: 20px;
+}
+
+
+.questionPage {
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    min-height: 500px;
+    height: auto;
+    background-color: #2e6d7c;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #e6e4e4;
+    display: none;
+}
+
+.questionPage h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    min-height: 200px;
+    height: auto;
+    width: 100%;
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options input[type="radio"]:checked+label {
+    background-color: #c7c5c5;
+}
+
+.options label {
+    cursor: pointer;
+    text-align: center;
+    background-color: #e6e4e4;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #114054;
+    width: 90%;
+    padding: 20px 0;
+    text-wrap: wrap;
+    transition: 0.2s ease-in-out;
+}
+
+.options label:hover {
+    scale: 1.01;
+}
+
+.actionBtns {
+    min-height: 100px;
+    height: auto;
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.actionBtns button {
+    width: max(25%, 200px);
+    padding: 10px 0;
+    border-radius: 25px;
+    background-color: #114054;
+    color: #e6e4e4;
+    border: none;
+    font-size: 17px;
+}
+
+
+
+
+.tableWrapper {
+    display: none;
+    align-items: center;
+    padding: 50px 0;
+}
+
+
+.tableWrapper table {
+    height: auto;
+    min-height: 450px;
+    width: 100%;
+    background-color: #2e6d7c;
+    color: #e6e4e4;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* .tableWrapper table tbody {
+    background-color: #2e6d7c;
+    color: #e6e4e4;
+}
+ */
+.tableWrapper table thead{
+    height: auto;
+}
+
+.tableWrapper table th {
+    padding: 15px;
+    width: 33.3%;
+    border-bottom: 1px solid #e6e4e4;
+    border-top: 1px solid #e6e4e4;
+
+}
+
+.tableWrapper table td {
+    padding: 0 10px;
+}
+
+.tableWrapper table td+td {
+    border-left: 1px solid #e6e4e4;
+}
+
+.tableWrapper table tr+tr{
+    border-top: 1px solid #e6e4e4;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+    .totalPointsWrapper .totalPoints{
+        font-size: 20px;
+    }
+
+    main{
+        padding: 20px;
+    }
+
+    .totalPoints{
+        font-size: 25px;
+    }
+
+    .startingPage h1 {
+        font-size: 25px;
+    }
+
+    .startingPage p{
+        font-size: 15px;
+    }
+
+
+    .questionPage h2{
+        font-size: 25px;
+    }
+
+    .questionPage .actionBtns button{
+        font-size: 15px;
+        width: 40%;
+    }
+
+    .options {
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 10px;
+    }
+
+    .options label {
+        width: 90%;
+        padding: 15px 0;
+    }
+
+    .options > label:not(:last-child){
+        margin-bottom: 15px;
+    }
+
+    .actionBtns {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .actionBtns button {
+        width: 50%;
+        margin: 10px 0;
+    }
+
+    .tableWrapper table th{
+        font-size: 15px;
+        padding: 10px 5px;
+        line-height: 20px;
+    }
+    .tableWrapper table tbody{
+        font-size: 12px;
+    }
+
+    .tableWrapper table td{
+        padding: 10px 5px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .startingPage .startBtn{
+        width: 50%;
+        min-width: 150px;
+        padding: 5px 0;
+    }
+
+    .questionPage h2{
+        font-size: 20px;
+    }
+
+    .questionPage .actionBtns button{
+        width: 70%;
+        padding: 5px 0;
+    }
+
+
+    .options{
+        padding: 10px 0;
+    }
+
+    .options label{
+        width: 83%;
+        padding: 5px;
+    }
+    
+}
