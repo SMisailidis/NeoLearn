@@ -29,10 +29,14 @@
     
 }
 
+.chaptersContainer{
+    width: 100%;
+    height: 60%;
+}
+
 .down-part{
-    position: absolute;
-    bottom: 0;
-    width:700px;
+   
+    width:100%;
     height: 40%;
     display: flex;
     justify-content: center;

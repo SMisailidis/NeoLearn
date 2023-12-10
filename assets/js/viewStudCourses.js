@@ -4,7 +4,6 @@ import modal from './modal.js';
 import toast from './toast.js';
 import pagination from "./pagination.js";
 
-
 $(document).ready(function () {
 
     // Function to render courses on the page
@@ -80,8 +79,11 @@ $(document).ready(function () {
 
         // Handling confirm button click
         $("#confirmBtn").on("click", function () {
+            
             modal.openModal();
         });
+
+       
 
         // Handling pagination
         pagination.setPaginationElement($(".left-child"));
@@ -121,6 +123,7 @@ $(document).ready(function () {
             $(".viewCourse").toggle();
             $(".checkBoxCont input[type='checkbox']").toggle();
             $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+
             modal.closeModal();
             toast.showToast();
         });
@@ -141,8 +144,3 @@ $(document).ready(function () {
     const studentID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
     updateEnrolledCourseList(studentID);
 });
-
-
-
-
-
