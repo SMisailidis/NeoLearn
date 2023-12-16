@@ -44,8 +44,9 @@ $(document).ready(function () {
                     const uploadedVideos = $("<div>").addClass("uploadedVideos");
 
                     // Create links for PDF and videos
-                    const pdfLink = $("<a>").attr("href", curriculum.Pdf_Link).text("curriculum.Pdf_Link");
-                    const videoLink = $("<a>").attr("href", curriculum.Video_Link).text("curriculum.Video_Link");
+                    const pdfLink = $("<a>").attr("href", curriculum.Pdf_Link).text("curriculum.Pdf_Link");   
+                    const videoLink = $("<a>").attr("href", "videoDisplay.php").text("curriculum.Video_Link");
+                    sessionStorage.setItem("video", curriculum.Video_Link);
 
                     // Append links to their respective containers
                     uploadText.appendTo(filesBox);
@@ -70,7 +71,14 @@ $(document).ready(function () {
             .catch((error) => {
                 console.log(error);
             });
+
+            
+
+    
     }
+
+    
+    
 
     // Call the function to update notes details list
     updateNotesDetailsList();

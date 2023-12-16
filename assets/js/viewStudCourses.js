@@ -1,5 +1,5 @@
 //Imports
-import { fetchData } from './EventHandler.js';
+import { fetchData } from './eventHandler.js';
 import modal from './modal.js';
 import toast from './toast.js';
 import pagination from "./pagination.js";
