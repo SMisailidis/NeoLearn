@@ -104,6 +104,7 @@
   background-color: #dddddd; /* Light gray */
   color: #666666; /* Dark gray */
   cursor: not-allowed;
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 882px) {

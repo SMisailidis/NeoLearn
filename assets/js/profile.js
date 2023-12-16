@@ -48,9 +48,13 @@ $(document).ready(function () {
     return sortedString1 === sortedString2;
   };
 
-  const changePasswordHandler = (e) => {};
+  const changePasswordHandler = (e) => {
+    window.location.href = "changePassword.php";
+  };
 
-  const viewListHandler = (e) => {};
+  const viewListHandler = (e) => {
+    window.location.href = "viewCourses.php";
+  };
 
   const validityCheck = (inputs) => {
     inputs.each(function () {

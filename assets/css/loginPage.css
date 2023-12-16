@@ -1,117 +1,123 @@
-
-
 main {
-    flex: 1;
-    padding: 25px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-
+  flex: 1;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .formContainer {
-    height: 550px;
-    max-width: 1500px;
-    /* margin: auto; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2e6d7c;
-    border-radius: 5px;
+  height: 550px;
+  max-width: 1500px;
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e6d7c;
+  border-radius: 5px;
 }
 
 .formContainer h2 {
-    width: 80%;
-    text-align: center;
-    color: #e6e4e4;
-    margin: auto 0;
-
+  width: 80%;
+  text-align: center;
+  color: #e6e4e4;
+  margin: auto 0;
 }
 
 .formContainer form {
-    width: 100%;
-    padding: 4rem 0;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 4px solid #e6e4e4;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-
-
+  width: 100%;
+  padding: 4rem 0;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid #e6e4e4;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 form .inputContainer {
-    height: 100px;
-    display: inline-flex;
-    flex-direction: column;
-    margin-bottom: 25px;
+  height: 100px;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: 25px;
 }
 
 .inputContainer label {
-    color: #e6e4e4;
-    font-size: 18px;
+  color: #e6e4e4;
+  font-size: 18px;
 }
 
 .inputContainer input {
-    width: 100%;
-    padding-right: 40px;
-    padding-left: 30px;
-    border: none;
-    border-radius: 8px;
-    background-color: #e6e4e4;
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e6e4e4;
 }
 
 .inputContainer input:focus {
-    box-shadow: none;
-
+  box-shadow: none;
 }
 
-.inputContainer .fa-lock, .fa-user {
-    font-size: 20px;
-    position: absolute;
-    top: 43%;
-    left: 1%;
-    color: #2e6d7c;
+.inputContainer .fa-lock,
+.fa-user {
+  font-size: 20px;
+  position: absolute;
+  top: 43%;
+  left: 1%;
+  color: #2e6d7c;
 }
 
 .inputContainer .passwordButton {
-    font-size: 23px;
-    width: 40px;
-    position: absolute;
-    top: 35%;
-    right: 3%;
-    color: #2e6d7c;
-    background-color: inherit;
-    border: none;
+  font-size: 23px;
+  width: 40px;
+  position: absolute;
+  top: 35%;
+  right: 3%;
+  color: #2e6d7c;
+  background-color: inherit;
+  border: none;
 }
 
 .inputContainer a {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    color: #e6e4e4;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #e6e4e4;
 }
 
 .inputContainer a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 form input[type="submit"] {
-    margin-top: 40px;
-    width: max(30%, 180px);
-    padding: 10px 0;
-    border: none;
-    border-radius: 20px;
-    background-color: #114054;
-    color: #e6e4e4;
-    font-size: large;
-    transition: ease-in-out 0.5s;
+  margin-top: 40px;
+  width: max(30%, 180px);
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #114054;
+  color: #e6e4e4;
+  font-size: large;
+  transition: ease-in-out 0.5s;
 }
 
 form input[type="submit"]:hover {
-    box-shadow: 0 5px 15px #2e6d7c, 0 2px 5px #000000;
+  box-shadow: 0 5px 15px #2e6d7c, 0 2px 5px #000000;
+}
+
+.loginLabelError {
+  color: red !important;
+}
+
+.inputContainer .iconError {
+  color: red !important;
+}
+
+.loginSubmitError {
+  background-color: red !important;
 }

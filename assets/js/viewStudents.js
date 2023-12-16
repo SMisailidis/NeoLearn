@@ -3,6 +3,8 @@ import { fetchData } from "./eventHandler.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
+  let id = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
+
   function expandMore() {
     if (!$(this).hasClass("rotate180")) {
       $(this).toggleClass("rotate180");
@@ -92,12 +94,9 @@ $(document).ready(function () {
   };
 
   const fetchStudents = () => {
-    fetchData(
-      jQuery,
-      "assets/Back-End/retrieveAllStudents.php",
-      "POST",
-      undefined
-    )
+    fetchData(jQuery, "assets/Back-End/retrieveAllStudents.php", "POST", {
+      ID: id,
+    })
       .then((data) => {
         pagination.setData(data);
         renderContent();

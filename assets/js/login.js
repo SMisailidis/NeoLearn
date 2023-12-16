@@ -5,6 +5,13 @@ $(document).ready(function () {
 
   let form = $("#loginForm");
 
+  $("#username, #password").on("input", function () {
+    $(".form-label").removeClass("loginLabelError");
+    $(".fa-solid").removeClass("iconError");
+    $("#submit").removeClass("loginSubmitError");
+    $(".spanError").css("display", "none");
+  });
+
   form.on("submit", function (e) {
     e.preventDefault();
 
@@ -40,7 +47,10 @@ $(document).ready(function () {
           console.error(error);
         });
     } else {
-      alert("Invalid input");
+      $(".form-label").addClass("loginLabelError");
+      $(".fa-solid").addClass("iconError");
+      $("#submit").addClass("loginSubmitError");
+      $(".spanError").css("display", "inherit");
     }
   };
 

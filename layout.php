@@ -39,6 +39,7 @@
         <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
         <link rel="stylesheet" href="assets/css/viewCourses.css">
         <link rel="stylesheet" href="assets/css/quiz.css">
+        <link rel="stylesheet" href="assets/css/changePassword.css">
         <!---------------->
 
         <!-- JS assets -->
