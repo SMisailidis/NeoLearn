@@ -1,0 +1,10 @@
+
+.videoClass{
+    width: 55%;
+    height: 55%;
+    border-radius: 10px;
+    background-color: rgba(46, 107, 122, 0.4);
+    display: inline-block; 
+    box-shadow: 10px 5px 8px 2px rgba(17, 64, 84, 0.2);
+    border: 2px solid #114054;  
+}
