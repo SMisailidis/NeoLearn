@@ -81,6 +81,11 @@
   height: 50px;
 }
 
+#confirmBtn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
 .right-child button {
   font-size: 16px;
   height: 40px;

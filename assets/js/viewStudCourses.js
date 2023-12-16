@@ -28,7 +28,7 @@ $(document).ready(function () {
                     .attr("id", course.ID)
                     .append($("<img>").attr("src", "./assets/images/whiteRightarrow.png").attr("alt", "arrow").addClass('viewCourseImage'));
                 const checkBoxCont = $("<div>").addClass("checkBoxCont");
-                const rmvCheckBox = $('<input type="checkbox">').val(course.ID);
+                const rmvCheckBox = $('<input type="checkbox">').addClass("removeCheckBox").val(course.ID);
 
                 checkBoxCont.append(rmvCheckBox);
                 courseDiv.append(courseTitle).append(viewCourse).append(checkBoxCont);
@@ -47,6 +47,14 @@ $(document).ready(function () {
                 pagination.setData(response);
                 renderCourses();
                 pagination.updatePaginationLinks();
+
+                // Add event listener for checkbox changes
+                $(".checkBoxCont input[type='checkbox']").on("change", function () {
+                    updateConfirmButtonState();
+                });
+
+                // Initial check for confirm button state
+                updateConfirmButtonState();
             })
             .catch((error) => {
                 console.log("Error fetching enrolled courses: " + error);
@@ -75,11 +83,11 @@ $(document).ready(function () {
             $(".viewCourse").toggle();
             $(".checkBoxCont input[type='checkbox']").toggle();
             $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+            updateConfirmButtonState(); // Update confirm button state on cancel
         });
 
         // Handling confirm button click
         $("#confirmBtn").on("click", function () {
-            
             modal.openModal();
         });
 
@@ -87,8 +95,6 @@ $(document).ready(function () {
         $("#addBtn").on("click", function () {
             window.location.href="availCourses.php";      
         });
-
-       
 
         // Handling pagination
         pagination.setPaginationElement($(".left-child"));
@@ -142,7 +148,14 @@ $(document).ready(function () {
             $(".viewCourse").toggle();
             $(".checkBoxCont input[type='checkbox']").toggle();
             $(".checkBoxCont input[type='checkbox']").prop("checked", false);
+            updateConfirmButtonState(); // Update confirm button state on modal close
         });
+    }
+
+    // Function to update the state of the confirm button based on checkbox selection
+    function updateConfirmButtonState() {
+        const atLeastOneCheckboxChecked = $(".checkBoxCont input[type='checkbox']:checked").length > 0;
+        $("#confirmBtn").prop("disabled", !atLeastOneCheckboxChecked);
     }
 
     // Fetching student ID from session storage and updating enrolled courses
