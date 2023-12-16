@@ -3,7 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Elevate your education with Neo Learn. 
+        Immerse yourself in a sophisticated learning environment curated for excellence.
+        Access expert-led courses, engage with accomplished instructors, and refine your skills through interactive quizes. 
+        Navigate a vast repository of educational resources, including meticulously crafted files. 
+        Join a distinguished community of students and educators committed to advancing knowledge and fostering academic success.
+        Start your educational journey with precision and purpose at Neo Learn.">
+        <meta name="keywords" content="Online education, E-learning, Distance learning, Expert-led courses, 
+        Academic excellence, Interactive quizes, Educational resources, Professional development, 
+        Distinguished instructors, Curriculum diversity, Skill development, Lifelong learning, Academic community, 
+        Digital learning, Knowledge advancement, Online classes, Learning platform, Virtual classroom,
+        Student engagement, Educational files">
+        <meta name="author" content="Neo Learn Developers">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#114054">
+
         <title>NeoLearn</title>
+
+        <meta property="og:title" content="Neo Learn">
+        <meta property="og:description" content="Discover a world of knowledge with our online education platform. 
+        Immerse yourself in expert-led courses, interactive quizzes, and a diverse array of educational resources. 
+        Join an academic community dedicated to lifelong learning and skill development. Elevate your education with us!">
+        <meta property="og:url" content="http://localhost/NeoLearn">
+        <meta property="og:type" content="website">
+
+
+
         <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
 
         <!-- Vendor assets -->
@@ -39,6 +64,7 @@
         <link rel="stylesheet" href="assets/css/viewCourseChapters.css">
         <link rel="stylesheet" href="assets/css/viewCourses.css">
         <link rel="stylesheet" href="assets/css/quiz.css">
+        <link rel="stylesheet" href="assets/css/videoDisplay.css">
         <!---------------->
 
         <!-- JS assets -->
