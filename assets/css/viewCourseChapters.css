@@ -23,6 +23,10 @@
   justify-content: space-between;
 }
 
+.chapters_central-div .pagination{
+  justify-content: center;
+}
+
 .chapterRectangle {
   background-color: #e8e9ea;
   display: flex;

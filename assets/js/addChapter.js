@@ -31,11 +31,11 @@ $(document).ready(function () {
   };
 
   modal.onClickCloseHandler(() => {
-    resetInputs();
+    location.reload();
   });
 
   modal.onClickSaveHandler(() => {
-    chapterData.Pdf_Link = "example.pdf";
+    chapterData.Pdf_Link = "https://example.com/pdf19";
 
     fetchData(jQuery, "assets/Back-End/addChapter.php", "POST", chapterData)
       .then((success) => {
@@ -56,5 +56,5 @@ $(document).ready(function () {
   modal.setTitle("Add Chapter");
   modal.setContent("Do you want to publish the Chapter?");
   modal.setButtonsText("No", "Yes");
-  toast.setContent("Published successfully!");
+  toast.setContent("Published Chapter successfully!");
 });

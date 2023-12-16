@@ -19,6 +19,6 @@
             <input class="addSubmit-btn" type="submit" value="Confirm" />
         </form>
     </main>
-<script type="module" src="assets/js/addChapter.js"></script>
 </div>
+<script type="module" src="assets/js/addChapter.js"></script>
 </body>
