@@ -3,13 +3,13 @@
   border-radius: 25px;
   background-color: rgba(46, 109, 124, 0.4);
   box-shadow: 5px 5px 10px;
-  height: 60vh;
+  height: 70vh;
   width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  text-align: center;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
     -5px -5px 20px rgba(255, 255, 255, 0.5);
   padding: 30px;
@@ -54,27 +54,20 @@
 
 .editCourseContainer .bottomContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  align-self: center;
+  margin-top: 5px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.editCourseContainer .inputFileWrapper{
   align-self: center;
 }
 
-.bottomContainer #saveChanges {
-  cursor: pointer;
-  padding: 8px;
-  border: 0;
-  border-radius: 14px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-  width: 100%;
-  background-color: #114054;
-  color: #e8e9ea;
-  font-weight: bold;
-  font-size: small;
+.editCourseContainer #formFileMultiple{
+  margin-bottom: 20px;
 }
 
-.bottomContainer #saveChanges:hover {
-  background-color: #e6e4e4;
-  color: #114054;
-}
+
+
