@@ -1,5 +1,5 @@
 // Imports
-import { fetchData } from './EventHandler.js';
+import { fetchData } from './eventHandler.js';
 
 $(document).ready(function () {
 
@@ -58,9 +58,8 @@ $(document).ready(function () {
                     filesCont.appendTo(descAndFilesCont);
 
                     // Create a button container for the quiz
-                    const quizButton = $("<div>").addClass("quizButton");
-                    const button = $("<button>").text("QUIZ");
-                    button.appendTo(quizButton);
+                    const quizButton = $('<a>').addClass('quizButton').attr('href', `quiz.php?curID=${curId}`).text('QUIZ');
+
 
                     // Append all the created elements to the main details container
                     noteName.appendTo(DetailsContainer);
