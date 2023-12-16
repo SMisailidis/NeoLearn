@@ -1,4 +1,4 @@
-import { fetchData } from "./EventHandler.js";
+import { fetchData } from "./eventHandler.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
@@ -58,6 +58,8 @@ $(document).ready(function () {
         console.log(error);
       });
   };
+
+  $("#AddChapter-btn").attr("href", `addChapter.php?courseId=${courseId}`);
 
   // Set pagination element and click handler
   pagination.setPaginationElement($(".Rectangles"));
