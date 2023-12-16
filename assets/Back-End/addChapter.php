@@ -2,9 +2,9 @@
 require 'DbConnection.php';
 
 $courseID = $_POST["Course_ID"];
-$ID = $_POST["chapterID"];
-$title = $_POST["chapterTitle"];
-$description = $_POST["chapterDesc"];
+$ID = $_POST["ID"];
+$title = $_POST["Title"];
+$description = $_POST["Description"];
 $videoLink = $_POST["Video_Link"];
 $pdfLink = $_POST["Pdf_Link"];
 

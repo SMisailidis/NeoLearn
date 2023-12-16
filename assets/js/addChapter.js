@@ -56,6 +56,5 @@ $(document).ready(function () {
   modal.setTitle("Add Chapter");
   modal.setContent("Do you want to publish the Chapter?");
   modal.setButtonsText("No", "Yes");
-
   toast.setContent("Published successfully!");
 });
