@@ -1,6 +1,9 @@
 
 const videoLink = sessionStorage.getItem("video");
 
-$(".videoClass").attr("src", videoLink);
+let newLink =  videoLink.replace("watch?v=", "embed/");
 
+$(".videoClass").attr("src", newLink);
+
+console.log(newLink);
 sessionStorage.removeItem("video");

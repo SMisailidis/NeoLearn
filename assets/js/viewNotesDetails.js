@@ -40,20 +40,37 @@ $(document).ready(function () {
                     const filesBox = $("<div>").addClass("filesBox");
                     const uploadText = $("<div>").addClass("uploadText").text("Uploaded Files");
                     const uploadedFiles = $("<div>").addClass("uploadedFiles");
-                    const uploadedPdf = $("<div>").addClass("uploadedPdf");
-                    const uploadedVideos = $("<div>").addClass("uploadedVideos");
+                   
 
                     // Create links for PDF and videos
-                    const pdfLink = $("<a>").attr("href", curriculum.Pdf_Link).text("curriculum.Pdf_Link");   
-                    const videoLink = $("<a>").attr("href", "videoDisplay.php").text("curriculum.Video_Link");
-                    sessionStorage.setItem("video", curriculum.Video_Link);
+                    console.log(typeof curriculum.Pdf_Link );
+                    if (curriculum.Pdf_Link !== undefined && curriculum.Pdf_Link !== null) {
+                        const pdfList = curriculum.Pdf_Link.split(",");
+                        for (let i = 0; i < pdfList.length; i++) {
+                            const uploadedPdf = $("<div>").addClass("uploadedPdf");
+                            const pdfLink = $("<a>").attr("href", pdfList[i]).text("PDF Link"); 
+                            pdfLink.appendTo(uploadedPdf);
+                            uploadedPdf.appendTo(uploadedFiles);
+
+                        }
+                    }
+                    if (curriculum.Video_Link !== undefined && curriculum.Video_Link !== null) {
+                        const videoList = curriculum.Video_Link.split(",");
+                    for(let i=0; i<videoList.length; i++){
+                        const uploadedVideos = $("<div>").addClass("uploadedVideos");
+                        const videoLink = $("<a>").attr("href", "videoDisplay.php").on("click", function(){
+                            sessionStorage.setItem("video", videoList[i]);
+                        }).text("Watch Video");
+                        videoLink.appendTo(uploadedVideos);
+                        uploadedVideos.appendTo(uploadedFiles);
+
+
+                    }
+                }
+                    
 
                     // Append links to their respective containers
                     uploadText.appendTo(filesBox);
-                    pdfLink.appendTo(uploadedPdf);
-                    videoLink.appendTo(uploadedVideos);
-                    uploadedPdf.appendTo(uploadedFiles);
-                    uploadedVideos.appendTo(uploadedFiles);
                     uploadedFiles.appendTo(filesBox);
                     filesBox.appendTo(filesCont);
                     filesCont.appendTo(descAndFilesCont);
