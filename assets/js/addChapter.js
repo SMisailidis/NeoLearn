@@ -1,12 +1,13 @@
 import { fetchData } from "./eventHandler.js";
 import modal from "./modal.js";
 import toast from "./toast.js";
-import {uploadPDF} from "./uploadPDF.js";
+import { uploadPDF } from "./uploadPDF.js";
 
 $(document).ready(function () {
   let chapterData = {};
   let formData = new FormData();
 
+  // Function to handle form submission
   const onSubmitHandler = (e) => {
     const inputs = $("form.addDetails :input");
     e.preventDefault();
@@ -16,6 +17,7 @@ $(document).ready(function () {
     
     let fileNames = [];
 
+    // Collect file data for FormData
     let files = Array.from(inputs[4].files); 
 
     for (let i = 0; i < files.length; i++) {
@@ -23,7 +25,7 @@ $(document).ready(function () {
       formData.append("files[]", files[i]);
     }
 
-    
+    // Prepare chapter data
     chapterData = {
       Course_ID: courseId,
       ID: inputs[1].value,
@@ -36,6 +38,7 @@ $(document).ready(function () {
     modal.openModal();
   };
 
+  // Function to reset form inputs
   const resetInputs = () => {
     const inputs = $("form.addDetails :input");
 
@@ -44,15 +47,17 @@ $(document).ready(function () {
     });
   };
 
+  // Close modal on close button click
   modal.onClickCloseHandler(() => {
     location.reload();
   });
 
+  // Handle the save button click inside the modal
   modal.onClickSaveHandler(() => {
-
     fetchData(jQuery, "assets/Back-End/addChapter.php", "POST", chapterData)
       .then((success) => {
         if (success) {
+          // Upload PDF files
           uploadPDF(jQuery, "assets/Back-End/uploadPDF.php", formData)
             .then((response) => {
               if (response.success) {
@@ -65,7 +70,6 @@ $(document).ready(function () {
             .catch((error) => {
               console.log(error);
             });
-          
         }
       })
       .catch((error) => {
@@ -73,8 +77,10 @@ $(document).ready(function () {
       });
   });
 
+  // Attach form submission handler
   $("form.addDetails").on("submit", onSubmitHandler);
 
+  // Set modal properties
   modal.setTitle("Add Chapter");
   modal.setContent("Do you want to publish the Chapter?");
   modal.setButtonsText("No", "Yes");

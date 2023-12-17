@@ -1,6 +1,7 @@
-import { fetchData } from "./EventHandler.js";
+import { fetchData } from "./eventHandler.js";
 import toast from "./toast.js";
 import modal from "./modal.js";
+import { uploadPDF } from "./uploadPDF.js";
 
 $(document).ready(function () {
   // Retrieve needed values from URL
@@ -40,6 +41,15 @@ $(document).ready(function () {
 
   // Function to save changes made to chapter details
   function saveChanges(courseId, newTitle, newDescription) {
+  
+    // Create FormData object for file uploads
+    let formData = new FormData();
+    let files = $("#formFileMultiple")[0].files;
+  
+    for (let i = 0; i < files.length; i++) {
+      formData.append("files[]", files[i]);
+    }
+
     fetchData($, "assets/Back-End/updateChapterDetails.php", "POST", {
       course_id: courseId,
       new_title: newTitle,
@@ -47,9 +57,15 @@ $(document).ready(function () {
     })
       .then((response) => {
         if (response) {
-          updateChapterDetailsList();
-          modal.closeModal();
-          toast.showToast();
+          uploadPDF($, "assets/Back-End/uploadPDF.php", formData)
+          .then(() => {
+            updateChapterDetailsList();
+            modal.closeModal();
+            toast.showToast();
+          })
+          .catch((error) => {
+            console.log("Error uploading files: " + error);
+          });
         }
       })
       .catch((error) => {
