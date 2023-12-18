@@ -16,7 +16,7 @@ $(document).ready(function () {
     let courseId = urlParams.get('courseId');
     
     let fileNames = [];
-
+  
     // Collect file data for FormData
     let files = Array.from(inputs[4].files); 
 
@@ -43,7 +43,11 @@ $(document).ready(function () {
     const inputs = $("form.addDetails :input");
 
     $.each(inputs, function (index, row) {
+      if(row.value==="Confirm"){
+        row.value = "Confirm";
+      }else{
       row.value = "";
+      }
     });
   };
 
