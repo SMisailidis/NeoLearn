@@ -4,14 +4,12 @@
         <form id="editCourseForm" class="title-desc-container">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" value="" class required>
-
             <label for="description">Description</label>
             <textarea id="description" name="description" required></textarea>
             <div class="bottomContainer">   
-                <button type="button" id="saveChanges">Save Changes</button>
+                <button type="button" class="Buttons" id="saveChanges">Save Changes</button>
             </div>
-        </form>    
-    </div>
+        </form>
 </main>
 </div>
 <script type="module" src="assets/js/editCourse.js"></script>

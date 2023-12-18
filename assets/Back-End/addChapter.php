@@ -1,18 +1,20 @@
 <?php
+require 'DbConnection.php';
 
-    include 'DbConnection.php';
+$connection = dbConnect();
 
-    $courseID = $_POST["Course_ID"];
-    $ID = $_POST["ID"];
-    $title = $_POST["Title"];
-    $description = $_POST["Description"];
-    
-    $connection = dbConnect();
+$courseID = $_POST["Course_ID"];
+$ID = $_POST["ID"];
+$title = $_POST["Title"];
+$description = $_POST["Description"];
+$videoLink = $_POST["Video_Link"];
+$pdfLink = $_POST["Pdf_Link"];
 
-    $query = "INSERT INTO curriculum (Course_ID, ID, Title, Description) VALUE ('$courseID', '$ID', '$title', '$description')";
+$connection = dbConnect();
 
-    $queryResult = executeDMLQuery($query, $connection);
+$query = "INSERT INTO Curriculum (Video_Link, Title, Course_ID, ID, Description, Pdf_Link) VALUES ('$videoLink', '$title', '$courseID', '$ID', '$description', '$pdfLink')";
 
-    echo($queryResult)
+$queryResult = executeDMLQuery($query, $connection);
 
+echo($queryResult);
 ?>

@@ -1,6 +1,7 @@
-import { fetchData } from "./EventHandler.js";
-import toast from "./toast.js";
+import { fetchData } from "./eventHandler.js";
 import modal from "./modal.js";
+import toast from "./toast.js";
+import { uploadPDF } from "./uploadPDF.js";
 
 $(document).ready(function () {
   // Retrieve needed values from URL
@@ -8,6 +9,10 @@ $(document).ready(function () {
   const curId = urlParams.get("curID");
   const crsTitle = urlParams.get("courseTitle");
   const crsID = urlParams.get("courseId");
+
+  // Create FormData object for file uploads
+  let formData = new FormData();
+  
 
   // Set the title in the UI based on the course details
   $("#TitleCourse").text(crsTitle + " (" + crsID + ")");
@@ -39,17 +44,43 @@ $(document).ready(function () {
   };
 
   // Function to save changes made to chapter details
-  function saveChanges(courseId, newTitle, newDescription) {
+  function saveChanges(courseId, newTitle, newDescription, curId) {
+    let files = $("#formFileMultiple")[0].files;
+    let fileNames = [];
+
+    for (let i = 0; i < files.length; i++) {
+      fileNames.push(files[i].name);
+      formData.append("files[]", files[i]);
+    }
+
     fetchData($, "assets/Back-End/updateChapterDetails.php", "POST", {
       course_id: courseId,
       new_title: newTitle,
       new_description: newDescription,
+      curID: curId,
+      Pdf_Link: fileNames.join(",")
     })
       .then((response) => {
         if (response) {
           updateChapterDetailsList();
           modal.closeModal();
+          toast.setContent("Changes saved successfully!");
           toast.showToast();
+          // Upload PDF and update Pdf_Link in the database
+          if (files.length > 0) {
+            uploadPDF($, "assets/Back-End/uploadPDF.php", formData)
+              .then((uploadResponse) => {
+                console.log(uploadResponse);
+                if (uploadResponse.success) {
+                  // Handle success if needed
+                } else {
+                  console.error("Error uploading PDF: " + uploadResponse.message);
+                }
+              })
+              .catch((error) => {
+                console.log("Error uploading files: " + error);
+              });
+          }
         }
       })
       .catch((error) => {
@@ -71,7 +102,7 @@ $(document).ready(function () {
     const newDescription = $(".descBoxT").val();
 
     // Save changes to chapter details
-    saveChanges(crsID, newChapterTitle, newDescription);
+    saveChanges(crsID, newChapterTitle, newDescription, curId);
   });
 
   // Open modal when the "Edit" button is clicked
@@ -82,3 +113,4 @@ $(document).ready(function () {
   // Initial update of chapter details list
   updateChapterDetailsList();
 });
+
