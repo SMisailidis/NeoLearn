@@ -6,7 +6,7 @@ const modal = {
     $("#exampleModalLongTitle").text(titleText);
   },
   setContent: (contentText) => {
-    $(".modal-body").append(contentText);
+    $(".modal-body").empty().append(contentText);
   },
 
   setButtonsText: (closeText, agreeText) => {

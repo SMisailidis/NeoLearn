@@ -53,7 +53,8 @@ $(document).ready(function () {
   };
 
   const viewListHandler = (e) => {
-    window.location.href = "viewCourses.php";
+    window.location.href =
+      userType === "teacher" ? "viewCourses.php" : "viewStudCourses.php";
   };
 
   const validityCheck = (inputs) => {

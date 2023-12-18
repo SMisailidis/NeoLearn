@@ -94,9 +94,9 @@ $(document).ready(function () {
               .css("display", "none");
             $(".spinner-border.text-primary").css("display", "inherit");
 
-            // setTimeout(function () {
-            //   window.location.href = `profile.php?ID=${id}`;
-            // }, 3000);
+            setTimeout(function () {
+              window.location.href = `profile.php?ID=${id}`;
+            }, 3000);
           }
         })
         .catch((error) => {
