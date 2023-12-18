@@ -9,6 +9,7 @@
                 <a href="loginPage.php"><i class="fa-solid fa-right-from-bracket"></i></a>
                 <a href=""><i class="fa-solid fa-gear"></i></a>
             </div>
+            <span class="copyrights">© NeoLearn 2023. All rights reserved.</span>
         </div>
         <!-- End Nav Bar -->
 
