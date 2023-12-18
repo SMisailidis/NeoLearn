@@ -1,5 +1,5 @@
 // Imports
-import { fetchData } from './EventHandler.js';
+import { fetchData } from "./eventHandler.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
