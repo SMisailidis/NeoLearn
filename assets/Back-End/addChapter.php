@@ -1,6 +1,8 @@
 <?php
 require 'DbConnection.php';
 
+$connection = dbConnect();
+
 $courseID = $_POST["Course_ID"];
 $ID = $_POST["ID"];
 $title = $_POST["Title"];
