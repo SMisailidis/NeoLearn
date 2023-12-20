@@ -135,8 +135,8 @@ $(document).ready(function () {
 
   //Fetching data from db
   const fetchStudents = () => {
-    fetchData(jQuery, "assets/Back-End/retrieveAllCourses.php", "POST", {
-      undefined,
+    fetchData(jQuery, "assets/Back-End/retrieveAllType.php", "POST", {
+      table: "course",
     })
       .then((data) => {
         pagination.setData(data);
