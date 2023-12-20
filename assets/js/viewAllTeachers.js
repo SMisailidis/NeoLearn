@@ -20,8 +20,8 @@ $(document).ready(function () {
     console.log("HERE I WILL DO THE LOGIC FOR ON UPDATE");
   };
 
-  const onAddStudent = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON ADD STUDENT");
+  const onAddTeacherHandler = () => {
+    console.log("HERE I WILL DO THE LOGIC FOR ON ADD TEACHER");
   };
 
   //Function to render content with pagination also
@@ -78,7 +78,7 @@ $(document).ready(function () {
         });
 
         let expandSection = $("<section>").addClass("showed");
-        let expandContent = $("<main>").addClass("expandedContent allStudents");
+        let expandContent = $("<main>").addClass("expandedContent allTeachers");
 
         let iconTrash = $("<i>").addClass("fa-regular fa-trash-can");
         let iconUpdate = $("<i>").addClass("fa-regular fa-pen-to-square");
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
   //Fetching data from db
   const fetchStudents = () => {
-    fetchData(jQuery, "assets/Back-End/retrieveAllStudents.php", "POST", {
+    fetchData(jQuery, "assets/Back-End/retrieveAllTeachers.php", "POST", {
       undefined,
     })
       .then((data) => {
@@ -139,7 +139,7 @@ $(document).ready(function () {
       });
   };
 
-  $("#addStuds").on("click", onAddStudent);
+  $("#addTeachers").on("click", onAddTeacherHandler);
 
   pagination.setPaginationElement($(".contentViewTypeContainer"));
   fetchStudents();

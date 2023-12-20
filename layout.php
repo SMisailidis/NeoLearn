@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+        <link rel="icon" type="image/x-icon" href="./logo.ico">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Elevate your education with Neo Learn. 
@@ -46,7 +46,6 @@
         <link rel="stylesheet" href="assets/css/availCourses.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
         <link rel="stylesheet" href="assets/css/expandedPagesContent.css">
-        <link rel="stylesheet" href="assets/css/viewAllStudents.css">
         <link rel="stylesheet" href="assets/css/viewTeacherStudents.css">
         <link rel="stylesheet" href="assets/css/profile.css">
         <link rel="stylesheet" href="assets/css/globals.css">

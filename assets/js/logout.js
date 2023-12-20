@@ -1,19 +1,19 @@
-$(document).ready(function() {
-    let inactivityTimeout;
+$(document).ready(function () {
+  let inactivityTimeout;
 
-    const resetTimer = () => {
-        clearTimeout(inactivityTimeout);
-        inactivityTimeout = setTimeout(logoutUser, 120000);
-    };
+  const resetTimer = () => {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(logoutUser, 300000);
+  };
 
-    const logoutUser = () => {
-        alert("You have been logged out due to inactivity");
+  const logoutUser = () => {
+    alert("You have been logged out due to inactivity");
 
-        window.location.href = "loginPage.php";
-        sessionStorage.clear()
-    };
+    window.location.href = "loginPage.php";
+    sessionStorage.clear();
+  };
 
-    $(document).on("mousemove keypress", resetTimer);
+  $(document).on("mousemove keypress", resetTimer);
 
-    resetTimer();
+  resetTimer();
 });

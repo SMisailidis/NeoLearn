@@ -2,8 +2,10 @@
         <section class="viewTypeInnerContent">
           <h1 class="header-text">View All Students</h1>
           <section class="contentViewTypeContainer">
-            </section>
+
+          </section>
             <?php require 'assets/partials/pagination.php' ?>
+            <button id="addStuds" class="btn btn-primary btn-lg addStud" style="background-color: #114054;">Add a student</button>
         </section>
       </main>
     </div>

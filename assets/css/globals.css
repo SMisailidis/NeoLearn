@@ -50,3 +50,7 @@ body {
   flex-direction: column;
   flex-grow: 1;
 }
+
+.btn.btn-primary {
+  border: 0;
+}

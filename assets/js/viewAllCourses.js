@@ -20,9 +20,13 @@ $(document).ready(function () {
     console.log("HERE I WILL DO THE LOGIC FOR ON UPDATE");
   };
 
-  const onAddStudent = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON ADD STUDENT");
+  const onAddChapterHandler = (e) => {
+    const courseID = e.target.closest("[data-info]").getAttribute("data-info");
+
+    window.location.href = `addChapter.php?courseId=${courseID}`;
   };
+
+  const onAddCourseHandler = () => {};
 
   //Function to render content with pagination also
   const renderContent = () => {
@@ -40,9 +44,9 @@ $(document).ready(function () {
         let article = $("<article>").addClass("userData");
         let studInfo = $("<p>")
           .addClass("userFullName")
-          .text(row.First_Name + " " + row.Last_Name + " - " + row.ID);
+          .text(row.Title + " - " + row.ID);
         let studPhoto = $("<img>")
-          .attr("src", "assets/images/loginUser.png")
+          .attr("src", "assets/images/bookmark.png")
           .attr("alt", "photo");
 
         let expandPhoto = $("<img>")
@@ -78,11 +82,11 @@ $(document).ready(function () {
         });
 
         let expandSection = $("<section>").addClass("showed");
-        let expandContent = $("<main>").addClass("expandedContent allStudents");
+        let expandContent = $("<main>").addClass("expandedContent allCourses");
 
         let iconTrash = $("<i>").addClass("fa-regular fa-trash-can");
         let iconUpdate = $("<i>").addClass("fa-regular fa-pen-to-square");
-
+        let iconAdd = $("<i>").addClass("fa-solid fa-plus");
         let expandedDeleteUser = $("<button>")
           .addClass("btn btn-outline-danger")
           .attr("title", "Delete User")
@@ -103,19 +107,24 @@ $(document).ready(function () {
               .append($("<span>").text("User"))
           )
           .on("click", onUpdateHandler);
-        let expandedLink = $("<article>")
-          .addClass("profileHref")
-          .attr("title", "View Profile")
+        let expandedAddChapter = $("<button>")
+          .addClass("btn btn-outline-primary")
+          .attr("title", "Add Chapter")
+          .attr("data-info", row.ID)
+          .append(iconAdd)
           .append(
-            $("<a>").attr("href", `profile.php?ID=${row.ID}`).text("More Info")
-          );
+            $("<p>")
+              .append($("<span>").text("Add"))
+              .append($("<span>").text("Chapter"))
+          )
+          .on("click", onAddChapterHandler);
 
         article.append(studPhoto).append(studInfo);
         mainContent.append(article).append(expandPhoto);
 
         expandContent
           .append(expandedDeleteUser)
-          .append(expandedLink)
+          .append(expandedAddChapter)
           .append(expandedUpdateUser);
         expandSection.append(expandContent);
         div.append(expandSection);
@@ -126,7 +135,7 @@ $(document).ready(function () {
 
   //Fetching data from db
   const fetchStudents = () => {
-    fetchData(jQuery, "assets/Back-End/retrieveAllStudents.php", "POST", {
+    fetchData(jQuery, "assets/Back-End/retrieveAllCourses.php", "POST", {
       undefined,
     })
       .then((data) => {
@@ -139,9 +148,10 @@ $(document).ready(function () {
       });
   };
 
-  $("#addStuds").on("click", onAddStudent);
+  $("#addCrses").on("click", onAddCourseHandler);
 
   pagination.setPaginationElement($(".contentViewTypeContainer"));
+
   fetchStudents();
   pagination.onClickHandler(renderContent);
 });

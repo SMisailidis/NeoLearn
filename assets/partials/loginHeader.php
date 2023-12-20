@@ -18,7 +18,6 @@
 
 <body>
     <header class="container-fluid  header">
-
         <div class="col-12 col-lg-6 col-xl-4 logoContainer">
             <img src="assets/images/logo.png" alt="">
             <span>NEOLEARN</span>
@@ -26,9 +25,3 @@
         </div>
     </header>
     <div class="subheader container-fluid"></div>
-
-
-
-</body>
-
-</html>

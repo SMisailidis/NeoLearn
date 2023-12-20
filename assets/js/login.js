@@ -77,14 +77,19 @@ $(document).ready(function () {
           MyCourses: {
             text: "My courses",
             url: "viewStudCourses.php",
-            imgURL: "fa-solid fa-book",
+            imgURL: "fa-solid fa-book-bookmark",
+          },
+          Quiz: {
+            text: "Quiz",
+            url: "quiz.php",
+            imgURL: "fa-solid fa-circle-question",
           },
           profile: {
             text: "Profile",
             url: `profile.php?ID=${
               JSON.parse(sessionStorage.getItem("userData"))[0].ID
             }`,
-            imgURL: "fa-solid fa-right-from-bracket",
+            imgURL: "fa-solid fa-user",
           },
         };
         break;
@@ -105,12 +110,17 @@ $(document).ready(function () {
             url: "AddCourse.php",
             imgURL: "fa-solid fa-square-plus",
           },
+          ViewStudents: {
+            text: "View Students",
+            url: "viewStuds.php",
+            imgURL: "fa-solid fa-people-group",
+          },
           profile: {
             text: "Profile",
             url: `profile.php?ID=${
               JSON.parse(sessionStorage.getItem("userData"))[0].ID
             }`,
-            imgURL: "fa-solid fa-right-from-bracket",
+            imgURL: "fa-solid fa-user",
           },
         };
         break;
@@ -124,12 +134,12 @@ $(document).ready(function () {
           Students: {
             text: "View Students",
             url: "viewAllStudents.php",
-            imgURL: "fa-solid fa-square-plus",
+            imgURL: "fa-solid fa-people-group",
           },
           Teachers: {
             text: "View Teachers",
             url: "viewAllTeachers.php",
-            imgURL: "fa-solid fa-book",
+            imgURL: "fa-solid fa-person-chalkboard",
           },
           Courses: {
             text: "View Courses",
@@ -141,7 +151,7 @@ $(document).ready(function () {
             url: `profile.php?ID=${
               JSON.parse(sessionStorage.getItem("userData"))[0].ID
             }`,
-            imgURL: "fa-solid fa-right-from-bracket",
+            imgURL: "fa-solid fa-user",
           },
         };
         break;
@@ -210,12 +220,28 @@ $(document).ready(function () {
         break;
       case "admin":
         contentList = {
-          Home: { text: "View Students", url: "viewAllStudents.php", imgURL: "assets/images/accountInfoIcon.png" },
-          Courses: { text: "View Teachers", url: "viewAllTeachers.php", imgURL: "assets/images/accountInfoIcon.png" },
-          AddCourse: { text: "View Courses", url: "viewAllCourses.php", imgURL: "assets/images/accountInfoIcon.png" },
-          LogOut: { text: "Profile", url: `profile.php?ID=${
-            JSON.parse(sessionStorage.getItem("userData"))[0].ID
-          }`, imgURL: "assets/images/accountInfoIcon.png" },
+          ViewStudents: {
+            text: "View Students",
+            url: "viewAllStudents.php",
+            imgURL: "assets/images/showStudentsIcon.png",
+          },
+          ViewTeachers: {
+            text: "View Teachers",
+            url: "viewAllTeachers.php",
+            imgURL: "assets/images/teacher.png",
+          },
+          Profile: {
+            text: "Profile",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
+            imgURL: "assets/images/accountInfoIcon.png",
+          },
+          ViewCourses: {
+            text: "View Courses",
+            url: "viewAllCourses.php",
+            imgURL: "assets/images/allCoursesIcon.png",
+          },
         };
         break;
       default:
