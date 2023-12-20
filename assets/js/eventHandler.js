@@ -1,3 +1,10 @@
+/* 
+  The fetchData function uses jQuery to handle asynchronous AJAX requests, 
+  resolving with response data if successful, the success message if affected rows exist, 
+  and rejecting with an error message otherwise. It assumes a JSON response format 
+  and logs errors to the console. 
+*/
+
 export const fetchData = ($, url, method, data) => {
   return new Promise((resolve, reject) => {
     $(document).ready(() => {

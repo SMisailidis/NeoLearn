@@ -25,18 +25,39 @@ $(document).ready(function () {
       .then((response) => {
         const curriculum = response[0];
 
+
         // Update UI elements with the fetched curriculum details
         $(".noteTitleT").val(curriculum.Title);
         $(".courseNameT #ChapterTitlePlaceholderT").text(
           curriculum.ChapterTitle
         );
         $(".descBoxT").text(curriculum.Description);
-        $(".uploadedPdfT a")
-          .attr("href", curriculum.Pdf_Link)
-          .text(curriculum.Pdf_Link);
-        $(".uploadedVideosT a")
-          .attr("href", curriculum.Video_Link)
-          .text(curriculum.Video_Link);
+
+        //Creating pdf links
+        if (curriculum?.Pdf_Link) {
+          const pdfList = curriculum.Pdf_Link.split(",")
+          for (let i = 0; i < pdfList.length; i++) {
+            let div = $("<div>").addClass("uploadedPdfT")
+            let anchor = $("<a>").attr("href", `assets/documents/${pdfList[i]}`).text(pdfList[i]);
+            
+            div.append(anchor);
+            $(".uploadedFilesT").append(div)
+          }
+        }
+
+        //Creating video links
+        if (curriculum?.Video_Link) {
+          const videoList = curriculum.Video_Link.split(",");
+          for (let i = 0; i < videoList.length; i++) {
+            let div = $("<div>").addClass("uploadedVideosT")
+            let anchor = $("<a>").attr("href", "videoDisplay.php").on("click", function(){
+              sessionStorage.setItem("video", videoList[i]);
+          }).text("Watch Video");
+            
+            div.append(anchor);
+            $(".uploadedFilesT").append(div)
+          }
+        }
       })
       .catch((error) => {
         console.log("Error fetching curriculum details: " + error);

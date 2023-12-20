@@ -1,3 +1,9 @@
+/*
+  The `modal` object encapsulates functions to dynamically manipulate a Bootstrap modal. 
+  It provides methods to set the modal's title, content, button texts, 
+  and handles opening, closing, and button-click events with optional callbacks.
+*/
+
 const modal = {
   setElement: (elements) => {
     $(".modal-body").empty().append(elements);

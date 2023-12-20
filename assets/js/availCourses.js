@@ -11,6 +11,7 @@ $(document).ready(function () {
 
   const stud_ID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
 
+  //Function to check for enrolled courses
   const checkEnrolledCourses = () => {
     $.each(enrolledInCourses, function (index, row) {
       $("#" + row.Course_ID)
@@ -19,6 +20,7 @@ $(document).ready(function () {
     });
   };
 
+  //Function to initialize the enrolled courses
   const initCheckedCourses = () => {
     fetchData(jQuery, "assets/Back-End/checkEnrolledCourses.php", "POST", {
       ID: stud_ID,
@@ -32,6 +34,7 @@ $(document).ready(function () {
       });
   };
 
+  //Function to render content with pagination
   const renderTable = () => {
     pagination.renderContent(() => {
       pagination.renderElement.empty();
@@ -61,6 +64,7 @@ $(document).ready(function () {
     });
   };
 
+  //Function to fetch the courses from db
   const fetchCourses = () => {
     fetchData(
       jQuery,
@@ -78,12 +82,14 @@ $(document).ready(function () {
       });
   };
 
+  //Function for close modal
   modal.onClickCloseHandler(() => {
     const input = $(`input[id=${selectedCourse}]`);
     const state = input.is(":checked");
     input.prop("checked", !state);
   });
 
+  //Function for agree/save modal
   modal.onClickSaveHandler(() => {
     fetchData(
       jQuery,
@@ -102,6 +108,7 @@ $(document).ready(function () {
       });
   });
 
+  //Function for check and uncheck boxes
   $(".tableBody").on("change", ":checkbox", function () {
     let course_ID = this.id;
     let course_Title = this.value;
@@ -124,11 +131,13 @@ $(document).ready(function () {
     modal.setContent(text);
   });
 
+  //Setting texts and components to modal/toast/pagination
   modal.setTitle("Course Enrolment");
   modal.setButtonsText("No", "Yes");
   toast.setContent("The changes have been applied successfully!");
   pagination.setPaginationElement($(".tableBody"));
 
+  //Calling functions
   fetchCourses();
   pagination.onClickHandler(renderTable);
   initCheckedCourses();

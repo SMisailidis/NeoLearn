@@ -13,6 +13,7 @@ $(document).ready(function () {
 
   const data = isUser ? { table: userType } : { table: "student" };
 
+  //Function that create Articles
   const createArticles = (articleID, labelText, inputValue) => {
     let article = $("<article>")
       .addClass("mainProfileContent")
@@ -29,6 +30,7 @@ $(document).ready(function () {
     return article.append(label).append(input);
   };
 
+  //Function for checking if 2 objects are equal
   const areObjectsEqual = (obj1, obj2) => {
     const modifiedObj1 = { ...obj1 };
     const modifiedObj2 = { ...obj2 };
@@ -48,15 +50,18 @@ $(document).ready(function () {
     return sortedString1 === sortedString2;
   };
 
+  //Function to navigate to changePassword
   const changePasswordHandler = (e) => {
     window.location.href = "changePassword.php";
   };
 
+  //Function to navigate to view student or teacher courses
   const viewListHandler = (e) => {
     window.location.href =
       userType === "teacher" ? "viewCourses.php" : "viewStudCourses.php";
   };
 
+  //Check if the inputs value is empty
   const validityCheck = (inputs) => {
     inputs.each(function () {
       if ($(this).val() === "") {
@@ -67,6 +72,7 @@ $(document).ready(function () {
     return true;
   };
 
+  //Function for close modal
   modal.onClickCloseHandler(() => {
     const inputs = $(
       `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
@@ -80,6 +86,7 @@ $(document).ready(function () {
     inputs[5].value = initData[0].Academic_Email;
   });
 
+  //Function for agree/save modal
   modal.onClickSaveHandler(() => {
     const inputs = $(
       `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
@@ -119,6 +126,7 @@ $(document).ready(function () {
     }
   });
 
+  //Function for save and edit profile
   $(".changeProfileButton").on("click", function (e) {
     const inputs = $(
       `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
@@ -150,6 +158,7 @@ $(document).ready(function () {
     });
   });
 
+  //Fetching data from db and rendering it
   fetchData(
     jQuery,
     `assets/Back-End/retrieveProfileContent.php?ID=${
@@ -264,6 +273,7 @@ $(document).ready(function () {
       console.error(error);
     });
 
+  //Setting texts to modal/toast
   modal.setTitle("Profile changes");
   modal.setContent("Are you willing to make the changes?");
   modal.setButtonsText("No", "Yes");

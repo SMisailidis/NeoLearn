@@ -5,6 +5,7 @@ $(document).ready(function () {
 
   let form = $("#loginForm");
 
+  //Function to reset the wrong inputs on typing
   $("#username, #password").on("input", function () {
     $(".form-label").removeClass("loginLabelError");
     $(".fa-solid").removeClass("iconError");
@@ -12,12 +13,14 @@ $(document).ready(function () {
     $(".spanError").css("display", "none");
   });
 
+  //Function for form submit
   form.on("submit", function (e) {
     e.preventDefault();
 
     validateInput();
   });
 
+  //Functio to validate the data and find out what the user is (teacher, student, admin)
   const validateInput = () => {
     const am_to_table = {
       ics: "student",
@@ -40,7 +43,7 @@ $(document).ready(function () {
       fetchData(jQuery, "assets/Back-End/login.php", "POST", credentials)
         .then((data) => {
           data.type = type;
-          delete data.Password;
+          delete data.Password; //deleting the password for security
           LogIn(data);
         })
         .catch((error) => {
@@ -54,6 +57,7 @@ $(document).ready(function () {
     }
   };
 
+  //Function to set the data of the aside navbar based on the type of the user
   const setNavList = () => {
     let navList;
 
@@ -121,6 +125,7 @@ $(document).ready(function () {
     sessionStorage.setItem("userNavList", JSON.stringify(navList));
   };
 
+  //Function to set the data of the portfolio based on the type of the user
   const setContentList = () => {
     let contentList;
 
@@ -191,6 +196,7 @@ $(document).ready(function () {
     sessionStorage.setItem("userContent", JSON.stringify(contentList));
   };
 
+  //Function to log in and navigate to the main portfolio
   const LogIn = (data) => {
     sessionStorage.setItem("userData", JSON.stringify(data));
     sessionStorage.setItem("userType", data.type);

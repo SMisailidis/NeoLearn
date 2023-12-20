@@ -5,6 +5,7 @@ import pagination from "./pagination.js";
 $(document).ready(function () {
   let id = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
 
+  //Function to rotate the img 
   function expandMore() {
     if (!$(this).hasClass("rotate180")) {
       $(this).toggleClass("rotate180");
@@ -13,6 +14,7 @@ $(document).ready(function () {
     }
   }
 
+  //Function to render content with pagination also
   const renderContent = () => {
     pagination.renderContent(() => {
       pagination.renderElement.empty();
@@ -93,6 +95,7 @@ $(document).ready(function () {
     });
   };
 
+  //Fetching data from db
   const fetchStudents = () => {
     fetchData(jQuery, "assets/Back-End/retrieveAllStudents.php", "POST", {
       ID: id,

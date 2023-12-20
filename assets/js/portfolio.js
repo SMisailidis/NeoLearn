@@ -1,3 +1,9 @@
+/*
+  dynamically populates a portfolio container with content fetched from sessionStorage. 
+  It updates the user's welcome message based on stored data 
+  and customizes the appearance of a quiz link by adjusting the image width and removing the text label.
+*/
+
 $(document).ready(function () {
   const content = JSON.parse(sessionStorage.getItem("userContent"));
 

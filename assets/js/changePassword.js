@@ -9,10 +9,12 @@ $(document).ready(function () {
   let newPass = "";
   let prevPass = "";
 
+  //Function to check if the new passwords and prev is equal
   const checkSimilarity = (pass1, pass2) => {
-    return pass1 === pass2 && pass1 !== prevPass;
+    return pass1.toUpperCase() === pass2.toUpperCase() && pass1.toUpperCase() !== prevPass.toUpperCase();
   };
 
+  //Function to reset the wrong inputs on typing
   const onChangeHandler = (e) => {
     $(".changePasswordInput").removeClass("inputError");
     $(".labelVerPass").removeClass("labelError");
@@ -22,6 +24,7 @@ $(document).ready(function () {
     $("#changePassConfBtn").removeClass("submitError");
   };
 
+  //Function for form
   $(".changePassForm").on("submit", function (e) {
     e.preventDefault();
 
@@ -43,6 +46,7 @@ $(document).ready(function () {
     }
   });
 
+  //Function for close modal
   modal.onClickCloseHandler(() => {
     if (!isPassConf) {
       window.location.href = `profile.php?ID=${id}`;
@@ -50,6 +54,7 @@ $(document).ready(function () {
     modal.closeModal();
   });
 
+  //Function for agree/save modal
   modal.onClickSaveHandler(() => {
     if (!isPassConf) {
       if ($(".changePasswordInput").val() === 0) {
@@ -105,6 +110,7 @@ $(document).ready(function () {
     }
   });
 
+  //Creating elements to change password
   let div = $("<div>");
 
   let input = $("<input>")
@@ -124,6 +130,7 @@ $(document).ready(function () {
 
   $("#newPassword, #confirmPassword").on("input", onChangeHandler);
 
+  //Setting texts to modal/toast
   modal.setElement(div);
   modal.setTitle("Change Password");
   modal.setButtonsText("Cancel", "Confirm");

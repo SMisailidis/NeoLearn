@@ -1,3 +1,9 @@
+/*
+    The `pagination` object manages dynamic rendering and interaction of a pagination component. 
+    It includes functions to set data, current page, and pagination element, as well as an event handler for page clicks. 
+    The object updates pagination links and renders content based on provided callback functions.
+*/
+
 const pagination = {
     renderElement: "",
     paginationRef: $(".pagination"),

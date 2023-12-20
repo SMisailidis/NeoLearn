@@ -5,6 +5,7 @@ import toast from "./toast.js";
 $(document).ready(function () {
   let courseData = {};
 
+  //Function for form submit 
   const onSubmitHandler = (e) => {
     const inputs = $(`:input:not(:button):not(input[type=submit])`);
     e.preventDefault();
@@ -22,6 +23,7 @@ $(document).ready(function () {
     modal.openModal();
   };
 
+  //General Function for reseting inputs
   const resetInputs = () => {
     const inputs = $(`:input:not(:button):not(input[type=submit])`);
 
@@ -30,10 +32,13 @@ $(document).ready(function () {
     });
   };
 
+  //Function for close modal
   modal.onClickCloseHandler(() => {
     resetInputs();
   });
 
+
+  //Function for agree/save modal
   modal.onClickSaveHandler(() => {
     fetchData(jQuery, "assets/Back-End/addCourse.php", "POST", courseData)
       .then((success) => {
@@ -49,11 +54,12 @@ $(document).ready(function () {
       });
   });
 
+  //Adding the function to the form
   $(".addInput-form").on("submit", onSubmitHandler);
 
+  //Setting texts to modal/toast
   modal.setTitle("Add Course");
   modal.setContent("Do you to publish the Course?");
   modal.setButtonsText("No", "Yes");
-
   toast.setContent("Published successfully!");
 });

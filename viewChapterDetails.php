@@ -12,12 +12,6 @@
                             <div class="filesBoxT">
                                 <div class="uploadTextT">Uploaded Files</div>
                                 <div class="uploadedFilesT">
-                                    <div class="uploadedPdfT">
-                                        <a href="#" id="PdfLinkPlaceholderT"></a>
-                                    </div>
-                                    <div class="uploadedVideosT">
-                                        <a href="#" id="VideoLinkPlaceholderT"></a>
-                                    </div>
                                 </div>
                                 <div class="inputFileWrapper">
                                     <label for="formFileMultiple" class="form-label">Upload Files Here!</label>

@@ -43,18 +43,17 @@ $(document).ready(function () {
                    
 
                     // Create links for PDF and videos
-                    console.log(typeof curriculum.Pdf_Link );
-                    if (curriculum.Pdf_Link !== undefined && curriculum.Pdf_Link !== null) {
+                    if (curriculum?.Pdf_Link) {
                         const pdfList = curriculum.Pdf_Link.split(",");
                         for (let i = 0; i < pdfList.length; i++) {
                             const uploadedPdf = $("<div>").addClass("uploadedPdf");
-                            const pdfLink = $("<a>").attr("href", pdfList[i]).text("PDF Link"); 
+                            const pdfLink = $("<a>").attr("href", `assets/documents/${pdfList[i]}`).text("PDF Link"); 
                             pdfLink.appendTo(uploadedPdf);
                             uploadedPdf.appendTo(uploadedFiles);
 
                         }
                     }
-                    if (curriculum.Video_Link !== undefined && curriculum.Video_Link !== null) {
+                    if (curriculum?.Video_Link) {
                         const videoList = curriculum.Video_Link.split(",");
                     for(let i=0; i<videoList.length; i++){
                         const uploadedVideos = $("<div>").addClass("uploadedVideos");
