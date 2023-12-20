@@ -116,7 +116,33 @@ $(document).ready(function () {
         break;
       case "admin":
         navList = {
-          Home: "Portfolio.php",
+          Home: {
+            text: "My dashboard",
+            url: "portfolio.php",
+            imgURL: "fa-solid fa-house-chimney",
+          },
+          Students: {
+            text: "View Students",
+            url: "viewAllStudents.php",
+            imgURL: "fa-solid fa-square-plus",
+          },
+          Teachers: {
+            text: "View Teachers",
+            url: "viewAllTeachers.php",
+            imgURL: "fa-solid fa-book",
+          },
+          Courses: {
+            text: "View Courses",
+            url: "viewAllCourses.php",
+            imgURL: "fa-solid fa-book",
+          },
+          profile: {
+            text: "Profile",
+            url: `profile.php?ID=${
+              JSON.parse(sessionStorage.getItem("userData"))[0].ID
+            }`,
+            imgURL: "fa-solid fa-right-from-bracket",
+          },
         };
         break;
       default:
@@ -182,14 +208,16 @@ $(document).ready(function () {
           },
         };
         break;
-      // case "admin":
-      //   contentList = {
-      //     Home: { text: "My dashboard", url: "portofolio.php", imgURL: "" },
-      //     Courses: { text: "My Courses", url: "courses.php", imgURL: "" },
-      //     AddCourse: { text: "Add Course", url: "AddCourse.php", imgURL: "" },
-      //     LogOut: { text: "Log Out", url: "LoginPage.php", imgURL: "" },
-      //   };
-      //   break;
+      case "admin":
+        contentList = {
+          Home: { text: "View Students", url: "viewAllStudents.php", imgURL: "assets/images/accountInfoIcon.png" },
+          Courses: { text: "View Teachers", url: "viewAllTeachers.php", imgURL: "assets/images/accountInfoIcon.png" },
+          AddCourse: { text: "View Courses", url: "viewAllCourses.php", imgURL: "assets/images/accountInfoIcon.png" },
+          LogOut: { text: "Profile", url: `profile.php?ID=${
+            JSON.parse(sessionStorage.getItem("userData"))[0].ID
+          }`, imgURL: "assets/images/accountInfoIcon.png" },
+        };
+        break;
       default:
         break;
     }

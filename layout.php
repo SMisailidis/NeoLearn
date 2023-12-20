@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Elevate your education with Neo Learn. 
@@ -26,7 +27,6 @@
         Join an academic community dedicated to lifelong learning and skill development. Elevate your education with us!">
         <meta property="og:url" content="http://localhost/NeoLearn">
         <meta property="og:type" content="website">
-        <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
 
         <!-- Vendor assets -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -45,7 +45,9 @@
         <link rel="stylesheet" href="assets/css/portfolio.css">
         <link rel="stylesheet" href="assets/css/availCourses.css">
         <link rel="stylesheet" href="assets/css/addCourse.css">
-        <link rel="stylesheet" href="assets/css/viewStudents.css">
+        <link rel="stylesheet" href="assets/css/expandedPagesContent.css">
+        <link rel="stylesheet" href="assets/css/viewAllStudents.css">
+        <link rel="stylesheet" href="assets/css/viewTeacherStudents.css">
         <link rel="stylesheet" href="assets/css/profile.css">
         <link rel="stylesheet" href="assets/css/globals.css">
         <link rel="stylesheet" href="assets/css/navbar.css">

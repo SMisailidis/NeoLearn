@@ -26,7 +26,7 @@ $(document).ready(function () {
       let currentOpenCollapseId = null;
       $.each(pageData, function (index, row) {
         // Create elements
-        let mainContent = $("<content>").addClass("mainViewStudentsContent");
+        let mainContent = $("<content>").addClass("mainViewTypeContent");
         let article = $("<article>").addClass("userData");
         let studInfo = $("<p>")
           .addClass("userFullName")
@@ -68,7 +68,7 @@ $(document).ready(function () {
         });
 
         let expandSection = $("<section>").addClass("showed");
-        let expandContent = $("<content>").addClass("expandedContent");
+        let expandContent = $("<content>").addClass("expandedContent teacherStuds");
 
         let expandedPhone = $("<article>")
           .addClass("phoneNumber")
@@ -97,7 +97,7 @@ $(document).ready(function () {
 
   //Fetching data from db
   const fetchStudents = () => {
-    fetchData(jQuery, "assets/Back-End/retrieveAllStudents.php", "POST", {
+    fetchData(jQuery, "assets/Back-End/retrieveTeacherStudents.php", "POST", {
       ID: id,
     })
       .then((data) => {
@@ -110,7 +110,7 @@ $(document).ready(function () {
       });
   };
 
-  pagination.setPaginationElement($(".contentViewStudentsContainer"));
+  pagination.setPaginationElement($(".contentViewTypeContainer"));
 
   fetchStudents();
   pagination.onClickHandler(renderContent);

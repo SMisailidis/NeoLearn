@@ -1,0 +1,103 @@
+.viewTypeInnerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contentViewTypeContainer {
+    background-color: rgba(46, 109, 124, 0.4);
+    border-radius: 10px;
+  }
+  
+  .contentViewTypeContainer .mainViewTypeContent {
+    width: 70vw;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e6e4e4;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .contentViewTypeContainer .mainViewTypeContent .userFullName {
+    margin-bottom: 0;
+  }
+  
+  .userData img {
+    width: 50px;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+  }
+  
+  .mainViewTypeContent .userData {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .expandMore {
+    width: 50px;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .rotate180 {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate180.init {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .expandedContent a:link,
+  .expandedContent a:visited {
+    color: #2e6d7c;
+  }
+  
+  .expandedContent {
+    width: 55vw;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    background-color: #e6e4e4;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .expandedContent .fa-regular {
+    align-self: center;
+  }
+
+  .expandedContent .btn{
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .expandedContent .btn p {
+    margin: auto;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .showed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .expandedContent .btn{
+        gap: unset ;
+        padding: 10px;
+    }
+  }

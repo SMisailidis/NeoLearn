@@ -1,0 +1,10 @@
+@media only screen and (max-width: 670px) {
+  .expandedContent.teacherStuds {
+    justify-content: center;
+  }
+
+  .expandedContent.teacherStuds .phoneNumber,
+  .expandedContent.teacherStuds .email {
+    display: none;
+  }
+}
