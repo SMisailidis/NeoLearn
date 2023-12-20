@@ -49,6 +49,7 @@
         <link rel="stylesheet" href="assets/css/viewTeacherStudents.css">
         <link rel="stylesheet" href="assets/css/profile.css">
         <link rel="stylesheet" href="assets/css/globals.css">
+        <link rel="stylesheet" href="assets/css/information.css">
         <link rel="stylesheet" href="assets/css/navbar.css">
         <link rel="stylesheet" href="assets/css/userHeader.css">
         <link rel="stylesheet" href="assets/css/portfolio.css">

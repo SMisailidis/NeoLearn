@@ -5,6 +5,10 @@
 */
 
 $(document).ready(function () {
+  if (sessionStorage.length === 0) {
+    window.location.href = "loginPage.php";
+  }
+
   const content = JSON.parse(sessionStorage.getItem("userContent"));
 
   const firstName = JSON.parse(sessionStorage.getItem("userData"))[0]

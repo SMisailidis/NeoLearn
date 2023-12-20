@@ -97,3 +97,9 @@
     background-color: #2e6d7c;
   }
 }
+
+.fa-solid.fa-circle-info:hover,
+.fa-solid.fa-right-from-bracket:hover {
+  color: black;
+  transition: 0.2s ease-in;
+}
