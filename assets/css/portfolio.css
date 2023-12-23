@@ -62,7 +62,7 @@
 
 .portfolioText {
   position: relative;
-  text-decoration: none; /* Initially, no underline */
+  text-decoration: none;
 }
 
 .portfolioText::before {
@@ -71,11 +71,11 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px; /* Adjust the height of the underline as needed */
-  background-color: #fff; /* Adjust the color of the underline as needed */
-  transition: width 0.2s ease-in-out; /* Smooth transition effect for width */
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.2s ease-in-out; 
 }
 
 .portfolioAnchor:hover .portfolioText::before {
-  width: 100%; /* Full width when anchor is hovered */
+  width: 100%;
 }

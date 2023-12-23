@@ -25,6 +25,7 @@ $(document).ready(function () {
       .then((response) => {
         const curriculum = response[0];
 
+        $(".uploadedPdfT, .uploadedFilesT").empty()
 
         // Update UI elements with the fetched curriculum details
         $(".noteTitleT").val(curriculum.Title);

@@ -59,7 +59,7 @@ $(document).ready(function () {
 
   //Setting texts to modal/toast
   modal.setTitle("Add Course");
-  modal.setContent("Do you to publish the Course?");
+  modal.setContent("Do you want to publish the course?");
   modal.setButtonsText("No", "Yes");
   toast.setContent("Published successfully!");
 });
