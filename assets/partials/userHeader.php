@@ -3,7 +3,7 @@
             
             <div class="logoContainer">
                 <a href="portfolio.php">
-                    <img src="assets/images/logo.png" alt="">
+                    <img src="assets/images/logo.png" class="headerImg" alt="">
                 </a>
             </div>
             <div class="userInfo">

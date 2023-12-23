@@ -43,6 +43,11 @@
   margin-right: 5px;
 }
 
+.headerImg:hover{
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  transition: filter 0.2s ease-in-out;
+}
+
 @media only screen and (max-width: 768px) {
   .header {
     justify-content: space-between;

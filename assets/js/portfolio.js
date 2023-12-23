@@ -18,9 +18,9 @@ $(document).ready(function () {
 
   $.each(content, function (index, row) {
     const article = $("<article>").addClass("mainPortfolioContent");
-    const link = $("<a>").addClass("link").attr("href", row.url);
-    const img = $("<img>").attr("src", row.imgURL);
-    const text = $("<span>").text(row.text);
+    const link = $("<a>").addClass("link").attr("href", row.url).addClass("portfolioAnchor");
+    const img = $("<img>").attr("src", row.imgURL).addClass("portfolioImg");
+    const text = $("<span>").text(row.text).addClass("portfolioText");
 
     link.append(img).append(text);
     article.append(link);
