@@ -1,8 +1,12 @@
 import { fetchData } from "./eventHandler.js";
 
 $(document).ready(function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const curId = urlParams.get('curID');
+
   let quizContainer = $(".quizContainer");
   let startingPage = $(".startingPage");
+  let noQuizPage = $('.noQuestionsContainer');
   let questionPage = $(".questionPage");
   let question = $(".question");
   let startBtn = $(".startBtn");
@@ -21,142 +25,151 @@ $(document).ready(function () {
   let points = $(".totalPoints");
 
   let order = 0;
-  let remaining = 5;
+  let remaining;
   let correctAnswers = 0;
   const givenAnswers = {};
 
   let QuestionsObject = {};
 
-  fetchData(jQuery, "assets/Back-End/quiz.php", "POST", undefined)
+  fetchData(jQuery, "assets/Back-End/quiz.php", "POST", { curr_id: curId })
     .then((data) => {
-      $.each(data, function (index, row) {
-        QuestionsObject[row.Question] = {
-          options: [row.Option1, row.Option2, row.Option3, row.Option4],
-          correctAnswer: row.Correct_Answer,
-          answered: row.Answered === "0" ? false : true,
-        };
-      });
+
+      remaining = data.length;
+      
+      console.log(remaining);
+      if (data && data.length > 0) {
+        startingPage.css('display','flex');
+        $.each(data, function (index, row) {
+          QuestionsObject[row.Question] = {
+            options: [row.Option1, row.Option2, row.Option3, row.Option4],
+            correctAnswer: row.Correct_Answer,
+            answered: row.Answered === "0" ? false : true,
+          };
+        });
+
+        startBtn.on("click", function () {
+          resetRadioButtons();
+          startingPage.css("display", "none");
+          questionPage.css("display", "flex");
+          order = 0;
+          displayCurrentQuestion();
+        });
+
+        nextBtn.on("click", function () {
+          nextQuestion();
+          resetRadioButtons();
+        });
+
+        previousBtn.on("click", function () {
+          previousQuestion();
+          resetRadioButtons();
+        });
+
+        function disableButtons() {
+          options.prop("disabled", true);
+          optionLabels.prop("disabled", true);
+          optionLabels.css("scale", "1");
+        }
+
+        confirmBtn.on("click", function () {
+          const selectedAnswer = $('input[name="answers"]:checked');
+          if (!selectedAnswer.length)
+            alert("Please Select an Answer before Proceeding!");
+          else {
+            checkAnswer();
+            disableButtons();
+            QuestionsObject[getCurrentQuestion()].answered = true;
+            remaining--;
+
+            if (remaining === 0) {
+              questionPage.css("display", "none");
+              showResults();
+            } else {
+              nextQuestion();
+              enableButtons();
+            }
+          }
+        });
+
+        function displayCurrentQuestion() {
+          resetRadioButtons();
+          question.text(getCurrentQuestion());
+          let options = QuestionsObject[getCurrentQuestion()].options;
+          optionLabels.each(function (index) {
+            $(this).text(options[index]);
+          });
+        }
+
+        function resetRadioButtons() {
+          options.prop("checked", false);
+        }
+
+        function getCurrentQuestion() {
+          return Object.keys(QuestionsObject)[order];
+        }
+
+        function nextQuestion() {
+          let originalOrder = order;
+          do {
+            order = (order + 1) % Object.keys(QuestionsObject).length;
+          } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
+          displayCurrentQuestion();
+        }
+
+        function previousQuestion() {
+          let originalOrder = order;
+          do {
+            order =
+              (order - 1 + Object.keys(QuestionsObject).length) %
+              Object.keys(QuestionsObject).length;
+          } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
+          displayCurrentQuestion();
+        }
+
+        function enableButtons() {
+          options.prop("disabled", false);
+        }
+
+        function checkAnswer() {
+          const selectedAnswer = $('input[name="answers"]:checked');
+          const currentQuestion = getCurrentQuestion();
+          const selectedAnswerLabel = selectedAnswer.next("label").text();
+          givenAnswers[currentQuestion] = selectedAnswerLabel;
+
+          if (selectedAnswerLabel === QuestionsObject[currentQuestion].correctAnswer)
+            correctAnswers++;
+        }
+
+        function showResults() {
+          for (let currentQuestion in givenAnswers) {
+            let dataRow = new $("<tr>");
+            let questionData = $("<td>").text(currentQuestion);
+            let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
+            let correctAnswerData = $("<td>").text(
+              QuestionsObject[currentQuestion].correctAnswer
+            );
+
+            if (givenAnswerData.text() === correctAnswerData.text())
+              givenAnswerData.css("color", "#a5feae");
+            else givenAnswerData.css("color", "#fda0a0");
+
+            dataRow
+              .append(questionData)
+              .append(givenAnswerData)
+              .append(correctAnswerData);
+            resultsBody.append(dataRow);
+          }
+          quizContainer.css("justify-content", "flex-start");
+          quizContainer.css("padding-top", "0");
+          tableWrapper.css("display", "flex");
+          points.text("Total Correct Answers: " + correctAnswers);
+          totalPointsWrapper.css("display", "block");
+        }
+      }else
+        noQuizPage.css('display', 'flex');
     })
     .catch((error) => {
       console.error(error);
+
     });
-
-  startBtn.on("click", function () {
-    resetRadioButtons();
-    startingPage.css("display", "none");
-    questionPage.css("display", "flex");
-    order = 0;
-    displayCurrentQuestion();
-  });
-
-  nextBtn.on("click", function () {
-    nextQuestion();
-    resetRadioButtons();
-  });
-
-  previousBtn.on("click", function () {
-    previousQuestion();
-    resetRadioButtons();
-  });
-
-  function disableButtons() {
-    options.prop("disabled", true);
-    optionLabels.prop("disabled", true);
-    optionLabels.css("scale", "1");
-  }
-
-  confirmBtn.on("click", function () {
-    const selectedAnswer = $('input[name="answers"]:checked');
-    if (!selectedAnswer.length)
-      alert("Please Select an Answer before Proceeding!");
-    else {
-      checkAnswer();
-      disableButtons();
-      QuestionsObject[getCurrentQuestion()].answered = true;
-      remaining--;
-
-      if (remaining === 0) {
-        questionPage.css("display", "none");
-        showResults();
-      } else {
-        nextQuestion();
-        enableButtons();
-      }
-    }
-  });
-
-  function displayCurrentQuestion() {
-    resetRadioButtons();
-    question.text(getCurrentQuestion());
-    let options = QuestionsObject[getCurrentQuestion()].options;
-    optionLabels.each(function (index) {
-      $(this).text(options[index]);
-    });
-  }
-
-  function resetRadioButtons() {
-    options.prop("checked", false);
-  }
-
-  function getCurrentQuestion() {
-    return Object.keys(QuestionsObject)[order];
-  }
-
-  function nextQuestion() {
-    let originalOrder = order;
-    do {
-      order = (order + 1) % Object.keys(QuestionsObject).length;
-    } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
-    displayCurrentQuestion();
-  }
-
-  function previousQuestion() {
-    let originalOrder = order;
-    do {
-      order =
-        (order - 1 + Object.keys(QuestionsObject).length) %
-        Object.keys(QuestionsObject).length;
-    } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
-    displayCurrentQuestion();
-  }
-
-  function enableButtons() {
-    options.prop("disabled", false);
-  }
-
-  function checkAnswer() {
-    const selectedAnswer = $('input[name="answers"]:checked');
-    const currentQuestion = getCurrentQuestion();
-    const selectedAnswerLabel = selectedAnswer.next("label").text();
-    givenAnswers[currentQuestion] = selectedAnswerLabel;
-
-    if (selectedAnswerLabel === QuestionsObject[currentQuestion].correctAnswer)
-      correctAnswers++;
-  }
-
-  function showResults() {
-    for (let currentQuestion in givenAnswers) {
-      let dataRow = new $("<tr>");
-      let questionData = $("<td>").text(currentQuestion);
-      let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
-      let correctAnswerData = $("<td>").text(
-        QuestionsObject[currentQuestion].correctAnswer
-      );
-
-      if (givenAnswerData.text() === correctAnswerData.text())
-        givenAnswerData.css("color", "#a5feae");
-      else givenAnswerData.css("color", "#fda0a0");
-
-      dataRow
-        .append(questionData)
-        .append(givenAnswerData)
-        .append(correctAnswerData);
-      resultsBody.append(dataRow);
-    }
-    quizContainer.css("justify-content", "flex-start");
-    quizContainer.css("padding-top", "0");
-    tableWrapper.css("display", "flex");
-    points.text("Total Correct Answers: " + correctAnswers);
-    totalPointsWrapper.css("display", "block");
-  }
 });

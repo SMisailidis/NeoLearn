@@ -42,6 +42,11 @@
                             </tbody>
                         </table>
                     </section>
+                    <section class="noQuestionsContainer container col-12 col-lg-10 col-xl-9">
+
+                                <img src="assets/images/notFound404Icon.png" alt="a 404 not found icon with a ghost instead of a '0'">
+                                <h1>There isn't a quiz available for this chapter yet! </h1>
+                    </section>
                 </div>
             </main>
         </div>

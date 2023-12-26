@@ -136,7 +136,7 @@ $(document).ready(function () {
           },
           quiz: {
             text: "Quiz",
-            url: "quiz.php",
+            url: "portfolioQuizLandingPage.php",
             imgURL: "assets/images/quizIcon.png",
           },
         };
