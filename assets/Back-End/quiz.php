@@ -1,9 +1,12 @@
 <?php 
     include 'DbConnection.php';
 
-    $connection = dbConnect();
+     $selectedCurriculumID = $_POST['curr_id'];
 
-    $query = "SELECT * FROM quiz";
+    $connection = dbConnect();
+    
+
+    $query = "SELECT * FROM quiz where Curr_ID = '$selectedCurriculumID' ";
 
     $queryResult = executeDMLQuery($query,$connection);
 

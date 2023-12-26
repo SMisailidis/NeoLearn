@@ -24,8 +24,8 @@
   align-items: center;
 }
 
-.startingPage {
-  display: flex;
+.noQuestionsContainer,.startingPage{
+  display: none ;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
@@ -39,7 +39,8 @@
   font-size: 20px;
 }
 
-.startingPage h1 {
+
+.startingPage, .noQuestionsContainer h1 {
   font-size: 30px;
 }
 

@@ -1,0 +1,67 @@
+main {
+    height: 100%;
+    width: 100%;
+}
+
+.coursesListWrapper {
+    background-color: #2e6d7c;
+    color: #e8e9ea;
+    height: 500px;
+    gap: 20px;
+    padding: 50px 25px;
+    border: none;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.listsWrapper {
+    height: 270px;
+    width: 60%;
+    border-bottom: 1px solid #e8e9ea;
+    border-top: 1px solid #e8e9ea;
+    overflow-y: auto;
+}
+
+.coursesList,
+.currList {
+    padding-left: 0;
+    list-style-type: square;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+
+.currList {
+    display: none;
+}
+
+.coursesList li,
+.currList li {
+    cursor: pointer;
+
+}
+
+.coursesList li+li,
+.currList li+li {
+    margin-top: 10px;
+}
+
+.coursesList li a,
+.currList li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.quizLandingBackBtn {
+    margin: auto auto 0 50px;
+    width: 250px;
+    border-radius: 25px;
+    padding: 15px 0;
+    background-color: #114054;
+    color: #e8e9ea;
+    border: none;
+    display: none;
+}
