@@ -65,6 +65,7 @@
         <link rel="stylesheet" href="assets/css/quiz.css">
         <link rel="stylesheet" href="assets/css/changePassword.css">
         <link rel="stylesheet" href="assets/css/videoDisplay.css">
+        <link rel="stylesheet" href="assets/css/quizLandingPage.css">
         <!---------------->
 
         <!-- JS assets -->
