@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php
+     $pageTitle = 'My Courses';
+     require 'layout.php' ?>
     <h1 class="header-text">My Courses</h1>
     <div class="viewCoursesContainer">
         <div class="CoursesList">  

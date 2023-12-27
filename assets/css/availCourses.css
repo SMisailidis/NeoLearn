@@ -3,12 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 80%;
+  height: 100%;
+  padding: 50px 25px;
 }
 .contentAvailCoursesContainer table {
   color: #0b2d3c;
   background-color: rgba(46, 109, 124, 0.4);
-  width: 60vw;
-  height: 70vh;
+  height: 100%;
+
 }
 
 .contentAvailCoursesContainer th,
@@ -17,10 +20,27 @@ td {
   text-align: center;
   vertical-align: middle;
 }
+.contentAvailCoursesContainer tr td{
+  transition: 0.4s ease-in-out;
+  backface-visibility: hidden;
+}
+.contentAvailCoursesContainer tr:hover td{
+  cursor: pointer;
+  scale: 1.02;
+  margin: 10px 0;
+}
+
+.contentAvailCoursesContainer tr{
+  transition: 0.3s ease-in-out;
+}
+.contentAvailCoursesContainer tr:hover {
+  box-shadow: 8px 5px 10px 5px #11405486;
+}
 
 .contentAvailCoursesContainer input[type="checkbox"] {
   transform: scale(1.5);
   accent-color: #114054;
+  cursor: pointer;
 }
 
 .tableHeaderRow th {
@@ -28,4 +48,28 @@ td {
   background-color: #114054;
   color: #ddd;
   text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 992px){
+    .contentAvailCoursesContainer{
+      width: 100%;
+      padding: 50px 10px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+  .contentAvailCoursesContainer{
+    padding: 50px 0;
+  }
+
+  .contentAvailCoursesContainer th,
+td {
+  font-size: 14px;
+  padding: 0 5px !important;
+}
+
+.contentAvailCoursesContainer input[type="checkbox"] {
+  transform: scale(1);
+}
 }

@@ -1,3 +1,5 @@
+import modal from "./modal.js";
+
 $(document).ready(function () {
   let inactivityTimeout;
 
@@ -7,11 +9,21 @@ $(document).ready(function () {
   };
 
   const logoutUser = () => {
-    alert("You have been logged out due to inactivity");
+    modal.setElement();
+    modal.setTitle('You have been logged out due to inactivity');
+    modal.setContent('You have been inactive for too long and, as a result, you have been logged out.');
+    modal.setButtonsText('Log In', '');
+    $("#save").remove();
+    modal.onClickCloseHandler(() => {
+      modal.closeModal();
+      window.location.href = "loginPage.php";
+      sessionStorage.clear();
+    });
+    modal.openModal(); // Open the modal
 
-    window.location.href = "loginPage.php";
-    sessionStorage.clear();
+
   };
+
 
   $(document).on("mousemove keypress", resetTimer);
 

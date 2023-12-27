@@ -1,4 +1,5 @@
 import { fetchData } from "./eventHandler.js";
+import modal from "./modal.js";
 
 $(document).ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
@@ -35,8 +36,7 @@ $(document).ready(function () {
     .then((data) => {
 
       remaining = data.length;
-      
-      console.log(remaining);
+      console.log(data.length);
       if (data && data.length > 0) {
         startingPage.css('display','flex');
         $.each(data, function (index, row) {
@@ -68,13 +68,21 @@ $(document).ready(function () {
         function disableButtons() {
           options.prop("disabled", true);
           optionLabels.prop("disabled", true);
-          optionLabels.css("scale", "1");
         }
 
         confirmBtn.on("click", function () {
           const selectedAnswer = $('input[name="answers"]:checked');
-          if (!selectedAnswer.length)
-            alert("Please Select an Answer before Proceeding!");
+          if (!selectedAnswer.length){
+            modal.setElement();
+            modal.setTitle('Please Select an Answer!');
+            modal.setContent("It seems you haven't chosen an answer. Please choose one and try again!");
+            modal.setButtonsText('Got it','');
+            modal.openModal();
+           modal.onClickCloseHandler(function(){
+            modal.closeModal();
+           })
+            $("#save").remove();
+          }
           else {
             checkAnswer();
             disableButtons();

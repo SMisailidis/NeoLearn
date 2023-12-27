@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php
+    $pageTitle='Profile Information';
+    require 'layout.php' ?>
                 <h1 class="header-text">My Profile</h1>
                 <div class="contentProfileContainer">
                     <img src="assets/images/userCircled.png" alt="image">

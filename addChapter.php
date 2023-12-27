@@ -1,4 +1,5 @@
-<?php require 'layout.php' ?>
+<?php $pageTitle = 'Create Chapter' ?>
+<?php require 'layout.php'?>
 
             <h1 class="header-text">Add a Chapter</h1>
             <form class="addDetails" id="formAddChapter" method="POST">

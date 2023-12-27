@@ -81,7 +81,7 @@ $(document).ready(function () {
           },
           Quiz: {
             text: "Quiz",
-            url: "quiz.php",
+            url: "portfolioQuizLandingPage.php",
             imgURL: "fa-solid fa-circle-question",
           },
           profile: {

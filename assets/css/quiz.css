@@ -1,5 +1,4 @@
 .totalPointsWrapper {
-  padding: 20px 0;
   display: none;
   text-align: center;
 }
@@ -13,8 +12,8 @@
   border-bottom: 1px solid #2e6d7c;
   color: #2e6d7c;
 }
+
 .quizContainer {
-  padding: 100px 0 10px 0;
   width: 100%;
   height: auto;
   display: flex;
@@ -24,8 +23,8 @@
   align-items: center;
 }
 
-.noQuestionsContainer,.startingPage{
-  display: none ;
+.startingPage {
+  display: none;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
@@ -38,9 +37,36 @@
   padding: 50px 0;
   font-size: 20px;
 }
+.noQuestionsContainer{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 500px;
+  height: auto;
+  background-color: #2e6d7c;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #00000033;
+  color: #e6e4e4;
+  padding: 50px 0;
+  font-size: 20px;
+}
+
+.backToQuizLandingBtn {
+  margin: auto auto 0 50px;
+  width: 250px;
+  border-radius: 25px;
+  padding: 15px 0;
+  background-color: #114054;
+  color: #e8e9ea;
+  border: none;
+  text-decoration: none;
+}
 
 
-.startingPage, .noQuestionsContainer h1 {
+.startingPage,
+.noQuestionsContainer h1 {
   font-size: 30px;
 }
 
@@ -90,7 +116,7 @@
   display: none;
 }
 
-.options input[type="radio"]:checked + label {
+.options input[type="radio"]:checked+label {
   background-color: #c7c5c5;
 }
 
@@ -134,7 +160,7 @@
 .tableWrapper {
   display: none;
   align-items: center;
-  padding: 50px 0;
+
 }
 
 .tableWrapper table {
@@ -147,11 +173,6 @@
   border-radius: 5px;
 }
 
-/* .tableWrapper table tbody {
-    background-color: #2e6d7c;
-    color: #e6e4e4;
-}
- */
 .tableWrapper table thead {
   height: auto;
 }
@@ -167,11 +188,11 @@
   padding: 0 10px;
 }
 
-.tableWrapper table td + td {
+.tableWrapper table td+td {
   border-left: 1px solid #e6e4e4;
 }
 
-.tableWrapper table tr + tr {
+.tableWrapper table tr+tr {
   border-top: 1px solid #e6e4e4;
 }
 
@@ -215,7 +236,7 @@
     padding: 15px 0;
   }
 
-  .options > label:not(:last-child) {
+  .options>label:not(:last-child) {
     margin-bottom: 15px;
   }
 
@@ -235,6 +256,7 @@
     padding: 10px 5px;
     line-height: 20px;
   }
+
   .tableWrapper table tbody {
     font-size: 12px;
   }

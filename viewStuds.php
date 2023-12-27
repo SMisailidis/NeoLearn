@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php
+      $pageTitle = 'My Students';
+      require 'layout.php' ?>
         <section class="viewTypeInnerContent">
           <h1 class="header-text">View My Students</h1>
           <section class="contentViewTypeContainer">

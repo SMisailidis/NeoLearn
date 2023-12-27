@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="icon" type="image/x-icon" href="./logo.ico">
+        <link rel="icon" type="image/x-icon" href="./assets/images/logoDark.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Elevate your education with Neo Learn. 
@@ -19,7 +19,7 @@
         <meta name="robots" content="index, follow">
         <meta name="theme-color" content="#114054">
 
-        <title>NeoLearn</title>
+        <title><?= $pageTitle ?? 'NeoLearn' ?></title>
 
         <meta property="og:title" content="Neo Learn">
         <meta property="og:description" content="Discover a world of knowledge with our online education platform. 
@@ -72,7 +72,7 @@
         <script src="assets/js/navbarToggle.js"></script>
         <script src="assets/js/portfolio.js"></script>
         <script src="assets/js/navbar.js"></script>
-        <script src="assets/js/logout.js"></script>
+        <script type="module" src="assets/js/logout.js"></script>
         <!--------------->
 
     </head>
@@ -81,6 +81,6 @@
         <?php require 'assets/partials/modal.php' ?>
         <?php require 'assets/partials/toast.php' ?>
         <?php require 'assets/partials/userHeader.php' ?>
-        <div class="nav-and-main" style="display: flex"> 
-            <?php require 'assets/partials/navbar.php' ?>  
-            <main class="mainContainer">
+        <div class="nav-and-main d-flex"> 
+            <?php require 'assets/partials/navbar.php'?>  
+            <main class="mainContainer col-xl-9 col-12">

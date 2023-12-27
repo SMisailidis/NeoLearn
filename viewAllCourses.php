@@ -1,4 +1,8 @@
-<?php require 'layout.php' ?>
+
+
+<?php
+      $pageTitle = 'All Courses';
+      require 'layout.php' ?>
         <section class="viewTypeInnerContent">
           <h1 class="header-text">View All Courses</h1>
           <section class="contentViewTypeContainer">

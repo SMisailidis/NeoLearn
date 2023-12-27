@@ -3,15 +3,15 @@
   display: flex;
   flex-direction: column;
   background-color: #2e6d7c;
-  height: 90vh;
-  flex-basis: 25%;
-  overflow: hidden;
-  transition: flex-basis 0.5s;
+  height: 100%;
+  /* flex-basis: 25%; */
+  white-space: nowrap;
+  box-shadow: 10px 0 8px -5px rgb(128, 127, 127);
 }
 
+
 .navContainer nav {
-  height: 70%;
-  min-height: 500px;
+  height: 100%;
   display: flex;
   background-color: #2e6d7c;
   justify-content: center;
@@ -19,7 +19,7 @@
 }
 
 .navContainer nav ul {
-  height: 80%;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,6 @@
   font-size: 1rem;
   border-bottom: 2px solid #e8e9ea;
   border-top: 2px solid #e8e9ea;
-  padding: 5px 0;
 }
 .navContainer nav ul li:hover {
   background-color: #e8e9ea;
@@ -46,12 +45,14 @@
 
 .navContainer nav ul li a {
   color: inherit;
+  display: inline-block;
   width: 100%;
+  padding: 5px 0;
   text-decoration: none;
 }
 
+
 .navContainer .controlPanel {
-  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,21 +69,29 @@
 
 .copyrights {
   color: #e8e9ea;
-
-  font-size: small;
+  font-size: 12px;
   display: inherit;
   align-self: flex-end;
   margin-top: auto;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1199px) {
   .navContainer {
-    flex-basis: 0%;
+    /* opacity: 0; */
     transition: 0.5s ease-in-out;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    overflow: scroll;
+    transform: translateX(-1000%);
   }
 
-  .navContainer nav ul li a span {
-    display: none;
+  .navContainerActive{
+    flex-basis: 100%;
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    transform: translateX(0);
+
   }
 
   .navContainer nav ul li a i {
@@ -90,7 +99,7 @@
   }
 
   .navActive {
-    flex-basis: 25%;
+    flex-basis: 100%;
   }
 
   .activateWidth {
@@ -98,8 +107,10 @@
   }
 }
 
-.fa-solid.fa-circle-info:hover,
-.fa-solid.fa-right-from-bracket:hover {
-  color: black;
-  transition: 0.2s ease-in;
-}
+@media only screen and (max-width: 768px){
+  .navContainer nav ul li a span {
+    display: none;
+  }
+
+} 
+

@@ -1,15 +1,16 @@
-main {
+.loginPageMain {
+  border: 1px solid black;
   flex: 1;
-  padding: 25px 0;
+  padding: 25px 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border: 1px solid black;
 }
 
 .formContainer {
-  height: 550px;
+  min-height: 550px;
   max-width: 1500px;
-  /* margin: auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

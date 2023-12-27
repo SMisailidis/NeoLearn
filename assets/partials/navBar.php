@@ -1,6 +1,6 @@
 
         <!-- Start Nav Bar -->
-        <div class="navContainer">
+        <div class="navContainer col-xl-3 col-12">
             <nav>
                 <ul class="navList">
                 </ul>

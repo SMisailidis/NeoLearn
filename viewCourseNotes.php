@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php
+      $pageTitle = 'Course Notes';
+      require 'layout.php' ?>
       <div class="course-title">
         <h1 class="header-text" id="curHeader"></h1>
       </div>

@@ -1,5 +1,6 @@
-        <?php require 'layout.php' ?>
-            <main class="container-fluid">
+        <?php
+            $pageTitle = 'Quiz Time';
+            require 'layout.php' ?>
                 <div class="quizContainer">
                     <section class="startingPage container col-12 col-lg-10 col-xl-9">
                         <h1>Web Tech Quiz</h1>
@@ -42,10 +43,12 @@
                             </tbody>
                         </table>
                     </section>
-                    <section class="noQuestionsContainer container col-12 col-lg-10 col-xl-9">
+                    <section class="noQuestionsContainer container col-12 col-lg-10 col-xl-9 p-relative">
 
                                 <img src="assets/images/notFound404Icon.png" alt="a 404 not found icon with a ghost instead of a '0'">
                                 <h1>There isn't a quiz available for this chapter yet! </h1>
+                                <a href="portfolioQuizLandingPage.php" class="backToQuizLandingBtn d-inline-flex justify-content-center align-items-center">< Back</a>
+
                     </section>
                 </div>
             </main>

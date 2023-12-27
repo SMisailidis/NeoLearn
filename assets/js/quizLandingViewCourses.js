@@ -18,8 +18,8 @@ $(document).ready(function () {
         });
 
     coursesList.on('click', '.anchors', function () {
-        backBtn.css("display", "inline");
         coursesList.css('display', 'none');
+        backBtn.css("display", "inline");
         curriculumList.css('display', 'block');
 
         fetchData($, "assets/Back-End/quizLandingViewCurr.php", "POST", { course_ID: $(this).attr('id') })
@@ -30,7 +30,7 @@ $(document).ready(function () {
                         .text(row.Title)
                         .addClass('anchors')
                         .attr('id', row.ID)
-                        .attr('href', `quiz.php?curID=${row.ID}`); // Use row.ID directly
+                        .attr('href', `quiz.php?curID=${row.ID}`);
 
                     curriculumList.append($('<li>').append(curricName));
                 });
@@ -44,6 +44,7 @@ $(document).ready(function () {
 
     backBtn.on('click', function () {
         curriculumList.css("display", "none");
+        curriculumList.empty();
         coursesList.css("display", "block");
         $(this).css("display", "none");
     });

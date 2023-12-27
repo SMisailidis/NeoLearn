@@ -6,11 +6,15 @@
   background-color: rgba(46, 109, 124, 0.4);
   padding: 20px;
   border-radius: 20px;
+  width: 90%;
+  height: 80%;
 }
 .sectionOuterProfileContainer {
   display: flex;
   gap: 15px;
   justify-content: center;
+  width: 100%;
+  
 }
 
 .sectionOuterProfileContainer .title {
@@ -28,15 +32,16 @@
   border-radius: 20px;
   padding-top: 20px;
   margin-top: 10px;
-  width: 30vw;
+  width: 100%;
   height: 100%;
   color: #114054;
 }
 
 .contentProfileContainer img {
-  width: 8vw;
+  width: 200px;
   aspect-ratio: 16/9;
   object-fit: contain;
+  margin-bottom: 20px;
 }
 
 .sectionProfileContainer input[type="text"],
@@ -77,8 +82,8 @@
 }
 
 .mainProfileContent .button {
-  width: 20%;
-  height: 75%;
+  width: 150px;
+  padding: 15px 5px;
   border: 0;
   border-radius: 50px;
   margin-right: 10px;
@@ -88,8 +93,8 @@
 }
 
 .changeProfileButton {
-  width: 20%;
-  height: 75%;
+  width: 150px;
+  padding: 15px 5px;
   border: 0;
   border-radius: 50px;
   margin-bottom: 10px;
@@ -101,19 +106,31 @@
 
 .sectionProfileContainer .button:disabled,
 .sectionProfileContainer .changeProfileButton:disabled {
-  background-color: #dddddd; /* Light gray */
-  color: #666666; /* Dark gray */
+  background-color: #dddddd;
+  color: #666666; 
   cursor: not-allowed;
   visibility: hidden;
 }
 
-@media only screen and (max-width: 882px) {
-  .sectionOuterProfileContainer {
-    flex-direction: column;
+@media only screen and (max-width: 992px){
+  .contentProfileContainer{
+    width: 100%;
+    justify-content: start;
+    overflow-y: auto;
   }
 
-  .sectionProfileContainer {
-    width: 50vw;
-    height: 50vh;
+  .sectionOuterProfileContainer{
+    flex-direction: column;
+  }
+}
+
+
+@media only screen and (max-width: 768px){
+
+  .contentProfileContainer{
+    padding: 25px 10px;
+  }
+  .contentProfileContainer img{
+    width: 120px;
   }
 }

@@ -3,7 +3,7 @@
         <?php require 'assets/css/loginPage.css' ?>
     </style>
 
-        <main class="container-fluid">
+        <main class="container-fluid loginPageMain">
             <div class="formContainer col-md-8 col-sm-10 col-12">
                 <h2>Είσοδος Στην Πλατφόρμα</h2>
                 <form method="POST" id="loginForm">

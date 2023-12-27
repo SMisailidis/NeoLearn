@@ -1,5 +1,7 @@
 
-<?php require 'layout.php' ?>
+<?php 
+    $pageTitle = 'My Portfolio';
+    require 'layout.php' ?>
                 <section class="contentPortfolioContainer"></section>
             </main>
         </div>

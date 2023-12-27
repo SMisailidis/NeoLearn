@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php
+      $pageTitle ='Notes';
+      require 'layout.php' ?>
                 <div class="header-text" id="crsName"></div>
                 <div class="allInfo"> 
                 </div>

@@ -1,5 +1,7 @@
 
-<?php require 'layout.php' ?>
+<?php 
+$pageTitle = 'Available Courses';
+require 'layout.php' ?>
                 <section class="contentAvailCoursesContainer">
                     <h1 class="header-text">Available Courses</h1>
                     <table class="table table-bordered table-hover">

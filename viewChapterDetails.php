@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php 
+     $pageTitle = 'Chapter Details';
+    require 'layout.php' ?>
                 <h1 class="header-text" id="TitleCourse"></h1>
                 <div class="Info">
                     <div class="courseNameT">

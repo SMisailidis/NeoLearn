@@ -1,4 +1,6 @@
-<?php require 'layout.php' ?>
+<?php 
+    $pageTitle = 'Chapters';
+    require 'layout.php' ?>
             <div class="course-title">
                 <h1 id="cTitle"></h1>
             </div>

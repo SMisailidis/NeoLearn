@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoLearn</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logoDark.png">
     <link rel="stylesheet" href="assets/css/loginHeader.css">
     <link rel="stylesheet" href="assets/css/globals.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -24,4 +25,3 @@
             <span>'Fueling Curiosity, Igniting Success'</span>
         </div>
     </header>
-    <div class="subheader container-fluid"></div>

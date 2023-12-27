@@ -8,10 +8,17 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
   display: flex;
   background-color: #e6e4e4 !important;
   flex-direction: column;
+  scrollbar-gutter: stable !important;
+}
+
+.nav-and-main{
+  height: 100%;
+  min-height: 700px;
+  position: relative;
 }
 
 .header-text {
@@ -42,13 +49,12 @@ body {
 }
 
 .mainContainer {
-  height: 100%;
-  width: 100%;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex-grow: 1;
+  transition: 0.5s ease-in-out;
 }
 
 .btn.btn-primary {
