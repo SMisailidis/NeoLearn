@@ -28,9 +28,4 @@ $(document).ready(function () {
     $(".contentPortfolioContainer").append(article);
   });
 
-  const quizSpan = $('a[href="quiz.php"] span');
-  const quizImg = $('a[href="quiz.php"] img');
-
-  quizImg.css("width", "20vw");
-  quizSpan.text("");
 });
