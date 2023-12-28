@@ -15,6 +15,7 @@ $(document).ready(function () {
     .First_Name;
 
   $(".headerUserName").text("Welcome, " + firstName);
+  let count = 0;
 
   $.each(content, function (index, row) {
     const article = $("<article>").addClass("mainPortfolioContent");
@@ -24,8 +25,10 @@ $(document).ready(function () {
 
     link.append(img).append(text);
     article.append(link);
+    (count%2===0) ? article.addClass('animate__animated animate__fadeInLeft') : article.addClass('animate__animated animate__fadeInRight') ;
 
     $(".contentPortfolioContainer").append(article);
+    count++;
   });
 
 });

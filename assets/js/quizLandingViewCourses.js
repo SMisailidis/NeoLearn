@@ -12,7 +12,7 @@ $(document).ready(function () {
         .then((data) => {
             $.each(data, function (index, row) {
                 const courseName = $('<a>').text(row.Title).addClass('anchors').attr('id', row.ID);
-                coursesList.append($('<li>').append(courseName));
+                coursesList.append($('<li>').append(courseName).addClass('animate__animated animate__fadeInRight'));
             });
         }).catch((error) => {
             console.error(error);
@@ -35,7 +35,7 @@ $(document).ready(function () {
                         .attr('id', row.ID)
                         .attr('href', `quiz.php?curID=${row.ID}`);
 
-                    curriculumList.append($('<li>').append(curricName));
+                    curriculumList.append($('<li>').append(curricName).addClass('animate__animated animate__fadeInRight'));
                 });
             })
             .catch((error) => {

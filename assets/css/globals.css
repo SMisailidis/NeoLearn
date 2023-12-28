@@ -10,6 +10,7 @@
   font-size: 35px;
   line-height: 40px;
   color: #114054;
+  text-align: center;
 }
 
 html,
@@ -27,6 +28,9 @@ body {
   position: relative;
 }
 
+/* a:visited{
+  color: inherit;
+} */
 
 .paginationNav .pagination .page-item .page-link {
   color: #114054;

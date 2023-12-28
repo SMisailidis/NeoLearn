@@ -3,8 +3,7 @@
   border-radius: 25px;
   background-color: rgba(46, 109, 124, 0.4);
   box-shadow: 5px 5px 10px;
-  height: 70vh;
-  width: 60vw;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +37,13 @@
   padding: 10px;
   margin-top: 5px;
   width: 100%;
+  transition: 0.4s ease-in-out;
+  color: #0b2d3c;
+}
+
+.editCourseContainer .title-desc-container input[type="text"]:focus,.editCourseContainer .title-desc-container #description:focus{
+  transform: scale(1.02);
+  box-shadow: 5px 5px 15px 5px #1140549c;
 }
 
 .editCourseContainer .title-desc-container #description {
@@ -50,6 +56,8 @@
   width: 100%;
   height: 40%;
   resize: none;
+  transition: 0.4s ease-in-out;
+  color: #0b2d3c;
 }
 
 .editCourseContainer .bottomContainer {

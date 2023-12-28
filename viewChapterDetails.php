@@ -2,11 +2,11 @@
      $pageTitle = 'Chapter Details';
     require 'layout.php' ?>
                 <h1 class="headerStyle" id="TitleCourse"></h1>
-                <div class="Info">
+                <div class="Info col-lg-10 col-12">
                     <div class="courseNameT">
-                    <textarea class="noteTitleT" name="ChapterTitle" required></textarea>
+                    <textarea class="noteTitleT" name="ChapterTitle" required cols="1" rows="1" resiz></textarea>
                     </div>
-                    <div class="descFilesContainerT">
+                    <div class="descFilesContainerT d-flex flex-column flex-lg-row">
                         <div class="descContainerT">
                             <textarea class="descBoxT" name="ChapterDesc"></textarea>
                         </div>
