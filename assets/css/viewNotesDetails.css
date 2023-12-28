@@ -1,32 +1,28 @@
-.courseName {
-  text-align: center;
+#crsName {
+  text-align: center !important;
   color: #114054;
   padding: 10px;
   margin-bottom: 20px;
-  font-size: x-large;
 }
 
 .allInfo {
-  width: 70%;
   height: 70%;
+  max-width: 900px;
   border: 2px solid #114054;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 30px;
   background-color: rgba(46, 107, 122, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .noteTitle {
   border: 2px solid #114054;
   color: #114054;
-  font-size: x-large;
   width: 70%;
+  font-size: 25px;
   height: 10%;
-  margin-bottom: 10px;
+  margin: 10px auto auto auto ;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,12 +61,13 @@
   height: 80%;
   border-radius: 10px;
   background-color: #e8e9ea;
-  padding: 5%;
+  overflow: auto;
+  padding: 25px;
 }
 
 .descandFilesContainer .filesContainer .filesBox {
   border: 2px solid #114054;
-  border-radius: 5%;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +88,11 @@
 
 .descandFilesContainer .filesContainer .filesBox .uploadedFiles {
   width: 100%;
-  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+
 }
 
 .descandFilesContainer .filesContainer .filesBox .uploadedFiles .uploadedPdf,
@@ -104,10 +105,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 15%;
-  margin-top: 5%;
+  color: #114054;
   background-color: rgb(192, 192, 192);
 }
+
 
 .descandFilesContainer
   .filesContainer
@@ -121,8 +122,9 @@
   .uploadedFiles
   .uploadedVideos
   a:link {
-  text-decoration: underline;
+    text-decoration: none;
   color: #114054;
+  width: 100%;
 }
 
 .allInfo .quizButton {
@@ -142,3 +144,46 @@
 }
 
 
+@media only screen and (max-width: 768px){
+
+  .allInfo{
+    gap: 20px;
+  }
+
+  .noteTitle{
+    font-size: 20px;
+  }
+  .descandFilesContainer{
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 25px;
+  }
+ .descandFilesContainer .descContainer , .descandFilesContainer .filesContainer{
+    height: 100%;
+    width: 100%;
+  }
+
+  .descandFilesContainer .filesContainer .filesBox , .descandFilesContainer .descContainer .descBox{
+    width: 80%;
+    height: 100%;
+  }
+
+  .descandFilesContainer .filesContainer .descBox{
+    padding: 10px;
+  }
+
+  .descandFilesContainer .filesContainer .filesBox .uploadText{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 567px){
+  
+  .descandFilesContainer .filesContainer .filesBox , .descandFilesContainer .descContainer .descBox{
+    width: 100%;
+  }
+
+  .noteTitle{
+    width: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 <?php $pageTitle = 'Create Chapter' ?>
 <?php require 'layout.php'?>
 
-            <h1 class="header-text">Add a Chapter</h1>
+            <h1 class="headerStyle">Add a Chapter</h1>
             <form class="addDetails" id="formAddChapter" method="POST">
                 <label for="chapterTitle">Chapter Title</label>
                 <input type="text" name="chapterTitle" id="chapterTitle" required placeholder="e.g. Introduction to Mathematics"/>

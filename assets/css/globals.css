@@ -6,6 +6,12 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
+.headerStyle{
+  font-size: 35px;
+  line-height: 40px;
+  color: #114054;
+}
+
 html,
 body {
   height: 100%;
@@ -21,12 +27,6 @@ body {
   position: relative;
 }
 
-.header-text {
-  color: #114054;
-  font-weight: normal;
-  margin-bottom: 3px;
-  text-align: center;
-}
 
 .paginationNav .pagination .page-item .page-link {
   color: #114054;
@@ -59,4 +59,12 @@ body {
 
 .btn.btn-primary {
   border: 0;
+}
+
+
+@media only screen and (max-width: 992px){
+   .headerStyle{
+    font-size: 30px;
+    line-height: 35px;
+   }
 }

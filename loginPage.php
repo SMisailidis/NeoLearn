@@ -3,9 +3,11 @@
         <?php require 'assets/css/loginPage.css' ?>
     </style>
 
+    <h1 class="d-none">NeoLearn Login In</h1>
+
         <main class="container-fluid loginPageMain">
             <div class="formContainer col-md-8 col-sm-10 col-12">
-                <h2>Είσοδος Στην Πλατφόρμα</h2>
+                <h2 class="headerStyle">Είσοδος Στην Πλατφόρμα</h2>
                 <form method="POST" id="loginForm">
 
                     <div class="inputContainer col-10 col-md-8 col-lg-7 position-relative">

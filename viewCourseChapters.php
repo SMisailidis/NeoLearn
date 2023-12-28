@@ -2,15 +2,17 @@
     $pageTitle = 'Chapters';
     require 'layout.php' ?>
             <div class="course-title">
-                <h1 id="cTitle"></h1>
+                <h1 class="headerStyle" id="cTitle"></h1>
             </div>
-            <div class="chapters_central-div">
-                <div class="Rectangles">
-            
+            <div class="chapters_central-div col-lg-10 col-12">
+                <div class="Rectangles d-flex flex-column justify-content-center">
+
+
+       
                 </div>
-                <?php require 'assets/partials/pagination.php' ?>
+                <?php require 'assets/partials/pagination.php' ?>       
                 <div class="AddChapterButtonContainer">
-                    <a id="AddChapter-btn"><button class="Buttons">Add a Chapter</button></a>
+                    <a id="AddChapter-btn"><button class="viewCoursesButtons">Add a Chapter</button></a>
                 </div>
             </div>
         </main>

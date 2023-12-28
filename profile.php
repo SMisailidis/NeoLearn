@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Profile Information';
 require 'layout.php' ?>
-<h1 class="header-text">My Profile</h1>
+<h1 class="headerStyle">My Profile</h1>
 <div class="contentProfileContainer">
     <div class="sectionOuterProfileContainer swiper">
         <div class="swiper-wrapper">

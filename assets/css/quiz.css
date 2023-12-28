@@ -49,8 +49,14 @@
   border-radius: 5px;
   box-shadow: 10px 5px 18px 5px #1140549d;
   color: #e8e9ea;
-  padding: 50px 0;
+  padding: 50px 20px;
   font-size: 20px;
+}
+
+.noQuestionsContainer .noQuizHeading{
+  font-size: 30px;
+  line-height: 34px;
+  text-align: center;
 
 }
 
@@ -63,12 +69,6 @@
   color: #114054;
   border: 1px solid #114054;
   text-decoration: none;
-}
-
-
-.startingPage,
-.noQuestionsContainer h1 {
-  font-size: 30px;
 }
 
 .startingPage p {
@@ -99,8 +99,8 @@
   display: none;
 }
 
-.questionPage h2 {
-  font-size: 30px;
+.questionPage h3 {
+  font-size: 30px ;
   text-align: center;
 }
 
@@ -200,6 +200,22 @@
 }
 
 @media screen and (max-width: 992px) {
+
+  .noQuestionsContainer .noQuizHeading{
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .noQuestionsContainer img{
+    width: 100px;
+  }
+
+  
+.backToQuizLandingBtn {
+  margin-left: 0;
+  width: max(35vw, 200px);
+}
+
   .totalPointsWrapper .totalPoints {
     font-size: 20px;
   }
@@ -224,7 +240,7 @@
   .questionPage{
     padding-top: 15px;
   }
-  .questionPage h2 {
+  .questionPage h3 {
     font-size: 25px;
   }
 
@@ -270,6 +286,12 @@
 
   .tableWrapper table td {
     padding: 10px 5px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .backToQuizLandingBtn{
+    margin: auto auto 0 auto;
   }
 }
 

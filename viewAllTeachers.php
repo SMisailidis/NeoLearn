@@ -1,6 +1,6 @@
 <?php require 'layout.php' ?>
         <section class="viewTypeInnerContent">
-          <h1 class="header-text">View All Teachers</h1>
+          <h1 class="headerStyle">View All Teachers</h1>
           <section class="contentViewTypeContainer">
             </section>
             <?php require 'assets/partials/pagination.php' ?>

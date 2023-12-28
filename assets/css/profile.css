@@ -7,7 +7,7 @@
   padding: 20px;
   border-radius: 20px;
   width: 90%;
-  height: 80%;
+  height: 90%;
   overflow: hidden;
 }
 .sectionOuterProfileContainer {
@@ -23,16 +23,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .sectionOuterProfileContainer .swiper-slide i{
-  font-size: 100px;
+  font-size: 80px;
   color: #114054;
 }
 
 .sectionOuterProfileContainer .title {
-  color: #114054;
   font-weight: normal;
   text-align: center;
   text-decoration: underline;
@@ -150,4 +149,10 @@
     padding: 25px 10px;
   }
 
+}
+
+@media only screen and (max-width: 576px){
+  .sectionProfileContainer{
+    width: 100%;
+  }
 }

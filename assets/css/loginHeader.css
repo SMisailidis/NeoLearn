@@ -1,13 +1,13 @@
 
 .header {
   height: 120px;
-  background-color: #2e6d7c;
+  background-color: #114054;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 8px solid #114054;
   padding: 15px 0; 
   text-align: center;
+  box-shadow: 5px 1px 20px 2px #707070;
 }
 
 .logoContainer {
@@ -28,4 +28,3 @@
   color: #e8e9ea;
   font-size: 15px;
 }
-

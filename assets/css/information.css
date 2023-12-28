@@ -18,6 +18,7 @@
 
 .informationSwiper .swiper-slide{
   min-height: 400px;
+  border-radius: 14px;
 }
 .infoHeaders {
   color: #0b2d3c;

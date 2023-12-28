@@ -1,8 +1,8 @@
 <?php
       $pageTitle ='Notes';
       require 'layout.php' ?>
-                <div class="header-text" id="crsName"></div>
-                <div class="allInfo"> 
+                <h1 class="headerStyle" id="crsName"></h1>
+                <div class="allInfo col-12 d-flex flex-column"> 
                 </div>
             </main>
         </div>

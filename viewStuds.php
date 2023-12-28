@@ -1,9 +1,9 @@
 <?php
       $pageTitle = 'My Students';
       require 'layout.php' ?>
-        <section class="viewTypeInnerContent">
-          <h1 class="header-text">View My Students</h1>
-          <section class="contentViewTypeContainer">
+        <section class="viewTypeInnerContent container-fluid">
+          <h1 class="headerStyle">View My Students</h1>
+          <section class="contentViewTypeContainer col-lg-10 col-12">
             </section>
             <?php require 'assets/partials/pagination.php' ?>
         </section>

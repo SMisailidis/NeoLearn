@@ -1,7 +1,7 @@
 <?php
      $pageTitle = 'My Courses';
      require 'layout.php' ?>
-        <div class="header-text">My Courses</div>
+        <h1 class="headerStyle">My Courses</h1>
           <div class="central-div d-flex flex-column align-items-center justify-content-between col-xl-8 col-lg-10 col-12">
             <div class="left-child d-flex flex-column align-items-center justify-content-start">
           </div>

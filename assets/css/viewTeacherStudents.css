@@ -1,4 +1,6 @@
-@media only screen and (max-width: 670px) {
+
+
+@media only screen and (max-width: 768px) {
   .expandedContent.teacherStuds {
     justify-content: center;
   }

@@ -12,8 +12,9 @@
 }
 
 .contentViewTypeContainer .mainViewTypeContent {
-  width: 70vw;
+
   height: 12vh;
+  min-height: 85px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,8 +62,9 @@
 }
 
 .expandedContent {
-  width: 55vw;
+  width: 90%;
   height: 7vh;
+  min-height: 50px;
   display: flex;
   align-items: center;
   text-align: center;

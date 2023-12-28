@@ -1,14 +1,15 @@
         <?php
             $pageTitle = 'Quiz Time';
             require 'layout.php' ?>
+            <h1 class="d-none">NeoLearn Quiz</h1>
                 <div class="quizContainer">
                     <section class="startingPage container col-12 col-lg-10 col-xl-9">
-                        <h1>Web Tech Quiz</h1>
+                        <h2 class="quizTitle headerStyle">Web Tech Quiz</h2>
                         <p>Press start to begin!</p>
                         <button class="startBtn">Start</button>
                     </section>
                     <section class="questionPage  col-12 col-lg-10 col-xl-9">
-                        <h2 class="question"></h2>
+                        <h3 class="question"></h3>
                         <div class="options container">
 
                             <input class="option" type="radio" id="first" name="answers">
@@ -46,7 +47,7 @@
                     <section class="noQuestionsContainer container col-12 col-lg-10 col-xl-9 p-relative">
 
                                 <img src="assets/images/notFound404Icon.png" alt="a 404 not found icon with a ghost instead of a '0'">
-                                <h1>There isn't a quiz available for this chapter yet! </h1>
+                                <h2 class="noQuizHeading">There isn't a quiz available for this chapter yet! </h2>
                                 <a href="portfolioQuizLandingPage.php" class="backToQuizLandingBtn d-inline-flex justify-content-center align-items-center">< Back</a>
                     </section>
                 </div>

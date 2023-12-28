@@ -4,9 +4,6 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-  width: 50vw;
-  height: 70vh;
-  gap: 20px;
 }
 
 .addInput-form {
@@ -74,4 +71,11 @@
   width: 80px;
   aspect-ratio: 16/9;
   object-fit: contain;
+}
+
+
+@media only screen and (max-width: 576px){
+  .addInput-form input::placeholder {
+    font-size: 14px !important; 
+  }
 }

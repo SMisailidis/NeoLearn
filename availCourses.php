@@ -3,7 +3,7 @@
 $pageTitle = 'Available Courses';
 require 'layout.php' ?>
                 <section class="contentAvailCoursesContainer">
-                    <h1 class="header-text">Available Courses</h1>
+                    <h1 class="headerStyle">Available Courses</h1>
                     <table class="table table-bordered table-hover">
                         <thead class="tableHeader">
                             <tr class="tableHeaderRow" height = "50px">

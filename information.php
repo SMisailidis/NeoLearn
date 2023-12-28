@@ -1,8 +1,9 @@
 <?php
 $pageTitle = 'Valuable Information';
 require 'layout.php' ?>
+<h1 class="d-none">NeoLearn Information</h1>
     
-    <h1 class="header-text">Information</h1>
+    <h2 class="headerStyle">Information</h2>
     <div class="swiper informationSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">

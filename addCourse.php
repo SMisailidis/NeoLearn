@@ -1,8 +1,8 @@
 <?php
 $pageTitle = 'Add a Course';
 require 'layout.php' ?>
-<section class="contentAddCourseContainer">
-  <h1 class="header-text">Add A Course</h1>
+<section class="contentAddCourseContainer col-lg-10 col-12">
+  <h1 class="headerStyle">Add A Course</h1>
   <form class="addInput-form" method="POST">
     <label for="Cname">Course Name</label>
     <input type="text" name="Cname" required placeholder="Mathematics II..." />

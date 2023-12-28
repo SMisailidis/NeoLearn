@@ -1,11 +1,9 @@
 .loginPageMain {
-  border: 1px solid black;
   flex: 1;
   padding: 25px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 }
 
 .formContainer {
@@ -15,14 +13,15 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #2e6d7c;
+  background-color: #114054;
   border-radius: 5px;
+  box-shadow: 5px 5px 20px 2px #114054ab;
 }
 
 .formContainer h2 {
   width: 80%;
   text-align: center;
-  color: #e6e4e4;
+  color: #e8e9ea;
   margin: auto 0;
 }
 
@@ -34,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 4px solid #e6e4e4;
+  border-top: 4px solid #e8e9ea;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
@@ -47,7 +46,7 @@ form .inputContainer {
 }
 
 .inputContainer label {
-  color: #e6e4e4;
+  color: #e8e9ea;
   font-size: 18px;
 }
 
@@ -57,7 +56,8 @@ form .inputContainer {
   padding-left: 30px;
   border: none;
   border-radius: 8px;
-  background-color: #e6e4e4;
+  background-color: #e8e9ea;
+  color: #114054;
 }
 
 .inputContainer input:focus {
@@ -70,7 +70,7 @@ form .inputContainer {
   position: absolute;
   top: 43%;
   left: 1%;
-  color: #2e6d7c;
+  color: #114054;
 }
 
 .inputContainer .passwordButton {
@@ -79,7 +79,7 @@ form .inputContainer {
   position: absolute;
   top: 35%;
   right: 3%;
-  color: #2e6d7c;
+  color: #114054;
   background-color: inherit;
   border: none;
 }
@@ -88,7 +88,7 @@ form .inputContainer {
   position: absolute;
   bottom: 0;
   right: 0;
-  color: #e6e4e4;
+  color: #e8e9ea;
 }
 
 .inputContainer a:hover {
@@ -99,10 +99,10 @@ form input[type="submit"] {
   margin-top: 40px;
   width: max(30%, 180px);
   padding: 10px 0;
-  border: none;
+  border: 1px solid #e8e9ea;
   border-radius: 20px;
   background-color: #114054;
-  color: #e6e4e4;
+  color: #e8e9ea;
   font-size: large;
   transition: ease-in-out 0.5s;
 }

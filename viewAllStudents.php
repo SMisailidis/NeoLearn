@@ -2,7 +2,7 @@
       $pageTitle = 'All Students';
       require 'layout.php' ?>
         <section class="viewTypeInnerContent">
-          <h1 class="header-text">View All Students</h1>
+          <h1 class="headerStyle">View All Students</h1>
           <section class="contentViewTypeContainer">
 
           </section>

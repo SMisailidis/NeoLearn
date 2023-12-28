@@ -1,7 +1,7 @@
 <?php 
      $pageTitle = 'Chapter Details';
     require 'layout.php' ?>
-                <h1 class="header-text" id="TitleCourse"></h1>
+                <h1 class="headerStyle" id="TitleCourse"></h1>
                 <div class="Info">
                     <div class="courseNameT">
                     <textarea class="noteTitleT" name="ChapterTitle" required></textarea>

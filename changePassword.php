@@ -2,7 +2,7 @@
     $pageTitle = 'Change your Password';
     require 'layout.php' ?>
 
-<h2 class="header-text">Change Password</h2>
+<h1 class="headerStyle">Change Password</h1>
 <section class="ChangePasswordContainer">
     <form class="changePassForm" id="changePasswordForm">
 

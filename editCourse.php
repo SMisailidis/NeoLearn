@@ -1,7 +1,7 @@
 <?php
     $pageTitle = 'Edit Course';
     require 'layout.php' ?>
-<h1 class="header-text">Edit Course</h1>
+<h1 class="headerStyle">Edit Course</h1>
 <div class="editCourseContainer">
     <form id="editCourseForm" class="title-desc-container">
         <label for="title">Title</label>

@@ -2,9 +2,9 @@
       $pageTitle = 'Course Notes';
       require 'layout.php' ?>
       <div class="course-title">
-        <h1 class="header-text" id="curHeader"></h1>
+        <h1 class="headerStyle" id="curHeader"></h1>
       </div>
-      <div class="Notes_central-div">
+      <div class="Notes_central-div col-12">
         <div class="chaptersContainer">
           <div class="allRectangles">
           </div>
