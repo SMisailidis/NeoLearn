@@ -19,7 +19,7 @@ $(document).ready(function () {
       window.location.href = "loginPage.php";
       sessionStorage.clear();
     });
-    modal.openModal(); // Open the modal
+    modal.openModal();
 
 
   };

@@ -1,5 +1,6 @@
 import { fetchData } from "./eventHandler.js";
 import modal from "./modal.js";
+import pagination from "./pagination.js";
 
 $(document).ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
@@ -38,7 +39,7 @@ $(document).ready(function () {
       remaining = data.length;
       console.log(data.length);
       if (data && data.length > 0) {
-        startingPage.css('display','flex');
+        startingPage.css('display', 'flex');
         $.each(data, function (index, row) {
           QuestionsObject[row.Question] = {
             options: [row.Option1, row.Option2, row.Option3, row.Option4],
@@ -72,15 +73,15 @@ $(document).ready(function () {
 
         confirmBtn.on("click", function () {
           const selectedAnswer = $('input[name="answers"]:checked');
-          if (!selectedAnswer.length){
+          if (!selectedAnswer.length) {
             modal.setElement();
             modal.setTitle('Please Select an Answer!');
             modal.setContent("It seems you haven't chosen an answer. Please choose one and try again!");
-            modal.setButtonsText('Got it','');
+            modal.setButtonsText('Got it', '');
             modal.openModal();
-           modal.onClickCloseHandler(function(){
-            modal.closeModal();
-           })
+            modal.onClickCloseHandler(function () {
+              modal.closeModal();
+            })
             $("#save").remove();
           }
           else {
@@ -148,32 +149,87 @@ $(document).ready(function () {
             correctAnswers++;
         }
 
+        // function showResults() {
+        //   for (let currentQuestion in givenAnswers) {
+        //     let dataRow = new $("<tr>");
+        //     let questionData = $("<td>").text(currentQuestion);
+        //     let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
+        //     let correctAnswerData = $("<td>").text(
+        //       QuestionsObject[currentQuestion].correctAnswer
+        //     );
+
+        //     if (givenAnswerData.text() === correctAnswerData.text())
+        //       givenAnswerData.css("color", "#a5feae");
+        //     else givenAnswerData.css("color", "#fda0a0");
+
+        //     dataRow
+        //       .append(questionData)
+        //       .append(givenAnswerData)
+        //       .append(correctAnswerData);
+        //     resultsBody.append(dataRow);
+        //   }
+        //   quizContainer.css("justify-content", "flex-start");
+        //   quizContainer.css("padding-top", "0");
+        //   tableWrapper.css("display", "flex");
+        //   points.text("Total Correct Answers: " + correctAnswers);
+        //   totalPointsWrapper.css("display", "block");
+        // }
         function showResults() {
-          for (let currentQuestion in givenAnswers) {
-            let dataRow = new $("<tr>");
-            let questionData = $("<td>").text(currentQuestion);
-            let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
-            let correctAnswerData = $("<td>").text(
-              QuestionsObject[currentQuestion].correctAnswer
-            );
-
-            if (givenAnswerData.text() === correctAnswerData.text())
-              givenAnswerData.css("color", "#a5feae");
-            else givenAnswerData.css("color", "#fda0a0");
-
-            dataRow
-              .append(questionData)
-              .append(givenAnswerData)
-              .append(correctAnswerData);
-            resultsBody.append(dataRow);
+          const resultsPerPage = pagination.itemsPerPage;
+          const totalResults = Object.keys(givenAnswers).length;
+      
+          // Update pagination data
+          pagination.setData(Object.keys(givenAnswers));
+      
+          // Set the pagination callback function to render the results
+          pagination.renderContent(renderResults);
+      
+          // Set the pagination element and update links
+          pagination.setPaginationElement(tableWrapper);
+          pagination.onClickHandler(renderResults);
+          pagination.updatePaginationLinks();
+      
+          // Display the first page of results
+          pagination.renderContent();
+          
+          function renderResults() {
+              resultsBody.empty();
+      
+              const currentPageResults = pagination.data.slice(
+                  (pagination.currentPage - 1) * resultsPerPage,
+                  pagination.currentPage * resultsPerPage
+              );
+      
+              for (let currentQuestion of currentPageResults) {
+                  let dataRow = $("<tr>");
+                  let questionData = $("<td>").text(currentQuestion);
+                  let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
+                  let correctAnswerData = $("<td>").text(QuestionsObject[currentQuestion].correctAnswer);
+      
+                  if (givenAnswerData.text() === correctAnswerData.text())
+                      givenAnswerData.css("color", "#125c00");
+                  else
+                      givenAnswerData.css("color", "#b50000");
+      
+                  dataRow
+                      .append(questionData)
+                      .append(givenAnswerData)
+                      .append(correctAnswerData);
+                  resultsBody.append(dataRow);
+              }
+      
+              // Update total points and display
+              quizContainer.css("justify-content", "flex-start");
+              quizContainer.css("padding-top", "0");
+              tableWrapper.css("display", "flex");
+              points.text("Total Correct Answers: " + correctAnswers);
+              totalPointsWrapper.css("display", "block");
           }
-          quizContainer.css("justify-content", "flex-start");
-          quizContainer.css("padding-top", "0");
-          tableWrapper.css("display", "flex");
-          points.text("Total Correct Answers: " + correctAnswers);
-          totalPointsWrapper.css("display", "block");
-        }
-      }else
+      }
+      
+
+
+      } else
         noQuizPage.css('display', 'flex');
     })
     .catch((error) => {

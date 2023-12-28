@@ -1,0 +1,12 @@
+.navigation{
+    gap: 15px;
+}
+
+ .navigation .navigationArrow{
+    width: 40px;
+    cursor: pointer;
+}
+
+ .leftArrow{
+    transform: rotate(180deg);
+}

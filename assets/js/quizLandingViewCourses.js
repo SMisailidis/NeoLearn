@@ -5,6 +5,8 @@ $(document).ready(function () {
     const coursesList = $('.coursesList');
     const curriculumList = $('.currList');
     const backBtn = $('.quizLandingBackBtn');
+    const listsHeading = $('.coursesListWrapper h2');
+    let listsHeadingContent = listsHeading.text();
 
     fetchData($, "assets/Back-End/quizLandingViewCourses.php", "POST", { stud_ID: studentID })
         .then((data) => {
@@ -21,10 +23,11 @@ $(document).ready(function () {
         coursesList.css('display', 'none');
         backBtn.css("display", "inline");
         curriculumList.css('display', 'block');
+        listsHeading.text($(this).text());
+
 
         fetchData($, "assets/Back-End/quizLandingViewCurr.php", "POST", { course_ID: $(this).attr('id') })
             .then((data) => {
-                console.log(data);
                 $.each(data, function (index, row) {
                     const curricName = $('<a>')
                         .text(row.Title)
@@ -47,6 +50,7 @@ $(document).ready(function () {
         curriculumList.empty();
         coursesList.css("display", "block");
         $(this).css("display", "none");
+        listsHeading.text(listsHeadingContent);
     });
 
 

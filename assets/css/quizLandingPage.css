@@ -4,7 +4,7 @@ main {
 }
 
 .coursesListWrapper {
-    background-color: #2e6d7c;
+    background-color: #114054;
     color: #e8e9ea;
     height: 500px;
     gap: 20px;
@@ -12,6 +12,10 @@ main {
     border: none;
     border-radius: 5px;
     overflow-y: scroll;
+}
+
+.coursesListWrapper h2{
+    text-align: center;
 }
 
 .listsWrapper {
@@ -60,8 +64,19 @@ main {
     width: 250px;
     border-radius: 25px;
     padding: 15px 0;
-    background-color: #114054;
-    color: #e8e9ea;
-    border: none;
+    background-color: #e8e9ea;
+    border:1px solid #114054;
+    color: #114054;
+    border: #114054;
     display: none;
+}
+
+@media only screen and (max-width:520px){
+    .listsWrapper{
+        width: 100%;
+    }
+
+    .coursesList, .currList{
+        padding: 10px;
+    }
 }

@@ -2,7 +2,7 @@
   border-top: 2px solid #e8e9ea;
   display: flex;
   flex-direction: column;
-  background-color: #2e6d7c;
+  background-color: #114054;
   height: 100%;
   /* flex-basis: 25%; */
   white-space: nowrap;
@@ -13,7 +13,6 @@
 .navContainer nav {
   height: 100%;
   display: flex;
-  background-color: #2e6d7c;
   justify-content: center;
   align-items: center;
 }
@@ -39,7 +38,7 @@
 }
 .navContainer nav ul li:hover {
   background-color: #e8e9ea;
-  color: #2e6d7c;
+  color: #114054;
   cursor: pointer;
 }
 
@@ -58,7 +57,6 @@
   align-items: center;
   padding: 25px 0;
   border-top: 1px solid #e8e9ea;
-  background-color: #2e6d7c;
 }
 
 .controlPanel i {

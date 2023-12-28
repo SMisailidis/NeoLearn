@@ -29,26 +29,25 @@
                     <div class="totalPointsWrapper col-lg-8 col-md-10 col-12">
                         <p class="totalPoints">sdads</p>
                     </div>
-                    <section class="tableWrapper col-lg-8 col-md-10 col-12">
-                        <table border="1">
-                            <thead>
-                                <tr>
+                    <section class="tableWrapper  flex-column align-items-center col-lg-8 col-md-10 col-12">
+                        <table class="resultsTable table table-bordered">
+                            <thead class="resultsTableHeader">
+                                <tr height = "50px">
                                     <th>Question</th>
                                     <th>Your Answer</th>
                                     <th>Correct Answer</th>
                                 </tr>
                             </thead>
                             <tbody id="resultsBody">
-
                             </tbody>
                         </table>
+                        <?php require 'assets/partials/pagination.php' ?>
                     </section>
                     <section class="noQuestionsContainer container col-12 col-lg-10 col-xl-9 p-relative">
 
                                 <img src="assets/images/notFound404Icon.png" alt="a 404 not found icon with a ghost instead of a '0'">
                                 <h1>There isn't a quiz available for this chapter yet! </h1>
                                 <a href="portfolioQuizLandingPage.php" class="backToQuizLandingBtn d-inline-flex justify-content-center align-items-center">< Back</a>
-
                     </section>
                 </div>
             </main>
