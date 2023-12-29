@@ -75,21 +75,19 @@ $(document).ready(function () {
   //Function for close modal
   modal.onClickCloseHandler(() => {
     const inputs = $(
-      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
+      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours]):not(input[name=Iusername]):not(input[name=IacadEmail])`
     );
     modal.closeModal();
     inputs[0].value = initData[0].First_Name + " " + initData[0].Last_Name;
     inputs[1].value = initData[0].Email;
     inputs[2].value = initData[0].Phone_Number;
     inputs[3].value = initData[0].Birth_Date;
-    inputs[4].value = initData[0].ID;
-    inputs[5].value = initData[0].Academic_Email;
   });
 
   //Function for agree/save modal
   modal.onClickSaveHandler(() => {
     const inputs = $(
-      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
+      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours]):not(input[name=Iusername]):not(input[name=IacadEmail])`
     );
     if (validityCheck(inputs)) {
       const newValues = {
@@ -98,8 +96,6 @@ $(document).ready(function () {
         Email: inputs[1].value,
         Phone_Number: inputs[2].value,
         Birth_Date: inputs[3].value,
-        Username: inputs[4].value,
-        Academic_Email: inputs[5].value,
         table: userType,
         ID: userID,
       };
@@ -129,8 +125,9 @@ $(document).ready(function () {
   //Function for save and edit profile
   $(".changeProfileButton").on("click", function (e) {
     const inputs = $(
-      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours])`
+      `:input:not(:button):not(input[name=Ipass]):not(input[name=Icours]):not(input[name=Iusername]):not(input[name=IacadEmail])`
     );
+  
     let changes = {};
     if ($(this).text() === "Edit") {
       changes = {
