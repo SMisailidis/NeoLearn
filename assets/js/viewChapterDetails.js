@@ -15,7 +15,7 @@ $(document).ready(function () {
   // Create FormData object for file uploads
   let formData = new FormData();
   
-  quizBtn.attr('href', `addQuizQuestion.php?courseID=${crsID}?curID=${curId}`);
+  quizBtn.attr('href', `addQuizQuestion.php?courseID=${crsID}&curID=${curId}`);
   // Set the title in the UI based on the course details
   $("#TitleCourse").text(crsTitle + " (" + crsID + ")");
 

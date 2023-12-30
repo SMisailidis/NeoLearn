@@ -6,14 +6,14 @@ require 'layout.php' ?>
     <div class="sectionOuterProfileContainer swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <i class="fa-solid fa-fingerprint"></i>
+                <i   class="fa-solid fa-fingerprint animate__animated  animate__bounceInRight"></i>
                 <section class="sectionProfileContainer" id="section1">
                     <h4 class="title" id="title1">Personal Information</h4>
                     <button class="changeProfileButton">Edit</button>
                 </section>
             </div>
             <div class="swiper-slide">
-                <i class="fa-solid fa-graduation-cap"></i>
+                <i class="fa-solid fa-graduation-cap animate__animated  animate__bounceInRight"></i>
                 <section class="sectionProfileContainer" id="section2">
                     <h4 class="title" id="title2">Academic Information</h4>
                 </section>

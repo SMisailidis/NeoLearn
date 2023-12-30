@@ -40,6 +40,7 @@ $(document).ready(function () {
       console.log(data.length);
       if (data && data.length > 0) {
         startingPage.css('display', 'flex');
+        questionPage.addClass('animate__animated animate__fadeIn');
         $.each(data, function (index, row) {
           QuestionsObject[row.Question] = {
             options: [row.Option1, row.Option2, row.Option3, row.Option4],
@@ -52,6 +53,7 @@ $(document).ready(function () {
           resetRadioButtons();
           startingPage.css("display", "none");
           questionPage.css("display", "flex");
+          questionPage.addClass('animate__animated animate__fadeIn');
           order = 0;
           displayCurrentQuestion();
         });

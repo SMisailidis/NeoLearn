@@ -2,7 +2,7 @@
 <?php 
 $pageTitle = 'Available Courses';
 require 'layout.php' ?>
-                <section class="contentAvailCoursesContainer">
+                <section class="contentAvailCoursesContainer tableHoveringEffect">
                     <h1 class="headerStyle">Available Courses</h1>
                     <table class="table table-bordered table-hover">
                         <thead class="tableHeader">

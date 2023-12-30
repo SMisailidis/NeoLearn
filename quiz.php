@@ -8,7 +8,7 @@
                         <p>Press start to begin!</p>
                         <button class="startBtn">Start</button>
                     </section>
-                    <section class="questionPage  col-12 col-lg-10 col-xl-9">
+                    <section class="questionPage col-12 col-lg-10 col-xl-9">
                         <h3 class="question"></h3>
                         <div class="options container">
 
@@ -30,8 +30,8 @@
                     <div class="totalPointsWrapper col-lg-8 col-md-10 col-12">
                         <p class="totalPoints">sdads</p>
                     </div>
-                    <section class="tableWrapper  flex-column align-items-center col-lg-8 col-md-10 col-12">
-                        <table class="resultsTable table table-bordered">
+                    <section class="tableWrapper tableHoveringEffect flex-column align-items-center col-lg-8 col-md-10 col-12">
+                        <table class="resultsTable table table-bordered table-hover">
                             <thead class="resultsTableHeader">
                                 <tr height = "50px">
                                     <th>Question</th>
@@ -48,7 +48,7 @@
 
                                 <img src="assets/images/notFound404Icon.png" alt="a 404 not found icon with a ghost instead of a '0'">
                                 <h2 class="noQuizHeading">There isn't a quiz available for this chapter yet! </h2>
-                                <a href="portfolioQuizLandingPage.php" class="backToQuizLandingBtn d-inline-flex justify-content-center align-items-center">< Back</a>
+                                <a href="portfolioQuizLandingPage.php" class="backToQuizLandingBtn darkButtonStyle d-inline-flex justify-content-center align-items-center"><span>< Back</span></a>
                     </section>
                 </div>
             </main>

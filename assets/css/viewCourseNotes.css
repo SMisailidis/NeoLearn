@@ -44,7 +44,7 @@
 }
 
 .Notesrectangle:hover{
-  box-shadow: 2px 2px 5px 5px #11405486;
+  box-shadow: 2px 4px 5px 5px #11405486;
   cursor: pointer;
 }
 

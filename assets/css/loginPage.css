@@ -95,30 +95,21 @@ form .inputContainer {
   color: #fff;
 }
 
-form input[type="submit"] {
+form .loginSubmitBtn {
   margin-top: 40px;
   width: max(30%, 180px);
-  padding: 10px 0;
-  border: 1px solid #e8e9ea;
+  height: 40px;
+  font-size: 18px;
   border-radius: 20px;
-  background-color: #114054;
-  color: #e8e9ea;
-  font-size: large;
-  transition: ease-in-out 0.5s;
 }
 
-form input[type="submit"]:hover {
-  box-shadow: 0 5px 15px #2e6d7c, 0 2px 5px #000000;
+
+@keyframes wrongCredentialsAnimation {
+  50% {
+    color: red;
+  }
 }
 
-.loginLabelError {
-  color: red !important;
-}
-
-.inputContainer .iconError {
-  color: red !important;
-}
-
-.loginSubmitError {
-  background-color: red !important;
+.loginLabelError,.inputContainer .iconError, .loginSubmitError{
+  animation: wrongCredentialsAnimation 0.8s ease-in-out 1;
 }

@@ -8,7 +8,7 @@
 }
 
 .addInput-form {
-  background-color: rgba(46, 109, 124, 0.4);
+  background-color: #114054;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
     -5px -5px 20px rgba(255, 255, 255, 0.5);
   border: 2px solid #114054;
@@ -25,7 +25,7 @@
 }
 
 .addInput-form label {
-  color: #114054;
+  color: #e8e9ea;
   font-size: 20px;
   margin-top: 10px;
 }
@@ -44,7 +44,7 @@
 
 .addInput-form input[type="text"]:focus{
   transform: scale(1.02);
-  box-shadow: 5px 5px 15px 5px #1140549c;
+  box-shadow: 2px 5px 5px 5px #25252577;
 }
 
 .addInput-form .inputFileWrapper {
@@ -62,8 +62,7 @@
 .addSubmit-btn {
   cursor: pointer;
   width: 250px;
-  padding: 15px 10px;
-  border: 0;
+  height: 60px;
   border-radius: 14px;
   margin-top: 20px;
   margin-bottom: 5px;

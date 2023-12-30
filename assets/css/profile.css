@@ -1,3 +1,5 @@
+
+
 .contentProfileContainer {
   display: flex;
   justify-content: center;
@@ -29,6 +31,7 @@
 .sectionOuterProfileContainer .swiper-slide i{
   font-size: 80px;
   color: #114054;
+
 }
 
 .sectionOuterProfileContainer .title {

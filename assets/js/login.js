@@ -59,7 +59,7 @@ $(document).ready(function () {
     } else {
       $(".form-label").addClass("loginLabelError");
       $(".fa-solid").addClass("iconError");
-      $("#submit").addClass("loginSubmitError");
+      // $("#submit").addClass("loginSubmitError");
       $(".spanError").css("display", "inherit");
     }
   };

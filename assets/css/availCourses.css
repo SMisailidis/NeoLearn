@@ -20,25 +20,8 @@ td {
   text-align: center;
   vertical-align: middle;
 }
-.contentAvailCoursesContainer tr td{
-  transition: 0.4s ease-in-out;
-  backface-visibility: hidden;
-}
-.contentAvailCoursesContainer tr:hover td{
-  cursor: pointer;
-  scale: 1.02;
-  margin: 10px 0;
-}
-
-.contentAvailCoursesContainer tr{
-  transition: 0.3s ease-in-out;
-}
-.contentAvailCoursesContainer tr:hover {
-  box-shadow: 8px 5px 10px 5px #11405486;
-}
 
 .contentAvailCoursesContainer input[type="checkbox"] {
-  transform: scale(1.5);
   accent-color: #114054;
   cursor: pointer;
 }

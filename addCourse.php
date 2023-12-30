@@ -14,7 +14,8 @@ require 'layout.php' ?>
     <input type="text" name="Cobj" required placeholder="You'll learn how to make simple and hard Equations..." />
     <label for="Cpre">Course Prerequisities</label>
     <input type="text" name="Cpre" required placeholder="Mathematics/Physics..." />
-    <input class="addSubmit-btn" type="submit" value="Confirm" />
+    <!-- <input class="addSubmit-btn darkButtonStyle" type="submit" value="Confirm" /> -->
+    <button type="submit" class="addSubmit-btn darkButtonStyle"><span>Confirm</span></button>
   </form>
 </section>
 </main>

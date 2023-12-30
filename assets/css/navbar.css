@@ -105,10 +105,21 @@
   }
 }
 
-@media only screen and (max-width: 768px){
-  .navContainer nav ul li a span {
+@media only screen and (max-width: 576px){
+  .navContainer nav ul li a i {
     display: none;
   }
 
 } 
 
+
+@media only screen and (max-width: 390px){
+
+  .navContainer nav ul li a i{
+    display: inline;
+  }
+
+  .navContainer nav ul li a span{
+    display: none;
+  }
+}

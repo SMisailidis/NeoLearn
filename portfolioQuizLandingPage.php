@@ -4,8 +4,8 @@
 ?>
 
 <h1 class="d-none">NeoLearn Quiz</h1>
-<main class="d-flex align-items-center">
 
+    
     <section class="coursesListWrapper col-lg-8 col-md-10 col-12 m-auto d-flex flex-column align-items-center">
         <h2 class="headerStyle">Please Select A Course</h2>
         <div class="listsWrapper d-flex flex-column align-items-center">
@@ -16,8 +16,8 @@
             </ul>
         </div>
 
-        <button class="quizLandingBackBtn">< Course Selection</button>
-        <a href="Portfolio.php" class="quizBackToPortfolioBtn">< Back To Portfolio</a>
+        <button class="quizLandingBackBtn darkButtonStyle"><span>< Course Selection</span></button>
+        <a href="Portfolio.php" class="quizBackToPortfolioBtn darkButtonStyle"><span>< Back to Portfolio</span></a>
 
     </section>
 </main>

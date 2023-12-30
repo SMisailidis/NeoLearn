@@ -29,48 +29,21 @@
 
 .formQuestionAdditionWrapper .form-group input{
     color: #114054;
+    transition: 0.4s ease-in-out;
+}
+
+.formQuestionAdditionWrapper .form-group input:focus{
+    transform: scale(1.02);
+    box-shadow: 2px 5px 5px 5px #25252577;
+    border: unset;
 }
 
 .formQuestionAdditionWrapper .addQuestionSubmitBtn{
     width: 240px;
     height: 40px;
-    border-radius: 10px;
-    border: 1px solid #e8e9ea;
-    background-color: #114054;
-    color: #e8e9ea;
-    position: relative;
-    transition: 0.4s ease-in-out;
+
 }
 
-.formQuestionAdditionWrapper .addQuestionSubmitBtn span{
-    /* z-index: 1; */
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-}
-
-.formQuestionAdditionWrapper .addQuestionSubmitBtn:hover{
-    color: #114054;
-}
-
-.formQuestionAdditionWrapper .addQuestionSubmitBtn::before{
-    position: absolute;
-    content: "";
-    top: 0; 
-    left: 0;
-    height: 100%;
-    width: 0;
-    border: 10px;
-    background-color: #e8e9ea;
-    transition: 0.4s ease-in-out;
-    border-radius: 10px;
-}
-
-
-.formQuestionAdditionWrapper .addQuestionSubmitBtn:hover::before{
-    width: 100%;
-}
 
 
 @media only screen  and (max-width: 576px){

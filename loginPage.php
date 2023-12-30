@@ -22,7 +22,7 @@
                         <button type="button" class="passwordButton"><i class="fa-regular fa-eye" id="showPasswordIcon"></i></button>
                         <span class="spanError" style="font-size: 14px;color: white;font-weight: bold;display:none">Something went wrong try again!</span>
                     </div>
-                    <input type="submit" name="submit" id="submit" class="btn-lg" value="Είσοδος">
+                    <button type="submit" class="loginSubmitBtn darkButtonStyle" id="submit"><span>Login</span></button>
                 </form>
             </div>
         </main>

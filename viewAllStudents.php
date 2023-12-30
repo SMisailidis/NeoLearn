@@ -1,9 +1,9 @@
 <?php
       $pageTitle = 'All Students';
       require 'layout.php' ?>
-        <section class="viewTypeInnerContent">
+        <section class="viewTypeInnerContent container-fluid">
           <h1 class="headerStyle">View All Students</h1>
-          <section class="contentViewTypeContainer">
+          <section class="contentViewTypeContainer col-lg-10 col-12">
 
           </section>
             <?php require 'assets/partials/pagination.php' ?>
@@ -14,3 +14,4 @@
     <script type="module" src="assets/js/viewAllStudents.js"></script>
   </body>
 </html>
+

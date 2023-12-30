@@ -1,3 +1,7 @@
+:root {
+  --animate-duration: 1s;
+}
+
 .totalPointsWrapper {
   display: none;
   text-align: center;
@@ -63,11 +67,8 @@
 .backToQuizLandingBtn {
   margin: auto auto 0 50px;
   width: 250px;
+  height: 60px;
   border-radius: 25px;
-  padding: 15px 0;
-  background-color: #e8e9ea;
-  color: #114054 !important;
-  border: 1px solid #114054;
   text-decoration: none;
 }
 
@@ -97,6 +98,7 @@
   box-shadow: 10px 5px 18px 5px #1140549d;
   color: #114054;
   display: none;
+  
 }
 
 .questionPage h3 {
