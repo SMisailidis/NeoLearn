@@ -14,6 +14,10 @@
 
 .formQuestionAdditionWrapper h1{
     color:#e8e9ea;
+    border-bottom: 1px solid #e8e9ea;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    width: 100%;
 }
 
 .formQuestionAdditionWrapper form{
