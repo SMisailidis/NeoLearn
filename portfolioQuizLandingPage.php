@@ -16,8 +16,9 @@
             </ul>
         </div>
 
-        <button class="quizLandingBackBtn">
-            < Back</button>
+        <button class="quizLandingBackBtn">< Course Selection</button>
+        <a href="Portfolio.php" class="quizBackToPortfolioBtn">< Back To Portfolio</a>
+
     </section>
 </main>
 </div>

@@ -5,6 +5,7 @@ $(document).ready(function () {
     const coursesList = $('.coursesList');
     const curriculumList = $('.currList');
     const backBtn = $('.quizLandingBackBtn');
+    const portfolioBtn = $('.quizBackToPortfolioBtn');
     const listsHeading = $('.coursesListWrapper h2');
     let listsHeadingContent = listsHeading.text();
 
@@ -22,6 +23,7 @@ $(document).ready(function () {
     coursesList.on('click', '.anchors', function () {
         coursesList.css('display', 'none');
         backBtn.css("display", "inline");
+        portfolioBtn.css('display', 'none');
         curriculumList.css('display', 'block');
         listsHeading.text($(this).text());
 
@@ -47,6 +49,7 @@ $(document).ready(function () {
 
     backBtn.on('click', function () {
         curriculumList.css("display", "none");
+        portfolioBtn.css("display", "inline-flex");
         curriculumList.empty();
         coursesList.css("display", "block");
         $(this).css("display", "none");

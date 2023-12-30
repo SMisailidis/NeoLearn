@@ -20,6 +20,7 @@ body {
   background-color: #e6e4e4 !important;
   flex-direction: column;
   scrollbar-gutter: stable !important;
+  overflow: hidden !important;
 }
 
 .nav-and-main{

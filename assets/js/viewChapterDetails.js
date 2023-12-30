@@ -4,6 +4,8 @@ import toast from "./toast.js";
 import { uploadPDF } from "./uploadPDF.js";
 
 $(document).ready(function () {
+
+  const quizBtn =  $('#quizB');
   // Retrieve needed values from URL
   const urlParams = new URLSearchParams(window.location.search);
   const curId = urlParams.get("curID");
@@ -13,7 +15,7 @@ $(document).ready(function () {
   // Create FormData object for file uploads
   let formData = new FormData();
   
-
+  quizBtn.attr('href', `addQuizQuestion.php?courseID=${crsID}?curID=${curId}`);
   // Set the title in the UI based on the course details
   $("#TitleCourse").text(crsTitle + " (" + crsID + ")");
 

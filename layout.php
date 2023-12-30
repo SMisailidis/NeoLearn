@@ -4,7 +4,7 @@
 <head>
     <link rel="icon" type="image/x-icon" href="./assets/images/logoDark.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Elevate your education with Neo Learn. 
         Immerse yourself in a sophisticated learning environment curated for excellence.
         Access expert-led courses, engage with accomplished instructors, and refine your skills through interactive quizes. 
@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="assets/css/changePassword.css">
     <link rel="stylesheet" href="assets/css/videoDisplay.css">
     <link rel="stylesheet" href="assets/css/quizLandingPage.css">
+    <link rel="stylesheet" href="assets/css/addQuizQuestion.css">
     <!---------------->
 
     <!-- JS assets -->

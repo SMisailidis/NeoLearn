@@ -1,0 +1,85 @@
+.addQuestionPageWrapper{
+    height: 80%;
+    padding: 25px;
+}
+.formQuestionAdditionWrapper{
+    height: 100%;
+    max-width: 1200px;
+    border: 2px solid #114054;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #114054;
+    box-shadow: 10px 5px 10px 5px #787879;
+}
+
+.formQuestionAdditionWrapper h1{
+    color:#e8e9ea;
+}
+
+.formQuestionAdditionWrapper form{
+    height: 100%;
+    max-height: 500px;
+}
+
+.formQuestionAdditionWrapper .form-group label{
+    font-size: 20px;
+    color:#e8e9ea;
+    
+}
+
+.formQuestionAdditionWrapper .form-group input{
+    color: #114054;
+}
+
+.formQuestionAdditionWrapper .addQuestionSubmitBtn{
+    width: 240px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #e8e9ea;
+    background-color: #114054;
+    color: #e8e9ea;
+    position: relative;
+    transition: 0.4s ease-in-out;
+}
+
+.formQuestionAdditionWrapper .addQuestionSubmitBtn span{
+    /* z-index: 1; */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+.formQuestionAdditionWrapper .addQuestionSubmitBtn:hover{
+    color: #114054;
+}
+
+.formQuestionAdditionWrapper .addQuestionSubmitBtn::before{
+    position: absolute;
+    content: "";
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 0;
+    border: 10px;
+    background-color: #e8e9ea;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+}
+
+
+.formQuestionAdditionWrapper .addQuestionSubmitBtn:hover::before{
+    width: 100%;
+}
+
+
+@media only screen  and (max-width: 576px){
+
+    .addQuestionPageWrapper{
+        height: 80%;
+        padding: 0;
+    }
+    .formQuestionAdditionWrapper form{
+        max-height: none;
+    }
+}

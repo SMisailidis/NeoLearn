@@ -149,47 +149,22 @@ $(document).ready(function () {
             correctAnswers++;
         }
 
-        // function showResults() {
-        //   for (let currentQuestion in givenAnswers) {
-        //     let dataRow = new $("<tr>");
-        //     let questionData = $("<td>").text(currentQuestion);
-        //     let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
-        //     let correctAnswerData = $("<td>").text(
-        //       QuestionsObject[currentQuestion].correctAnswer
-        //     );
-
-        //     if (givenAnswerData.text() === correctAnswerData.text())
-        //       givenAnswerData.css("color", "#a5feae");
-        //     else givenAnswerData.css("color", "#fda0a0");
-
-        //     dataRow
-        //       .append(questionData)
-        //       .append(givenAnswerData)
-        //       .append(correctAnswerData);
-        //     resultsBody.append(dataRow);
-        //   }
-        //   quizContainer.css("justify-content", "flex-start");
-        //   quizContainer.css("padding-top", "0");
-        //   tableWrapper.css("display", "flex");
-        //   points.text("Total Correct Answers: " + correctAnswers);
-        //   totalPointsWrapper.css("display", "block");
-        // }
         function showResults() {
           const resultsPerPage = pagination.itemsPerPage;
           const totalResults = Object.keys(givenAnswers).length;
       
-          // Update pagination data
+
           pagination.setData(Object.keys(givenAnswers));
       
-          // Set the pagination callback function to render the results
+   
           pagination.renderContent(renderResults);
       
-          // Set the pagination element and update links
+
           pagination.setPaginationElement(tableWrapper);
           pagination.onClickHandler(renderResults);
           pagination.updatePaginationLinks();
       
-          // Display the first page of results
+
           pagination.renderContent();
           
           function renderResults() {

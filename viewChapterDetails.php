@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="chapterButtons">
-                        <button id="quizB">QUIZ</button>
+                        <a id="quizB">QUIZ</a>
                         <button id="editB">Save Changes</button>
                     </div>
                 </div>
