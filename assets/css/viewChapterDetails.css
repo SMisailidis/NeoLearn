@@ -179,11 +179,13 @@
     width: 100%;
   }
 
-  .Info .chapterButtons button {
+  .Info .chapterButtons button,.Info .chapterButtons button, .Info .chapterButtons a  {
   width: 150px;
   padding: 10px 5px; 
   font-size: 15px;
   }
+
+  
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,8 +208,8 @@
 }
 
 @media only screen and (max-width: 576px){
-  .Info .chapterButtons button {
-    width: 110px;
+  .Info .chapterButtons button, .Info .chapterButtons button, .Info .chapterButtons a  {
+    width: 130px;
     padding: 10px 2px;
     font-size: 13px;
     }
