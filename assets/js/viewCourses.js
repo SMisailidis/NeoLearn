@@ -33,9 +33,9 @@ $(document).ready(function () {
           .attr(
             "href",
             "viewCourseChapters.php?courseTitle=" +
-              encodeURIComponent(courseTitle) +
-              "&courseId=" +
-              encodeURIComponent(crsId)
+            encodeURIComponent(courseTitle) +
+            "&courseId=" +
+            encodeURIComponent(crsId)
           )
           .append(course.Title);
 
@@ -110,11 +110,18 @@ $(document).ready(function () {
   $("#RemoveB, #cancelB").click(function () {
     resetPage();
     updateConfirmButtonState();
+
+  });
+
+  // Event Listener to toggle buttons
+  $("#RemoveB, #cancelB").click(function () {
+    $("#RemoveB, #cancelB, #confirmB, #AddB").toggle();
+    updateConfirmButtonState();
   });
 
   // Event handler for modal close
   modal.onClickCloseHandler(function cancelRemoval() {
-    $(".Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
+    $("#RemoveB, #cancelB, #confirmB, #AddB, .Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
     $(".courseCheckbox").prop("checked", false);
   });
 
@@ -133,8 +140,9 @@ $(document).ready(function () {
     })
       .then((data) => {
         if (data) {
-          toast.showToast();
+          
           updateConfirmButtonState();
+          toast.showToast();
         }
       })
       .catch((error) => {
