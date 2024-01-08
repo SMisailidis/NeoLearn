@@ -49,9 +49,11 @@ $(document).ready(function () {
   const addUserHandler = () => {
     fetchData(jQuery, "assets/Back-End/addUser.php", "POST", userData)
       .then((success) => {
-        modal.closeModal();
-        toast.showToast();
-        resetInputs();
+        if (success) {
+          modal.closeModal();
+          toast.showToast();
+          resetInputs();
+        }
       })
       .catch((error) => {
         console.error(error);
