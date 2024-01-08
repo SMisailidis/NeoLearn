@@ -5,7 +5,7 @@ import pagination from "./pagination.js";
 $(document).ready(function () {
   let id = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
 
-  //Function to rotate the img 
+  //Function to rotate the img
   function expandMore() {
     if (!$(this).hasClass("rotate180")) {
       $(this).toggleClass("rotate180");
@@ -37,6 +37,7 @@ $(document).ready(function () {
 
         let expandPhoto = $("<img>")
           .attr("src", "assets/images/expand.png")
+          .attr("alt", "expand")
           .addClass("expandMore")
           .attr("data-toggle", "collapse")
           .attr("href", "#collapse-" + index)
@@ -68,13 +69,18 @@ $(document).ready(function () {
         });
 
         let expandSection = $("<section>").addClass("showed");
-        let expandContent = $("<content>").addClass("expandedContent teacherStuds");
+        let expandContent = $("<content>").addClass(
+          "expandedContent teacherStuds"
+        );
 
         let expandedPhone = $("<article>")
           .addClass("phoneNumber")
           .text("Phone Number: " + row.Phone_Number);
         let expandedLink = $("<article>").append(
-          $("<a>").attr("href", `profile.php?ID=${row.ID}`).text("More Info")
+          $("<a>")
+            .attr("title", row.First_Name + " " + row.Last_Name)
+            .attr("href", `profile.php?ID=${row.ID}`)
+            .text("More Info")
         );
         let expandedEmail = $("<article>")
           .addClass("email")

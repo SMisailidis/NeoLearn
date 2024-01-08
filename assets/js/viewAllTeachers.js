@@ -47,6 +47,7 @@ $(document).ready(function () {
 
         let expandPhoto = $("<img>")
           .attr("src", "assets/images/expand.png")
+          .attr("alt", "expand")
           .addClass("expandMore")
           .attr("data-toggle", "collapse")
           .attr("href", "#collapse-" + index)
@@ -107,7 +108,10 @@ $(document).ready(function () {
           .addClass("profileHref")
           .attr("title", "View Profile")
           .append(
-            $("<a>").attr("href", `profile.php?ID=${row.ID}`).text("More Info")
+            $("<a>")
+              .attr("title", row.First_Name + " " + row.Last_Name)
+              .attr("href", `profile.php?ID=${row.ID}`)
+              .text("More Info")
           );
 
         article.append(studPhoto).append(studInfo);

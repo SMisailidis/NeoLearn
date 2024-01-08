@@ -18,6 +18,7 @@ $(document).ready(function () {
         const chapterTitle = $("<a>")
           .addClass("chapterTitle")
           // Build the URL for viewing chapter details
+          .attr("title", curriculum.Title)
           .attr(
             "href",
             "viewChapterDetails.php?courseTitle=" +

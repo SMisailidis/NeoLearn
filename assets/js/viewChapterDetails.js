@@ -4,8 +4,7 @@ import toast from "./toast.js";
 import { uploadPDF } from "./uploadPDF.js";
 
 $(document).ready(function () {
-
-  const quizBtn =  $('#quizB');
+  const quizBtn = $("#quizB");
   // Retrieve needed values from URL
   const urlParams = new URLSearchParams(window.location.search);
   const curId = urlParams.get("curID");
@@ -14,8 +13,8 @@ $(document).ready(function () {
 
   // Create FormData object for file uploads
   let formData = new FormData();
-  
-  quizBtn.attr('href', `addQuizQuestion.php?courseID=${crsID}&curID=${curId}`);
+
+  quizBtn.attr("href", `addQuizQuestion.php?courseID=${crsID}&curID=${curId}`);
   // Set the title in the UI based on the course details
   $("#TitleCourse").text(crsTitle + " (" + crsID + ")");
 
@@ -27,7 +26,7 @@ $(document).ready(function () {
       .then((response) => {
         const curriculum = response[0];
 
-        $(".uploadedPdfT, .uploadedFilesT").empty()
+        $(".uploadedPdfT, .uploadedFilesT").empty();
 
         // Update UI elements with the fetched curriculum details
         $(".noteTitleT").val(curriculum.Title);
@@ -38,13 +37,16 @@ $(document).ready(function () {
 
         //Creating pdf links
         if (curriculum?.Pdf_Link) {
-          const pdfList = curriculum.Pdf_Link.split(",")
+          const pdfList = curriculum.Pdf_Link.split(",");
           for (let i = 0; i < pdfList.length; i++) {
-            let div = $("<div>").addClass("uploadedPdfT")
-            let anchor = $("<a>").attr("href", `assets/documents/${pdfList[i]}`).text(pdfList[i]);
-            
+            let div = $("<div>").addClass("uploadedPdfT");
+            let anchor = $("<a>")
+              .attr("title", pdfList[i])
+              .attr("href", `assets/documents/${pdfList[i]}`)
+              .text(pdfList[i]);
+
             div.append(anchor);
-            $(".uploadedFilesT").append(div)
+            $(".uploadedFilesT").append(div);
           }
         }
 
@@ -52,13 +54,17 @@ $(document).ready(function () {
         if (curriculum?.Video_Link) {
           const videoList = curriculum.Video_Link.split(",");
           for (let i = 0; i < videoList.length; i++) {
-            let div = $("<div>").addClass("uploadedVideosT")
-            let anchor = $("<a>").attr("href", "videoDisplay.php").on("click", function(){
-              sessionStorage.setItem("video", videoList[i]);
-          }).text("Watch Video");
-            
+            let div = $("<div>").addClass("uploadedVideosT");
+            let anchor = $("<a>")
+              .attr("title", videoList[i])
+              .attr("href", "videoDisplay.php")
+              .on("click", function () {
+                sessionStorage.setItem("video", videoList[i]);
+              })
+              .text("Watch Video");
+
             div.append(anchor);
-            $(".uploadedFilesT").append(div)
+            $(".uploadedFilesT").append(div);
           }
         }
       })
@@ -82,7 +88,7 @@ $(document).ready(function () {
       new_title: newTitle,
       new_description: newDescription,
       curID: curId,
-      Pdf_Link: fileNames.join(",")
+      Pdf_Link: fileNames.join(","),
     })
       .then((response) => {
         if (response) {
@@ -98,7 +104,9 @@ $(document).ready(function () {
                 if (uploadResponse.success) {
                   // Handle success if needed
                 } else {
-                  console.error("Error uploading PDF: " + uploadResponse.message);
+                  console.error(
+                    "Error uploading PDF: " + uploadResponse.message
+                  );
                 }
               })
               .catch((error) => {
@@ -137,4 +145,3 @@ $(document).ready(function () {
   // Initial update of chapter details list
   updateChapterDetailsList();
 });
-

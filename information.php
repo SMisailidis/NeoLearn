@@ -36,10 +36,10 @@ require 'layout.php' ?>
                     <h2 class="infoHeaders">Contact Us</h2>
                     <span>If you have any questions or inquiries, feel free to reach out to us:</span>
                     <ul class="infoKeyFeatures">
-                        <li>Email: <a href="mailto:info@example.com">info@example.com</a></li>
+                        <li>Email: <a href="mailto:info@example.com" title="email">info@example.com</a></li>
                         <li>Phone: +1 (123) 456-7890</li>
-                        <li>Follow us on <a href="https://www.twitter.com/example" target="_blank">Twitter</a> for updates.</li>
-                        <li>See our work <a href="https://github.com/SMisailidis/NeoLearn"><i class="fa-brands fa-github"></i></a></li>
+                        <li>Follow us on <a href="https://www.twitter.com/example" target="_blank" title="Twitter">Twitter</a> for updates.</li>
+                        <li>See our work <a href="https://github.com/SMisailidis/NeoLearn" title="github"><i class="fa-brands fa-github"></i></a></li>
                     </ul>
                 </article>
             </div>

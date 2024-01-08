@@ -3,8 +3,6 @@ import modal from "./modal.js";
 
 import pagination from "./pagination.js";
 
-
-
 $(document).ready(function () {
   //Function to rotate the img
   function expandMore() {
@@ -18,11 +16,8 @@ $(document).ready(function () {
   modal.setTitle("Delete course");
   modal.setContent("Are you sure you want to delete the selected course?");
   modal.setButtonsText("Cancel", "Confirm");
-  modal.onClickCloseHandler(function onDeleteClick(){});
-  modal.onClickSaveHandler(function onUpdateClick() {
-
-
-  });
+  modal.onClickCloseHandler(function onDeleteClick() {});
+  modal.onClickSaveHandler(function onUpdateClick() {});
 
   const onDeleteHandler = () => {
     modal.openModal();
@@ -64,6 +59,7 @@ $(document).ready(function () {
 
         let expandPhoto = $("<img>")
           .attr("src", "assets/images/expand.png")
+          .attr("alt", "expand")
           .addClass("expandMore")
           .attr("data-toggle", "collapse")
           .attr("href", "#collapse-" + index)

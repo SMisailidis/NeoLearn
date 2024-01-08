@@ -30,18 +30,20 @@ $(document).ready(function () {
         // Create a link to view course chapters with appropriate parameters
         const name = $("<a>")
           .addClass("CourseName")
+          .attr("title", course.Title)
           .attr(
             "href",
             "viewCourseChapters.php?courseTitle=" +
-            encodeURIComponent(courseTitle) +
-            "&courseId=" +
-            encodeURIComponent(crsId)
+              encodeURIComponent(courseTitle) +
+              "&courseId=" +
+              encodeURIComponent(crsId)
           )
           .append(course.Title);
 
         // Create an edit button with a link to the editCourse.php page
         const editAnchor = $("<a>")
           .addClass("ENbuttons")
+          .attr("title", course.Title)
           .attr("id", "editButton")
           .attr("href", "editCourse.php?courseId=" + encodeURIComponent(crsId));
         const editImage = $("<img>")
@@ -110,7 +112,6 @@ $(document).ready(function () {
   $("#RemoveB, #cancelB").click(function () {
     resetPage();
     updateConfirmButtonState();
-
   });
 
   // Event Listener to toggle buttons
@@ -121,7 +122,9 @@ $(document).ready(function () {
 
   // Event handler for modal close
   modal.onClickCloseHandler(function cancelRemoval() {
-    $("#RemoveB, #cancelB, #confirmB, #AddB, .Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
+    $(
+      "#RemoveB, #cancelB, #confirmB, #AddB, .Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox"
+    ).toggle();
     $(".courseCheckbox").prop("checked", false);
   });
 
@@ -140,7 +143,6 @@ $(document).ready(function () {
     })
       .then((data) => {
         if (data) {
-          
           updateConfirmButtonState();
           toast.showToast();
         }
