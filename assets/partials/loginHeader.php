@@ -21,7 +21,7 @@
 <body>
     <header class="container-fluid header">
         <div class="col-12 col-lg-6 col-xl-4 logoContainer animate__animated animate__fadeInDown">
-            <img src="assets/images/logo.png" alt="">
+            <img src="assets/images/logo.png" alt="NeoLearn Logo">
             <span>NEOLEARN</span>
             <span>'Fueling Curiosity, Igniting Success'</span>
         </div>

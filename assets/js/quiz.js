@@ -4,11 +4,12 @@ import pagination from "./pagination.js";
 
 $(document).ready(function () {
   const urlParams = new URLSearchParams(window.location.search);
-  const curId = urlParams.get('curID');
+  const curId = urlParams.get("curID");
+  const curTitle = urlParams.get("curName");
 
   let quizContainer = $(".quizContainer");
   let startingPage = $(".startingPage");
-  let noQuizPage = $('.noQuestionsContainer');
+  let noQuizPage = $(".noQuestionsContainer");
   let questionPage = $(".questionPage");
   let question = $(".question");
   let startBtn = $(".startBtn");
@@ -33,14 +34,14 @@ $(document).ready(function () {
 
   let QuestionsObject = {};
 
+  $(".quizTitle").text(curTitle + " Quiz");
+
   fetchData(jQuery, "assets/Back-End/quiz.php", "POST", { curr_id: curId })
     .then((data) => {
-
       remaining = data.length;
-      console.log(data.length);
       if (data && data.length > 0) {
-        startingPage.css('display', 'flex');
-        questionPage.addClass('animate__animated animate__fadeIn');
+        startingPage.css("display", "flex");
+        questionPage.addClass("animate__animated animate__fadeIn");
         $.each(data, function (index, row) {
           QuestionsObject[row.Question] = {
             options: [row.Option1, row.Option2, row.Option3, row.Option4],
@@ -53,7 +54,7 @@ $(document).ready(function () {
           resetRadioButtons();
           startingPage.css("display", "none");
           questionPage.css("display", "flex");
-          questionPage.addClass('animate__animated animate__fadeIn');
+          questionPage.addClass("animate__animated animate__fadeIn");
           order = 0;
           displayCurrentQuestion();
         });
@@ -77,16 +78,17 @@ $(document).ready(function () {
           const selectedAnswer = $('input[name="answers"]:checked');
           if (!selectedAnswer.length) {
             modal.setElement();
-            modal.setTitle('Please Select an Answer!');
-            modal.setContent("It seems you haven't chosen an answer. Please choose one and try again!");
-            modal.setButtonsText('Got it', '');
+            modal.setTitle("Please Select an Answer!");
+            modal.setContent(
+              "It seems you haven't chosen an answer. Please choose one and try again!"
+            );
+            modal.setButtonsText("Got it", "");
             modal.openModal();
             modal.onClickCloseHandler(function () {
               modal.closeModal();
-            })
+            });
             $("#save").remove();
-          }
-          else {
+          } else {
             checkAnswer();
             disableButtons();
             QuestionsObject[getCurrentQuestion()].answered = true;
@@ -123,7 +125,10 @@ $(document).ready(function () {
           let originalOrder = order;
           do {
             order = (order + 1) % Object.keys(QuestionsObject).length;
-          } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
+          } while (
+            QuestionsObject[getCurrentQuestion()].answered &&
+            order !== originalOrder
+          );
           displayCurrentQuestion();
         }
 
@@ -133,7 +138,10 @@ $(document).ready(function () {
             order =
               (order - 1 + Object.keys(QuestionsObject).length) %
               Object.keys(QuestionsObject).length;
-          } while (QuestionsObject[getCurrentQuestion()].answered && order !== originalOrder);
+          } while (
+            QuestionsObject[getCurrentQuestion()].answered &&
+            order !== originalOrder
+          );
           displayCurrentQuestion();
         }
 
@@ -147,70 +155,67 @@ $(document).ready(function () {
           const selectedAnswerLabel = selectedAnswer.next("label").text();
           givenAnswers[currentQuestion] = selectedAnswerLabel;
 
-          if (selectedAnswerLabel === QuestionsObject[currentQuestion].correctAnswer)
+          if (
+            selectedAnswerLabel ===
+            QuestionsObject[currentQuestion].correctAnswer
+          )
             correctAnswers++;
         }
 
         function showResults() {
           const resultsPerPage = pagination.itemsPerPage;
           const totalResults = Object.keys(givenAnswers).length;
-      
 
           pagination.setData(Object.keys(givenAnswers));
-      
-   
+
           pagination.renderContent(renderResults);
-      
 
           pagination.setPaginationElement(tableWrapper);
           pagination.onClickHandler(renderResults);
           pagination.updatePaginationLinks();
-      
 
           pagination.renderContent();
-          
+
           function renderResults() {
-              resultsBody.empty();
-      
-              const currentPageResults = pagination.data.slice(
-                  (pagination.currentPage - 1) * resultsPerPage,
-                  pagination.currentPage * resultsPerPage
+            resultsBody.empty();
+
+            const currentPageResults = pagination.data.slice(
+              (pagination.currentPage - 1) * resultsPerPage,
+              pagination.currentPage * resultsPerPage
+            );
+
+            for (let currentQuestion of currentPageResults) {
+              let dataRow = $("<tr>");
+              let questionData = $("<td>").text(currentQuestion);
+              let givenAnswerData = $("<td>").text(
+                givenAnswers[currentQuestion]
               );
-      
-              for (let currentQuestion of currentPageResults) {
-                  let dataRow = $("<tr>");
-                  let questionData = $("<td>").text(currentQuestion);
-                  let givenAnswerData = $("<td>").text(givenAnswers[currentQuestion]);
-                  let correctAnswerData = $("<td>").text(QuestionsObject[currentQuestion].correctAnswer);
-      
-                  if (givenAnswerData.text() === correctAnswerData.text())
-                      givenAnswerData.css("color", "#125c00");
-                  else
-                      givenAnswerData.css("color", "#b50000");
-      
-                  dataRow
-                      .append(questionData)
-                      .append(givenAnswerData)
-                      .append(correctAnswerData);
-                  resultsBody.append(dataRow);
-              }
-      
-              // Update total points and display
-              quizContainer.css("justify-content", "flex-start");
-              quizContainer.css("padding-top", "0");
-              tableWrapper.css("display", "flex");
-              points.text("Total Correct Answers: " + correctAnswers);
-              totalPointsWrapper.css("display", "block");
+              let correctAnswerData = $("<td>").text(
+                QuestionsObject[currentQuestion].correctAnswer
+              );
+
+              if (givenAnswerData.text() === correctAnswerData.text())
+                givenAnswerData.css("color", "#125c00");
+              else givenAnswerData.css("color", "#b50000");
+
+              dataRow
+                .append(questionData)
+                .append(givenAnswerData)
+                .append(correctAnswerData);
+              resultsBody.append(dataRow);
+            }
+
+            // Update total points and display
+            quizContainer.css("justify-content", "flex-start");
+            quizContainer.css("padding-top", "0");
+            tableWrapper.css("display", "flex");
+            points.text("Total Correct Answers: " + correctAnswers);
+            totalPointsWrapper.css("display", "block");
           }
-      }
-      
-
-
-      } else
-        noQuizPage.css('display', 'flex');
+        }
+      } else noQuizPage.css("display", "flex");
     })
     .catch((error) => {
       console.error(error);
-
     });
 });

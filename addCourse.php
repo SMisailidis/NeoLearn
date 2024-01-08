@@ -30,6 +30,16 @@ require 'layout.php' ?>
         <label for="Cpre">Course Prerequisities</label>
         <input type="text" name="Cpre" required placeholder="Mathematics/Physics..." />
       </div>
+      <div class="inputGroup col-lg-6 col-12 d-flex align-items-start flex-column justify-content-between">
+        <label>Select a category</label>
+        <select class="form-select catSelect" aria-label="Default select example">
+          <option selected disabled>Select a category</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+
     </div>
     <button type="submit" class="addSubmit-btn darkButtonStyle d-block mx-auto"><span>Confirm</span></button>
   </form>

@@ -4,7 +4,7 @@
             <h1 class="d-none">NeoLearn Quiz</h1>
                 <div class="quizContainer">
                     <section class="startingPage container col-12 col-lg-10 col-xl-9">
-                        <h2 class="quizTitle headerStyle">Web Tech Quiz</h2>
+                        <h2 class="quizTitle headerStyle"></h2>
                         <p>Press start to begin!</p>
                         <button class="startBtn">Start</button>
                     </section>

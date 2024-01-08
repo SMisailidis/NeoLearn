@@ -19,16 +19,24 @@ $(document).ready(function () {
 
   $.each(content, function (index, row) {
     const article = $("<article>").addClass("mainPortfolioContent");
-    const link = $("<a>").addClass("link").attr("href", row.url).addClass("portfolioAnchor");
-    const img = $("<img>").attr("src", row.imgURL).addClass("portfolioImg");
+    const link = $("<a>")
+      .addClass("link")
+      .attr("title", row.text)
+      .attr("href", row.url)
+      .addClass("portfolioAnchor");
+    const img = $("<img>")
+      .attr("src", row.imgURL)
+      .attr("alt", row.text)
+      .addClass("portfolioImg");
     const text = $("<span>").text(row.text).addClass("portfolioText");
 
     link.append(img).append(text);
     article.append(link);
-    (count%2===0) ? article.addClass('animate__animated animate__fadeInLeft') : article.addClass('animate__animated animate__fadeInRight') ;
+    count % 2 === 0
+      ? article.addClass("animate__animated animate__fadeInLeft")
+      : article.addClass("animate__animated animate__fadeInRight");
 
     $(".contentPortfolioContainer").append(article);
     count++;
   });
-
 });
