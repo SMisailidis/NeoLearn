@@ -1,6 +1,9 @@
 import { fetchData } from "./eventHandler.js";
+import modal from "./modal.js";
 
 import pagination from "./pagination.js";
+
+
 
 $(document).ready(function () {
   //Function to rotate the img
@@ -12,8 +15,18 @@ $(document).ready(function () {
     }
   }
 
+  modal.setTitle("Delete course");
+  modal.setContent("Are you sure you want to delete the selected course?");
+  modal.setButtonsText("Cancel", "Confirm");
+  modal.onClickCloseHandler(function onDeleteClick(){});
+  modal.onClickSaveHandler(function onUpdateClick() {
+
+
+  });
+
   const onDeleteHandler = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON DELETE");
+    modal.openModal();
+    console.log(row.ID);
   };
 
   const onUpdateHandler = () => {
@@ -94,7 +107,7 @@ $(document).ready(function () {
           .append(
             $("<p>")
               .append($("<span>").text("Delete"))
-              .append($("<span>").text("User"))
+              .append($("<span>").text("Course"))
           )
           .on("click", onDeleteHandler);
         let expandedUpdateUser = $("<button>")
@@ -104,7 +117,7 @@ $(document).ready(function () {
           .append(
             $("<p>")
               .append($("<span>").text("Update"))
-              .append($("<span>").text("User"))
+              .append($("<span>").text("Course"))
           )
           .on("click", onUpdateHandler);
         let expandedAddChapter = $("<button>")
