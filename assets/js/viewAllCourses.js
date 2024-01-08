@@ -16,16 +16,18 @@ $(document).ready(function () {
   modal.setTitle("Delete course");
   modal.setContent("Are you sure you want to delete the selected course?");
   modal.setButtonsText("Cancel", "Confirm");
-  modal.onClickCloseHandler(function onDeleteClick() {});
-  modal.onClickSaveHandler(function onUpdateClick() {});
+  modal.onClickCloseHandler(function onDeleteClick() { });
+  modal.onClickSaveHandler(function onUpdateClick() { });
 
   const onDeleteHandler = () => {
     modal.openModal();
     console.log(row.ID);
   };
 
-  const onUpdateHandler = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON UPDATE");
+  const onUpdateHandler = (e) => {
+    const courseID = e.target.closest("[data-info]").getAttribute("data-info");
+
+    window.location.href = `UpdateCourse.php?courseId=${courseID}`;
   };
 
   const onAddChapterHandler = (e) => {
@@ -107,6 +109,7 @@ $(document).ready(function () {
         let expandedUpdateUser = $("<button>")
           .addClass("btn btn-outline-success")
           .attr("title", "Update User")
+          .attr("data-info", row.ID)
           .append(iconUpdate)
           .append(
             $("<p>")
