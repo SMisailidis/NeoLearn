@@ -4,7 +4,6 @@ import toast from "./toast.js";
 
 $(document).ready(function () {
   let courseData = {};
-
   //Function for form submit
   const onSubmitHandler = (e) => {
     const inputs = $(`:input:not(:button):not(input[type=submit])`);

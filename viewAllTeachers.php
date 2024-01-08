@@ -4,7 +4,7 @@
           <section class="contentViewTypeContainer col-lg-10 col-12">
             </section>
             <?php require 'assets/partials/pagination.php' ?>
-            <button id="addTeachers" class="btn btn-primary btn-lg addStud" style="background-color: #114054;">Add a teacher</button>
+            <button id="addTeachers" class="btn btn-primary btn-lg addStud" style="background-color: #114054;" title="Add Teacher">Add a teacher</button>
         </section>
       </main>
     </div>

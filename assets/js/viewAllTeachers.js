@@ -21,7 +21,7 @@ $(document).ready(function () {
   };
 
   const onAddTeacherHandler = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON ADD TEACHER");
+    window.location.href = "addUser.php?type=teacher";
   };
 
   //Function to render content with pagination also

@@ -77,7 +77,6 @@
 
     <!-- JS assets -->
     <script src="assets/js/navbarToggle.js"></script>
-    <script type="module" src="assets/js/portfolio.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script type="module" src="assets/js/logout.js"></script>
     <!--------------->

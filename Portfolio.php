@@ -8,4 +8,6 @@
             </main>
         </div>
     </body>
+    <script type="module" src="assets/js/portfolio.js"></script>
+
 </html>

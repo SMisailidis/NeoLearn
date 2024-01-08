@@ -21,7 +21,7 @@ $(document).ready(function () {
   };
 
   const onAddStudent = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON ADD STUDENT");
+    window.location.href = "addUser.php?type=student";
   };
 
   //Function to render content with pagination also

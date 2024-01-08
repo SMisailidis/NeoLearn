@@ -42,12 +42,12 @@ $(document).ready(function () {
     if (credentials.table) {
       fetchData(jQuery, "assets/Back-End/login.php", "POST", credentials)
         .then((data) => {
-          if(data.length === 0) {
+          if (data.length === 0) {
             $(".form-label").addClass("loginLabelError");
             $(".fa-solid").addClass("iconError");
             $("#submit").addClass("loginSubmitError");
             $(".spanError").css("display", "inherit");
-            return
+            return;
           }
           data.type = type;
           delete data.Password; //deleting the password for security
