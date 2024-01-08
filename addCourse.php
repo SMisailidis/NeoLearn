@@ -34,9 +34,12 @@ require 'layout.php' ?>
         <label>Select a category</label>
         <select class="form-select catSelect" aria-label="Default select example">
           <option selected disabled>Select a category</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="Programming">Programming</option>
+          <option value="Mathematics/Statistics">Mathematics/Statistics</option>
+          <option value="Finances">Finances</option>
+          <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+          <option value="Data Science">Data Science</option>
+          <option value="General Knowledge">General Knowledge</option>
         </select>
       </div>
 

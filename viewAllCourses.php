@@ -9,8 +9,6 @@
             </section>
             <?php require 'assets/partials/pagination.php' ?>
         </section>
-        <button id="addCrses" class="btn btn-primary btn-lg addStud" style="background-color: #114054;">Add a Course</button>
-
       </main>
     </div>
     <script type="module" src="assets/js/viewAllCourses.js"></script>  

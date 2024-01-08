@@ -8,9 +8,9 @@ require 'layout.php' ?>
                         <thead class="tableHeader">
                             <tr class="tableHeaderRow" height = "50px">
                                 <th scope="col" width = "70px">Course</th>
-                                <th scope="col" width = "70px">Course ID</th>
+                                <th scope="col" width = "70px">Course Category</th>
                                 <th scope="col" width = "70px">Teacher</th>
-                                <th scope="col" width = "50px">Sign Up</th>
+                                <th scope="col" width = "70px">Sign Up</th>
                             </tr>
                         </thead>
                         <tbody class = "tableBody">

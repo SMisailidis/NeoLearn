@@ -53,8 +53,8 @@ $(document).ready(function () {
           .attr("type", "checkbox")
           .attr("id", row.ID)
           .attr("value", row.Title);
-        td1.append(row.Title);
-        td2.append(row.ID);
+        td1.append(row.Title + " (" + row.ID + ")");
+        td2.append(row.Category);
         td3.append(row.First_Name + " " + row.Last_Name);
         td4.append(checkbox);
         tr.append(td1).append(td2).append(td3).append(td4);

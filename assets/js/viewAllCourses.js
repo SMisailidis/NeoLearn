@@ -34,8 +34,6 @@ $(document).ready(function () {
     window.location.href = `addChapter.php?courseId=${courseID}`;
   };
 
-  const onAddCourseHandler = () => {};
-
   //Function to render content with pagination also
   const renderContent = () => {
     pagination.renderContent(() => {
@@ -143,7 +141,7 @@ $(document).ready(function () {
   };
 
   //Fetching data from db
-  const fetchStudents = () => {
+  const fetchCourses = () => {
     fetchData(jQuery, "assets/Back-End/retrieveAllType.php", "POST", {
       table: "course",
     })
@@ -157,10 +155,8 @@ $(document).ready(function () {
       });
   };
 
-  $("#addCrses").on("click", onAddCourseHandler);
-
   pagination.setPaginationElement($(".contentViewTypeContainer"));
 
-  fetchStudents();
+  fetchCourses();
   pagination.onClickHandler(renderContent);
 });

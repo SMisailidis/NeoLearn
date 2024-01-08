@@ -5,9 +5,11 @@ import toast from "./toast.js";
 $(document).ready(function () {
   let courseData = {};
 
-  //Function for form submit 
+  //Function for form submit
   const onSubmitHandler = (e) => {
     const inputs = $(`:input:not(:button):not(input[type=submit])`);
+    const category = $(".catSelect").find(":selected").val();
+
     e.preventDefault();
 
     const teacher_ID = JSON.parse(sessionStorage.getItem("userData"))[0].ID;
@@ -15,6 +17,7 @@ $(document).ready(function () {
       Teacher_ID: teacher_ID,
       ID: inputs[1].value,
       Title: inputs[0].value,
+      Category: category,
       Description: inputs[2].value,
       Objectives: inputs[3].value,
       Prerequisities: inputs[4].value,
@@ -25,18 +28,13 @@ $(document).ready(function () {
 
   //General Function for reseting inputs
   const resetInputs = () => {
-    const inputs = $(`:input:not(:button):not(input[type=submit])`);
-
-    $.each(inputs, function (index, row) {
-      row.value = "";
-    });
+    $(".addInput-form").trigger("reset");
   };
 
   //Function for close modal
   modal.onClickCloseHandler(() => {
     resetInputs();
   });
-
 
   //Function for agree/save modal
   modal.onClickSaveHandler(() => {
