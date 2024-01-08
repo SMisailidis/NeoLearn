@@ -93,6 +93,11 @@
 @media only screen and (max-width: 992px) {
   .contentAddCourseContainer {
     height: auto;
+    max-height: 100%;
+  }
+
+  .addInput-form{
+    gap: 0;
   }
 
   .contentAddCourseContainer .row {
