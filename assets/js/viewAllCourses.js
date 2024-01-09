@@ -2,6 +2,7 @@ import { fetchData } from "./eventHandler.js";
 import modal from "./modal.js";
 
 import pagination from "./pagination.js";
+import toast from "./toast.js";
 
 $(document).ready(function () {
   //Function to rotate the img
@@ -13,15 +14,43 @@ $(document).ready(function () {
     }
   }
 
+  toast.setContent("Course deleted successfully!");
   modal.setTitle("Delete course");
   modal.setContent("Are you sure you want to delete the selected course?");
   modal.setButtonsText("Cancel", "Confirm");
-  modal.onClickCloseHandler(function onDeleteClick() { });
-  modal.onClickSaveHandler(function onUpdateClick() { });
+  modal.onClickCloseHandler(() => {
+    modal.closeModal();
+  }
+  );
 
-  const onDeleteHandler = () => {
+
+  const onDeleteHandler = (e) => {
+    const courseID = [];
+    courseID.push(e.target.closest("[data-info]").getAttribute("data-info"));
     modal.openModal();
-    console.log(row.ID);
+    modal.onClickSaveHandler(() => {
+      fetchData(jQuery, "assets/Back-End/deleteCourses.php", "POST", {
+        course_ids: courseID,
+      })
+        .then((data) => {
+          if (data) {
+            modal.closeModal();
+            toast.showToast();
+            let spinnerElement = '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+
+            $(`p:contains('${courseID[0]}')`).parent().parent().next('div').remove();
+
+            $(`p:contains('${courseID[0]}')`).parent().replaceWith(spinnerElement);
+            setTimeout(function () {
+              location.reload();
+            }, 3000)
+
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
   };
 
   const onUpdateHandler = (e) => {
@@ -99,6 +128,7 @@ $(document).ready(function () {
         let expandedDeleteUser = $("<button>")
           .addClass("btn btn-outline-danger")
           .attr("title", "Delete User")
+          .attr("data-info", row.ID)
           .append(iconTrash)
           .append(
             $("<p>")

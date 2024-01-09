@@ -76,7 +76,7 @@ $(document).ready(function () {
     if (courseId) {
         updateCourseDetails(courseId);
 
-        $("form").on("submit", function (event) {
+        $(".addInput-form").on("submit", function (event) {
             event.preventDefault();
 
             modal.openModal();
