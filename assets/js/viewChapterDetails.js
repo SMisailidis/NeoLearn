@@ -102,7 +102,7 @@ $(document).ready(function () {
               .then((uploadResponse) => {
                 console.log(uploadResponse);
                 if (uploadResponse.success) {
-                  // Handle success if needed
+                  $("#formFileMultiple").val("");
                 } else {
                   console.error(
                     "Error uploading PDF: " + uploadResponse.message
@@ -126,6 +126,7 @@ $(document).ready(function () {
   modal.setContent("Are you sure you want to save these changes?");
   modal.setButtonsText("Cancel", "Save");
   modal.onClickCloseHandler(() => {
+    $("#formFileMultiple").val("");
     location.reload();
   });
   modal.onClickSaveHandler(() => {

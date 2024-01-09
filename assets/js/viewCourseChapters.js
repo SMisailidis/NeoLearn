@@ -50,10 +50,14 @@ $(document).ready(function () {
       course_id: courseId,
     })
       .then((response) => {
-        // Set pagination data and render courses
-        pagination.setData(response);
-        renderCourses();
-        pagination.updatePaginationLinks();
+        if (response.length === 0) {
+          $(".emptyChapters").css("display", "block");
+        } else {
+          // Set pagination data and render courses
+          pagination.setData(response);
+          renderCourses();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.log(error);

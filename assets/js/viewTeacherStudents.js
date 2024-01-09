@@ -107,9 +107,13 @@ $(document).ready(function () {
       ID: id,
     })
       .then((data) => {
-        pagination.setData(data);
-        renderContent();
-        pagination.updatePaginationLinks();
+        if (data.length === 0) {
+          $(".emptyTeachersStuds").css("display", "block");
+        } else {
+          pagination.setData(data);
+          renderContent();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.error(error);

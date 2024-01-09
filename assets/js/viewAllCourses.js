@@ -20,9 +20,7 @@ $(document).ready(function () {
   modal.setButtonsText("Cancel", "Confirm");
   modal.onClickCloseHandler(() => {
     modal.closeModal();
-  }
-  );
-
+  });
 
   const onDeleteHandler = (e) => {
     const courseID = [];
@@ -36,15 +34,21 @@ $(document).ready(function () {
           if (data) {
             modal.closeModal();
             toast.showToast();
-            let spinnerElement = '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+            let spinnerElement =
+              '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
 
-            $(`p:contains('${courseID[0]}')`).parent().parent().next('div').remove();
+            $(`p:contains('${courseID[0]}')`)
+              .parent()
+              .parent()
+              .next("div")
+              .remove();
 
-            $(`p:contains('${courseID[0]}')`).parent().replaceWith(spinnerElement);
+            $(`p:contains('${courseID[0]}')`)
+              .parent()
+              .replaceWith(spinnerElement);
             setTimeout(function () {
               location.reload();
-            }, 3000)
-
+            }, 3000);
           }
         })
         .catch((error) => {
@@ -179,9 +183,13 @@ $(document).ready(function () {
       table: "course",
     })
       .then((data) => {
-        pagination.setData(data);
-        renderContent();
-        pagination.updatePaginationLinks();
+        if (data.length === 0) {
+          $(".emptyAllCourses").css("display", "block");
+        } else {
+          pagination.setData(data);
+          renderContent();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.error(error);

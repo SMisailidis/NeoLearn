@@ -6,9 +6,7 @@
             </div>
             <div class="chapters_central-div col-lg-10 col-12">
                 <div class="Rectangles d-flex flex-column justify-content-center">
-
-
-       
+                    <h2 class="emptyChapters" style="display:none;text-align:center">This course does not have any chapters at the moment.</h2>
                 </div>
                 <?php require 'assets/partials/pagination.php' ?>       
                 <div class="AddChapterButtonContainer">

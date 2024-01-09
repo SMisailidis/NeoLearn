@@ -4,6 +4,7 @@
     <h1 class="headerStyle">My Courses</h1>
     <div class="viewCoursesContainer col-lg-10 col-12">
         <div class="CoursesList d-flex flex-column justify-content-start">  
+            <h2 class="emptyCourses" style="display:none;text-align:center;margin:auto">At present, you are not instructing any courses.</h2>
         </div>  
         <?php require 'assets/partials/pagination.php' ?>
         <div class="button-container">

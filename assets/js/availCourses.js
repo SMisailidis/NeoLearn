@@ -73,9 +73,16 @@ $(document).ready(function () {
       undefined
     )
       .then((data) => {
-        pagination.setData(data);
-        renderTable();
-        pagination.updatePaginationLinks();
+        if (data.length === 0) {
+          $("#th1").text("There are");
+          $("#th2").text("no courses");
+          $("#th3").text("available");
+          $("#th4").text("at the moment!");
+        } else {
+          pagination.setData(data);
+          renderTable();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.error(error);

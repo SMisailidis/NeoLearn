@@ -1,6 +1,6 @@
 import { fetchData } from "./eventHandler.js";
-import toast from "./toast.js"
-import modal from "./modal.js"
+import toast from "./toast.js";
+import modal from "./modal.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
@@ -21,21 +21,27 @@ $(document).ready(function () {
     modal.onClickSaveHandler(() => {
       fetchData(jQuery, "assets/Back-End/deleteUser.php", "POST", {
         userID: studentID,
-        Type: "student"
+        Type: "student",
       })
         .then((success) => {
           if (success) {
             modal.closeModal();
             toast.showToast();
-            let spinnerElement = '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+            let spinnerElement =
+              '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
 
-            $(`p:contains('${studentID}')`).parent().parent().next('div').remove();
+            $(`p:contains('${studentID}')`)
+              .parent()
+              .parent()
+              .next("div")
+              .remove();
 
-            $(`p:contains('${studentID}')`).parent().replaceWith(spinnerElement);
+            $(`p:contains('${studentID}')`)
+              .parent()
+              .replaceWith(spinnerElement);
             setTimeout(function () {
               location.reload();
-            }, 3000)
-
+            }, 3000);
           }
         })
         .catch((error) => {
@@ -134,7 +140,6 @@ $(document).ready(function () {
             $("<p>")
               .append($("<span>").text("Update"))
               .append($("<span>").text("User"))
-              
           )
           .on("click", onUpdateHandler);
         let expandedLink = $("<article>")
@@ -167,9 +172,13 @@ $(document).ready(function () {
       table: "student",
     })
       .then((data) => {
-        pagination.setData(data);
-        renderContent();
-        pagination.updatePaginationLinks();
+        if (data.length === 0) {
+          $(".emptyAllStudents").css("display", "block");
+        } else {
+          pagination.setData(data);
+          renderContent();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -182,11 +191,11 @@ $(document).ready(function () {
   fetchStudents();
   pagination.onClickHandler(renderContent);
 
-
-  
   toast.setContent("User deleted succesfully!");
   modal.setTitle("Delete User");
   modal.setContent("Are you sure you want to delete the selected user?");
   modal.setButtonsText("Cancel", "Confirm");
-  modal.onClickCloseHandler(() => {modal.closeModal();})
+  modal.onClickCloseHandler(() => {
+    modal.closeModal();
+  });
 });

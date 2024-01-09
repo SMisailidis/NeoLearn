@@ -75,9 +75,13 @@ $(document).ready(function () {
     })
       .then((response) => {
         // Set pagination data and render courses
-        pagination.setData(response);
-        renderCourses();
-        pagination.updatePaginationLinks();
+        if (response.length === 0) {
+          $(".emptyCourses").css("display", "block");
+        } else {
+          pagination.setData(response);
+          renderCourses();
+          pagination.updatePaginationLinks();
+        }
       })
       .catch((error) => {
         console.log("Error fetching courses: " + error);
@@ -91,12 +95,15 @@ $(document).ready(function () {
   };
 
   // Function to reset the page state
-  const resetPage = () => {
+  const resetPage = (selectedButton) => {
     $(".Buttons, .RemoveButtons, .ENbuttons, .courseCheckbox").toggle();
 
     // Uncheck checkboxes if cancel button is clicked
-    if ($(this).attr("id") === "cancelB") {
+    if (selectedButton.attr("id") === "cancelB") {
       $(".courseCheckbox").prop("checked", false);
+      $("a[href='addCourse.php'").css("display", "block");
+    } else {
+      $("a[href='addCourse.php'").css("display", "none");
     }
 
     updateConfirmButtonState();
@@ -110,12 +117,7 @@ $(document).ready(function () {
 
   // Event listeners for Remove and Cancel buttons
   $("#RemoveB, #cancelB").click(function () {
-    resetPage();
-    updateConfirmButtonState();
-  });
-
-  // Event Listener to toggle buttons
-  $("#RemoveB, #cancelB").click(function () {
+    resetPage($(this)); // Pass the clicked button as an argument
     $("#RemoveB, #cancelB, #confirmB, #AddB").toggle();
     updateConfirmButtonState();
   });

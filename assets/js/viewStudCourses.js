@@ -58,10 +58,14 @@ $(document).ready(function () {
       student_id: studentId,
     })
       .then((response) => {
-        // Update pagination data and render courses
-        pagination.setData(response);
-        renderCourses();
-        pagination.updatePaginationLinks();
+        if (response.length === 0) {
+          $(".emptyStudCourses").css("display", "block");
+        } else {
+          // Update pagination data and render courses
+          pagination.setData(response);
+          renderCourses();
+          pagination.updatePaginationLinks();
+        }
 
         // Add event listener for checkbox changes
         $(".checkBoxCont input[type='checkbox']").on("change", function () {
