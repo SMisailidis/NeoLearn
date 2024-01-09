@@ -1,4 +1,6 @@
 import { fetchData } from "./eventHandler.js";
+import toast from "./toast.js"
+import modal from "./modal.js"
 
 import pagination from "./pagination.js";
 
@@ -12,8 +14,35 @@ $(document).ready(function () {
     }
   }
 
-  const onDeleteHandler = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON DELETE");
+  const onDeleteHandler = (e) => {
+    const teacherID = e.target.closest("[data-info]").getAttribute("data-info");
+
+    modal.openModal();
+
+    modal.onClickSaveHandler(() => {
+      fetchData(jQuery, "assets/Back-End/deleteUser.php", "POST", {
+        userID: teacherID,
+        Type: "teacher"
+      })
+        .then((success) => {
+          if (success) {
+            modal.closeModal();
+            toast.showToast();
+            let spinnerElement = '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+
+            $(`p:contains('${teacherID}')`).parent().parent().next('div').remove();
+
+            $(`p:contains('${teacherID}')`).parent().replaceWith(spinnerElement);
+            setTimeout(function () {
+              location.reload();
+            }, 3000)
+
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
   };
 
   const onUpdateHandler = (e) => {
@@ -89,6 +118,7 @@ $(document).ready(function () {
         let expandedDeleteUser = $("<button>")
           .addClass("btn btn-outline-danger")
           .attr("title", "Delete User")
+          .attr("data-info", row.ID)
           .append(iconTrash)
           .append(
             $("<p>")
@@ -152,4 +182,13 @@ $(document).ready(function () {
   pagination.setPaginationElement($(".contentViewTypeContainer"));
   fetchStudents();
   pagination.onClickHandler(renderContent);
+
+
+  toast.setContent("User deleted succesfully!");
+  modal.setTitle("Delete User");
+  modal.setContent("Are you sure you want to delete the selected user?");
+  modal.setButtonsText("Cancel", "Confirm");
+  modal.onClickCloseHandler(() => {modal.closeModal();})
+
+
 });
