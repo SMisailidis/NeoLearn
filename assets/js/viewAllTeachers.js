@@ -16,8 +16,10 @@ $(document).ready(function () {
     console.log("HERE I WILL DO THE LOGIC FOR ON DELETE");
   };
 
-  const onUpdateHandler = () => {
-    console.log("HERE I WILL DO THE LOGIC FOR ON UPDATE");
+  const onUpdateHandler = (e) => {
+    const teacherID = e.target.closest("[data-info]").getAttribute("data-info");
+
+    window.location.href = `updateUser.php?type=teacher&userID=${teacherID}`;
   };
 
   const onAddTeacherHandler = () => {
@@ -97,11 +99,13 @@ $(document).ready(function () {
         let expandedUpdateUser = $("<button>")
           .addClass("btn btn-outline-success")
           .attr("title", "Update User")
+          .attr("data-info", row.ID)
           .append(iconUpdate)
           .append(
             $("<p>")
               .append($("<span>").text("Update"))
               .append($("<span>").text("User"))
+              
           )
           .on("click", onUpdateHandler);
         let expandedLink = $("<article>")
