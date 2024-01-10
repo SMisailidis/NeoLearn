@@ -84,7 +84,7 @@ $(document).ready(function () {
           // Create a button container for the quiz
           const quizButton = $("<a>")
             .addClass("quizButton")
-            .attr("href", `quiz.php?curID=${curId}`)
+            .attr("href", `quiz.php?curID=${curId}&curName=${curriculum.Title}`)
             .text("QUIZ");
 
           // Append all the created elements to the main details container

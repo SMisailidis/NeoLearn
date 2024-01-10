@@ -5,6 +5,9 @@ import pagination from "./pagination.js";
 import toast from "./toast.js";
 
 $(document).ready(function () {
+
+  let courseID = []
+
   //Function to rotate the img
   function expandMore() {
     if (!$(this).hasClass("rotate180")) {
@@ -23,39 +26,39 @@ $(document).ready(function () {
   });
 
   const onDeleteHandler = (e) => {
-    const courseID = [];
-    courseID.push(e.target.closest("[data-info]").getAttribute("data-info"));
+    courseID = Array.of(e.target.closest("[data-info]").getAttribute("data-info"));
     modal.openModal();
-    modal.onClickSaveHandler(() => {
-      fetchData(jQuery, "assets/Back-End/deleteCourses.php", "POST", {
-        course_ids: courseID,
-      })
-        .then((data) => {
-          if (data) {
-            modal.closeModal();
-            toast.showToast();
-            let spinnerElement =
-              '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
-
-            $(`p:contains('${courseID[0]}')`)
-              .parent()
-              .parent()
-              .next("div")
-              .remove();
-
-            $(`p:contains('${courseID[0]}')`)
-              .parent()
-              .replaceWith(spinnerElement);
-            setTimeout(function () {
-              location.reload();
-            }, 3000);
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    });
   };
+
+  modal.onClickSaveHandler(() => {
+    fetchData(jQuery, "assets/Back-End/deleteCourses.php", "POST", {
+      course_ids: courseID,
+    })
+      .then((data) => {
+        if (data) {
+          modal.closeModal();
+          toast.showToast();
+          let spinnerElement =
+            '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+
+          $(`p:contains('${courseID[0]}')`)
+            .parent()
+            .parent()
+            .next("div")
+            .remove();
+
+          $(`p:contains('${courseID[0]}')`)
+            .parent()
+            .replaceWith(spinnerElement);
+          setTimeout(function () {
+            location.reload();
+          }, 3000);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
 
   const onUpdateHandler = (e) => {
     const courseID = e.target.closest("[data-info]").getAttribute("data-info");
@@ -197,7 +200,7 @@ $(document).ready(function () {
   };
 
   pagination.setPaginationElement($(".contentViewTypeContainer"));
-
   fetchCourses();
   pagination.onClickHandler(renderContent);
+  pagination.itemsPerPage = 3
 });

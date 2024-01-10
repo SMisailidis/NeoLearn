@@ -5,6 +5,9 @@ import modal from "./modal.js";
 import pagination from "./pagination.js";
 
 $(document).ready(function () {
+
+  let teacherID = ""
+
   //Function to rotate the img
   function expandMore() {
     if (!$(this).hasClass("rotate180")) {
@@ -15,41 +18,41 @@ $(document).ready(function () {
   }
 
   const onDeleteHandler = (e) => {
-    const teacherID = e.target.closest("[data-info]").getAttribute("data-info");
+    teacherID = e.target.closest("[data-info]").getAttribute("data-info");
 
     modal.openModal();
-
-    modal.onClickSaveHandler(() => {
-      fetchData(jQuery, "assets/Back-End/deleteUser.php", "POST", {
-        userID: teacherID,
-        Type: "teacher",
-      })
-        .then((success) => {
-          if (success) {
-            modal.closeModal();
-            toast.showToast();
-            let spinnerElement =
-              '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
-
-            $(`p:contains('${teacherID}')`)
-              .parent()
-              .parent()
-              .next("div")
-              .remove();
-
-            $(`p:contains('${teacherID}')`)
-              .parent()
-              .replaceWith(spinnerElement);
-            setTimeout(function () {
-              location.reload();
-            }, 3000);
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    });
   };
+
+  modal.onClickSaveHandler(() => {
+    fetchData(jQuery, "assets/Back-End/deleteUser.php", "POST", {
+      userID: teacherID,
+      Type: "teacher",
+    })
+      .then((success) => {
+        if (success) {
+          modal.closeModal();
+          toast.showToast();
+          let spinnerElement =
+            '<div class="spinner-border text-primary" role="status" style="display:flex;align-self:center;color: #2e6d7c !IMPORTANT;margin-left:10px;"><span class="visually-hidden">Loading...</span></div>';
+
+          $(`p:contains('${teacherID}')`)
+            .parent()
+            .parent()
+            .next("div")
+            .remove();
+
+          $(`p:contains('${teacherID}')`)
+            .parent()
+            .replaceWith(spinnerElement);
+          setTimeout(function () {
+            location.reload();
+          }, 3000);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
 
   const onUpdateHandler = (e) => {
     const teacherID = e.target.closest("[data-info]").getAttribute("data-info");
@@ -168,7 +171,7 @@ $(document).ready(function () {
   };
 
   //Fetching data from db
-  const fetchStudents = () => {
+  const fetchTeachers = () => {
     fetchData(jQuery, "assets/Back-End/retrieveAllType.php", "POST", {
       table: "teacher",
     })
@@ -189,8 +192,9 @@ $(document).ready(function () {
   $("#addTeachers").on("click", onAddTeacherHandler);
 
   pagination.setPaginationElement($(".contentViewTypeContainer"));
-  fetchStudents();
+  fetchTeachers();
   pagination.onClickHandler(renderContent);
+  pagination.itemsPerPage = 3
 
   toast.setContent("User deleted succesfully!");
   modal.setTitle("Delete User");
