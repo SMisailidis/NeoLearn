@@ -9,7 +9,7 @@
     <input type="text" name="chapterID" id="chapterID" required placeholder="cur##" />
     <label for="chapterDesc">Chapter Description</label>
     <input type="text" name="chapterDesc" id="chapterDesc" required placeholder="e.g. A basic course in mathem..." />
-    <label for="videoLink">Chapter Description</label>
+    <label for="videoLink">Chapter Video Link</label>
     <input type="text" name="videoLink" id="chapterDesc" required placeholder="e.g. https://www.youtube.com..." />
 
     <div class="inputFileWrapper">
