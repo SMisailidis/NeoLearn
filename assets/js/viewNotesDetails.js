@@ -65,10 +65,7 @@ $(document).ready(function () {
               const uploadedVideos = $("<div>").addClass("uploadedVideos");
               const videoLink = $("<a>")
                 .attr("title", videoList[i])
-                .attr("href", "videoDisplay.php")
-                .on("click", function () {
-                  sessionStorage.setItem("video", videoList[i]);
-                })
+                .attr("href", `videoDisplay.php?url=${videoList[i]}`)
                 .text("Watch Video");
               videoLink.appendTo(uploadedVideos);
               uploadedVideos.appendTo(uploadedFiles);
